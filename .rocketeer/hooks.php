@@ -24,8 +24,36 @@ return [
     // Tasks to execute after the core Rocketeer Tasks
     'after'  => [
         'setup'   => [],
-        'deploy'  => [],
-        'cleanup' => [],
+        'deploy'  => [
+            function($task){
+                $test=$task->runForCurrentRelease('php artisan migrate --force');
+                if ($test) {
+                    $task->command->info('php artisan migrate executed');
+                } else {
+                    $task->command->error('error! command php artisan migrate');
+                }
+            },
+            function($task){
+                $test=$task->runForCurrentRelease('php artisan config:cache');
+                if ($test) {
+                    $task->command->info('php artisan optimize config:cache');
+                } else {
+                    $task->command->error('error! command php artisan config:cache');
+                }
+            },
+            function($task){
+                $test=$task->runForCurrentRelease('php artisan route:cache');
+                if ($test) {
+                    $task->command->info('php artisan optimize route:cache');
+                } else {
+                    $task->command->error('error! command php artisan route:cache');
+                }
+            }
+
+        ],
+        'cleanup' => [
+
+        ],
     ],
 
     // Custom Tasks to register with Rocketeer
