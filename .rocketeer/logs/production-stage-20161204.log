@@ -1,0 +1,168 @@
+20161204054302
+20161204071817
+$ git clone "https://spqa:anhminhhehe7565775@github.com/spqa/flipmanga.git" "/home/www/flipmanga/stage/releases/20161204071923" --branch="stage" --depth="1"
+git clone "https://spqa:anhminhhehe7565775@github.com/spqa/flipmanga.git" "/home/www/flipmanga/stage/releases/20161204071923" --branch="stage" --depth="1"
+Cloning into '/home/www/flipmanga/stage/releases/20161204071923'...
+$ cd /home/www/flipmanga/stage/releases/20161204071923
+$ git submodule update --init --recursive
+cd /home/www/flipmanga/stage/releases/20161204071923
+git submodule update --init --recursive
+
+which: no bundle in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+/usr/local/bin/composer
+$ cd /home/www/flipmanga/stage/releases/20161204071923
+$ /usr/local/bin/composer install --no-interaction --no-dev --prefer-dist
+cd /home/www/flipmanga/stage/releases/20161204071923
+/usr/local/bin/composer install --no-interaction --no-dev --prefer-dist
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+Loading composer repositories with package information
+Installing dependencies from lock file
+  - Installing jakub-onderka/php-console-color (0.1)
+    Loading from cache
+
+  - Installing vlucas/phpdotenv (v2.4.0)
+    Loading from cache
+
+  - Installing symfony/polyfill-mbstring (v1.3.0)
+    Loading from cache
+
+  - Installing symfony/var-dumper (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/translation (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/routing (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/process (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/http-foundation (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/event-dispatcher (v3.2.0)
+    Loading from cache
+
+  - Installing psr/log (1.0.2)
+    Loading from cache
+
+  - Installing symfony/debug (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/http-kernel (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/finder (v3.1.7)
+    Loading from cache
+
+  - Installing symfony/console (v3.1.7)
+    Loading from cache
+
+  - Installing swiftmailer/swiftmailer (v5.4.4)
+    Loading from cache
+
+  - Installing paragonie/random_compat (v2.0.4)
+    Loading from cache
+
+  - Installing ramsey/uuid (3.5.2)
+    Loading from cache
+
+  - Installing nikic/php-parser (v2.1.1)
+    Loading from cache
+
+  - Installing jakub-onderka/php-console-highlighter (v0.3.2)
+    Loading from cache
+
+  - Installing dnoegel/php-xdg-base-dir (0.1)
+    Loading from cache
+
+  - Installing psy/psysh (v0.7.2)
+    Loading from cache
+
+  - Installing nesbot/carbon (1.21.0)
+    Loading from cache
+
+  - Installing mtdowling/cron-expression (v1.1.0)
+    Loading from cache
+
+  - Installing monolog/monolog (1.22.0)
+    Loading from cache
+
+  - Installing league/flysystem (1.0.32)
+    Loading from cache
+
+  - Installing symfony/polyfill-util (v1.3.0)
+    Loading from cache
+
+  - Installing symfony/polyfill-php56 (v1.3.0)
+    Loading from cache
+
+  - Installing jeremeamia/superclosure (2.2.0)
+    Loading from cache
+
+  - Installing doctrine/inflector (v1.1.0)
+    Loading from cache
+
+  - Installing classpreloader/classpreloader (3.0.0)
+    Loading from cache
+
+  - Installing laravel/framework (v5.3.26)
+    Loading from cache
+
+Generating autoload files
+> Illuminate\Foundation\ComposerScripts::postInstall
+> php artisan optimize
+Generating optimized class loader
+
+Compiling common classes
+which: no npm in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+$ cd /home/www/flipmanga/stage/releases/20161204071923
+$ npm install
+cd /home/www/flipmanga/stage/releases/20161204071923
+npm install
+bash: npm: command not found
+which: no bower in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+which: no bower in (/home/www/flipmanga/stage/releases/20161204071923/node_modules/.bin)
+$ cd /home/www/flipmanga/stage/releases/20161204071923
+$ chmod -R 755 /home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite
+$ chmod -R g+s /home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite
+$ chown -R nginx:nginx /home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite
+cd /home/www/flipmanga/stage/releases/20161204071923
+chmod -R 755 /home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite
+chmod -R g+s /home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite
+chown -R nginx:nginx /home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite
+chmod: cannot access ‘/home/www/flipmanga/stage/releases/20161204071923/app/database/production.sqlite’: No such file or directory
+$ cd /home/www/flipmanga/stage/releases/20161204071923
+$ chmod -R 755 /home/www/flipmanga/stage/releases/20161204071923/storage
+$ chmod -R g+s /home/www/flipmanga/stage/releases/20161204071923/storage
+$ chown -R nginx:nginx /home/www/flipmanga/stage/releases/20161204071923/storage
+cd /home/www/flipmanga/stage/releases/20161204071923
+chmod -R 755 /home/www/flipmanga/stage/releases/20161204071923/storage
+chmod -R g+s /home/www/flipmanga/stage/releases/20161204071923/storage
+chown -R nginx:nginx /home/www/flipmanga/stage/releases/20161204071923/storage
+
+$ cd /home/www/flipmanga/stage/releases/20161204071923
+$ chmod -R 755 /home/www/flipmanga/stage/releases/20161204071923/public
+$ chmod -R g+s /home/www/flipmanga/stage/releases/20161204071923/public
+$ chown -R nginx:nginx /home/www/flipmanga/stage/releases/20161204071923/public
+cd /home/www/flipmanga/stage/releases/20161204071923
+chmod -R 755 /home/www/flipmanga/stage/releases/20161204071923/public
+chmod -R g+s /home/www/flipmanga/stage/releases/20161204071923/public
+chown -R nginx:nginx /home/www/flipmanga/stage/releases/20161204071923/public
+
+$ rm -rf /home/www/flipmanga/stage/releases/20161204071923/storage/logs
+rm -rf /home/www/flipmanga/stage/releases/20161204071923/storage/logs
+
+$ ln -s /home/www/flipmanga/stage/shared/storage/logs /home/www/flipmanga/stage/releases/20161204071923/storage/logs-temp
+$ mv -Tf /home/www/flipmanga/stage/releases/20161204071923/storage/logs-temp /home/www/flipmanga/stage/releases/20161204071923/storage/logs
+ln -s /home/www/flipmanga/stage/shared/storage/logs /home/www/flipmanga/stage/releases/20161204071923/storage/logs-temp
+mv -Tf /home/www/flipmanga/stage/releases/20161204071923/storage/logs-temp /home/www/flipmanga/stage/releases/20161204071923/storage/logs
+
+$ ln -s /home/www/flipmanga/stage/releases/20161204071923 /home/www/flipmanga/stage/current-temp
+$ mv -Tf /home/www/flipmanga/stage/current-temp /home/www/flipmanga/stage/current
+ln -s /home/www/flipmanga/stage/releases/20161204071923 /home/www/flipmanga/stage/current-temp
+mv -Tf /home/www/flipmanga/stage/current-temp /home/www/flipmanga/stage/current
+
+<fg=cyan>production/0/stage</fg=cyan>      |=> Successfully deployed release 20161204071923
+<fg=cyan>production/0/stage</fg=cyan>      |=> No releases to prune from the server

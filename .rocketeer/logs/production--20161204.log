@@ -1,0 +1,173 @@
+20161204045606
+$ git clone "https://spqa:anhminhhehe7565775@github.com/spqa/flipmanga.git" "/home/www/flipmanga/releases/20161204045754" --branch="master" --depth="1"
+git clone "https://spqa:anhminhhehe7565775@github.com/spqa/flipmanga.git" "/home/www/flipmanga/releases/20161204045754" --branch="master" --depth="1"
+Cloning into '/home/www/flipmanga/releases/20161204045754'...
+$ cd /home/www/flipmanga/releases/20161204045754
+$ git submodule update --init --recursive
+cd /home/www/flipmanga/releases/20161204045754
+git submodule update --init --recursive
+
+which: no bundle in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+/usr/local/bin/composer
+$ cd /home/www/flipmanga/releases/20161204045754
+$ /usr/local/bin/composer install --no-interaction --no-dev --prefer-dist
+cd /home/www/flipmanga/releases/20161204045754
+/usr/local/bin/composer install --no-interaction --no-dev --prefer-dist
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+Loading composer repositories with package information
+Installing dependencies from lock file
+  - Installing jakub-onderka/php-console-color (0.1)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 50%    Downloading: 100%
+
+  - Installing vlucas/phpdotenv (v2.4.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 80%    Downloading: 100%
+
+  - Installing symfony/polyfill-mbstring (v1.3.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 35%    Downloading: 70%    Downloading: 100%
+
+  - Installing symfony/var-dumper (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 10%    Downloading: 20%    Downloading: 35%    Downloading: 40%    Downloading: 50%    Downloading: 60%    Downloading: 75%    Downloading: 85%    Downloading: 95%    Downloading: 100%
+
+  - Installing symfony/translation (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing symfony/routing (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing symfony/process (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 15%    Downloading: 20%    Downloading: 35%    Downloading: 45%    Downloading: 65%    Downloading: 80%    Downloading: 100%
+
+  - Installing symfony/http-foundation (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing symfony/event-dispatcher (v3.2.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 100%
+
+  - Installing psr/log (1.0.2)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 15%    Downloading: 100%
+
+  - Installing symfony/debug (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 100%
+
+  - Installing symfony/http-kernel (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing symfony/finder (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 100%
+
+  - Installing symfony/console (v3.1.7)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing swiftmailer/swiftmailer (v5.4.4)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing paragonie/random_compat (v2.0.4)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 30%    Downloading: 55%    Downloading: 100%
+
+  - Installing ramsey/uuid (3.5.2)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 15%    Downloading: 35%    Downloading: 50%    Downloading: 60%    Downloading: 70%    Downloading: 75%    Downloading: 85%    Downloading: 90%    Downloading: 100%
+
+  - Installing nikic/php-parser (v2.1.1)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing jakub-onderka/php-console-highlighter (v0.3.2)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 65%    Downloading: 100%
+
+  - Installing dnoegel/php-xdg-base-dir (0.1)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 100%
+
+  - Installing psy/psysh (v0.7.2)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing nesbot/carbon (1.21.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 30%    Downloading: 50%    Downloading: 55%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 95%    Downloading: 100%
+
+  - Installing mtdowling/cron-expression (v1.1.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 70%    Downloading: 100%
+
+  - Installing monolog/monolog (1.22.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+  - Installing league/flysystem (1.0.32)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 10%    Downloading: 20%    Downloading: 25%    Downloading: 35%    Downloading: 50%    Downloading: 60%    Downloading: 70%    Downloading: 80%    Downloading: 100%
+
+  - Installing symfony/polyfill-util (v1.3.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 25%    Downloading: 100%
+
+  - Installing symfony/polyfill-php56 (v1.3.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 95%    Downloading: 100%
+
+  - Installing jeremeamia/superclosure (2.2.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 25%    Downloading: 50%    Downloading: 55%    Downloading: 80%    Downloading: 100%
+
+  - Installing doctrine/inflector (v1.1.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 100%
+
+  - Installing classpreloader/classpreloader (3.0.0)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 55%    Downloading: 70%    Downloading: 100%
+
+  - Installing laravel/framework (v5.3.26)
+    Downloading: Connecting...    Downloading: 0%               Downloading: 5%    Downloading: 10%    Downloading: 15%    Downloading: 20%    Downloading: 25%    Downloading: 30%    Downloading: 35%    Downloading: 40%    Downloading: 45%    Downloading: 50%    Downloading: 55%    Downloading: 60%    Downloading: 65%    Downloading: 70%    Downloading: 75%    Downloading: 80%    Downloading: 85%    Downloading: 90%    Downloading: 95%    Downloading: 100%
+
+Generating autoload files
+> Illuminate\Foundation\ComposerScripts::postInstall
+> php artisan optimize
+Generating optimized class loader
+
+Compiling common classes
+which: no npm in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+$ cd /home/www/flipmanga/releases/20161204045754
+$ npm install
+cd /home/www/flipmanga/releases/20161204045754
+npm install
+bash: npm: command not found
+which: no bower in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+which: no bower in (/home/www/flipmanga/releases/20161204045754/node_modules/.bin)
+$ cd /home/www/flipmanga/releases/20161204045754
+$ chmod -R 755 /home/www/flipmanga/releases/20161204045754/app/database/production.sqlite
+$ chmod -R g+s /home/www/flipmanga/releases/20161204045754/app/database/production.sqlite
+$ chown -R www-data:www-data /home/www/flipmanga/releases/20161204045754/app/database/production.sqlite
+cd /home/www/flipmanga/releases/20161204045754
+chmod -R 755 /home/www/flipmanga/releases/20161204045754/app/database/production.sqlite
+chmod -R g+s /home/www/flipmanga/releases/20161204045754/app/database/production.sqlite
+chown -R www-data:www-data /home/www/flipmanga/releases/20161204045754/app/database/production.sqlite
+chmod: cannot access ‘/home/www/flipmanga/releases/20161204045754/app/database/production.sqlite’: No such file or directory
+$ cd /home/www/flipmanga/releases/20161204045754
+$ chmod -R 755 /home/www/flipmanga/releases/20161204045754/storage
+$ chmod -R g+s /home/www/flipmanga/releases/20161204045754/storage
+$ chown -R www-data:www-data /home/www/flipmanga/releases/20161204045754/storage
+cd /home/www/flipmanga/releases/20161204045754
+chmod -R 755 /home/www/flipmanga/releases/20161204045754/storage
+chmod -R g+s /home/www/flipmanga/releases/20161204045754/storage
+chown -R www-data:www-data /home/www/flipmanga/releases/20161204045754/storage
+chown: invalid user: ‘www-data:www-data’
+$ cd /home/www/flipmanga/releases/20161204045754
+$ chmod -R 755 /home/www/flipmanga/releases/20161204045754/public
+$ chmod -R g+s /home/www/flipmanga/releases/20161204045754/public
+$ chown -R www-data:www-data /home/www/flipmanga/releases/20161204045754/public
+cd /home/www/flipmanga/releases/20161204045754
+chmod -R 755 /home/www/flipmanga/releases/20161204045754/public
+chmod -R g+s /home/www/flipmanga/releases/20161204045754/public
+chown -R www-data:www-data /home/www/flipmanga/releases/20161204045754/public
+chown: invalid user: ‘www-data:www-data’
+$ mkdir -p /home/www/flipmanga/shared/storage
+mkdir -p /home/www/flipmanga/shared/storage
+
+$ mv /home/www/flipmanga/releases/20161204045754/storage/logs /home/www/flipmanga/shared/storage/logs
+mv /home/www/flipmanga/releases/20161204045754/storage/logs /home/www/flipmanga/shared/storage/logs
+
+$ ln -s /home/www/flipmanga/shared/storage/logs /home/www/flipmanga/releases/20161204045754/storage/logs-temp
+$ mv -Tf /home/www/flipmanga/releases/20161204045754/storage/logs-temp /home/www/flipmanga/releases/20161204045754/storage/logs
+ln -s /home/www/flipmanga/shared/storage/logs /home/www/flipmanga/releases/20161204045754/storage/logs-temp
+mv -Tf /home/www/flipmanga/releases/20161204045754/storage/logs-temp /home/www/flipmanga/releases/20161204045754/storage/logs
+
+$ rm -rf /home/www/flipmanga/current
+rm -rf /home/www/flipmanga/current
+
+$ ln -s /home/www/flipmanga/releases/20161204045754 /home/www/flipmanga/current-temp
+$ mv -Tf /home/www/flipmanga/current-temp /home/www/flipmanga/current
+ln -s /home/www/flipmanga/releases/20161204045754 /home/www/flipmanga/current-temp
+mv -Tf /home/www/flipmanga/current-temp /home/www/flipmanga/current
+
+|=> Successfully deployed release 20161204045754
+|=> No releases to prune from the server
