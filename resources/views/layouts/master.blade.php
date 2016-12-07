@@ -3,9 +3,7 @@
 <head>
     <!--Import Google Icon Font-->
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="{{asset('js/materialize.min.js')}}"></script>
-    <script src="{{asset('js/owl.carousel.min.js')}} "></script>
+
     <!--Let browser know website is optimized for mobile-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -16,7 +14,7 @@
 
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
-    <script src="{{asset('js/script.js')}}"></script>
+
     <link rel="stylesheet" href="{{asset('css/style.css')}}" >
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,7 +23,7 @@
 <body >
 <nav>
     <div class="nav-wrapper  blue darken-4">
-        <div class="container">
+        {{--<div class="container">--}}
             <a href="#" class="brand-logo center">FlipM</a>
             <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -64,10 +62,13 @@
                     </form>
                 </li>
                 <li>
+                    <a class="btn-flat white-text green">Contact</a>
+                </li>
+                <li>
                     <button class="btn-flat white-text orange">Login</button>
                 </li>
             </ul>
-        </div>
+        {{--</div>--}}
         <ul class="side-nav" id="mobile-sidebar">
             <li><a href="#">FlipM</a></li>
             <li class="black-text">
@@ -131,6 +132,10 @@
 
 </footer>
 <!-- end footer -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{{asset('js/materialize.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}} "></script>
+<script src="{{asset('js/script.js')}}"></script>
 <script>
     window.fbAsyncInit = function() {
         FB.init({

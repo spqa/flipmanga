@@ -24,7 +24,10 @@ return [
     // Tasks to execute after the core Rocketeer Tasks
     'after'  => [
         'setup'   => [],
-        'deploy'  => [],
+        'deploy'  => [
+            'php artisan route:cache',
+            'php artisan config:cache'
+        ],
         'cleanup' => [],
     ],
 

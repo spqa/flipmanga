@@ -2,14 +2,16 @@ $( document ).ready(function(){
 	$(".button-collapse").sideNav();
 	$(".slide-container").owlCarousel({
 		navigation:false,
-		items:8,
+		items:6,
 		itemsDesktop:[1645,5],
 		itemsDesktopSmall:[1461,5],
 		itemsTabletSmall:[992,4],
-		itemsTablet:[1248,4],
+		itemsTablet:[1248,3.5],
 		itemsMobile:[600,2.5],
 		pagination:false,
-
+		afterInit:function () {
+			$('.slide-container').show();
+        }
 	});
 
 	var lastScrollTop = 0;
@@ -25,14 +27,14 @@ $( document ).ready(function(){
 		lastScrollTop = st;
 	});
 	$("button[data-role='slide-next']").on("click",function(){
-		console.log('clicked');;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-		// var owl=$(this).closest(".slide-container").data('owlCarousel');
+        console.log('clicked');
+        // var owl=$(this).closest(".slide-container").data('owlCarousel');
 		var owl=$(".slide-container").data('owlCarousel');
 		owl.next();
 	});
 	$("button[data-role='slide-prev']").on("click",function(){
-		console.log('clicked');;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-		// var owl=$(this).closest(".slide-container").data('owlCarousel');
+        console.log('clicked');
+        // var owl=$(this).closest(".slide-container").data('owlCarousel');
 		var owl=$(".slide-container").data('owlCarousel');
 		owl.prev();
 	});
