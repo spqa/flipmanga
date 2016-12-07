@@ -22,7 +22,7 @@ class CreateMangasTable extends Migration
             $table->string('translator');
             $table->text('description');
             $table->string('status');
-            $table->string('view');
+            $table->integer('view');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -66,6 +66,15 @@ return [
             'engine' => null,
         ],
 
+        'sqlsrv' => [
+            'driver' => 'sqlsrv',
+            'host' => 'heymanga.database.windows.net',
+            'database' => 'mangadb',
+            'username' => 'heymanga',
+            'password' => 'abc1231!',
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),

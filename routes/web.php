@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/','IndexController@index');
+Route::get('/','IndexController@index')->name('home');
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
+Route::get('/manga/{manga}/{chapter?}','MangaController@show')->name('manga');
