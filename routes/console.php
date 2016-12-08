@@ -33,7 +33,8 @@ Artisan::command('sqlserver', function () {
 //        $this->comment($manga->TITLE);
 //    }
 
-    $allmanga=\App\Manga::skip(452)->take(3000)->get();
+    $allmanga=\App\Manga::skip(1366)->take(3000)->get();
+//    dd($allmanga->first());
     foreach ($allmanga as $manga){
         $allChapter=DB::connection('sqlsrv')->table('CHAPTER')->where('MANGAID',$manga->cloudid)->get();
         $allChapter=$allChapter->unique('TITLE');

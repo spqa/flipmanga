@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChaptersTable extends Migration
+class CreateIndexChapters extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateChaptersTable extends Migration
      */
     public function up()
     {
-        Schema::create('chapters', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('img');
-            $table->integer('manga_id');
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('chapters',function(Blueprint $table){
+            $table->index('manga_id');
         });
     }
 
@@ -29,6 +25,6 @@ class CreateChaptersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chapters');
+        //
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddJsonToChapter extends Migration
+class CreateGenreMangaPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddJsonToChapter extends Migration
      */
     public function up()
     {
-        Schema::table('chapters',function (Blueprint $table){
-            $table->json('img');
+        Schema::create('genre_manga',function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('manga_id')->index();
+            $table->integer('genre_id')->index();
         });
     }
 

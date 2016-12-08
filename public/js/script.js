@@ -41,5 +41,8 @@ $( document ).ready(function(){
 	$('.modal').modal();
 	$('.tooltipped').tooltip({delay: 50});
 	$('.carousel.carousel-slider').carousel({full_width: true,dist:0});
+	setInterval(function () {
+        $('.carousel.carousel-slider').carousel('next');
+    },3500);
 	// $(".dropdown-button").dropdown();
 });

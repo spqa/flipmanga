@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/ajax/genres/{genre?}','AjaxController@genre');
+Route::get('/genres/{genre?}','AjaxController@genre');

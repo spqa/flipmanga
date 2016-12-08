@@ -12,6 +12,8 @@ class AjaxController extends Controller
             return '';
         }
         $mangas=Manga::inRandomOrder()->take(12)->get();
+        $temp=function (){
 
+        };
     }
 }

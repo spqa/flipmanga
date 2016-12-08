@@ -1,5 +1,5 @@
 <!-- start poster -->
-<a class="black-text" href="{{route('manga',['manga'=>$item->slug])}}">
+<a class="black-text" href="{{route('manga',['manga'=>$item->slug])}}" rel="contents">
 <div class="col s12 m6 l4">
     <div class="card-panel padding-0 short-infomation">
         <div class="row row-poster">
