@@ -4,7 +4,7 @@
     <div class="card-panel padding-0 short-infomation">
         <div class="row row-poster">
             <div class="col s4 padding-0">
-                <img class="manga-poster" src="{{$item->poster}}" />
+                <img class="manga-poster" src="{{'http://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&gadget=a&no_expand=1&resize_h=0&rewriteMime=image%2F*&url='.$item->poster}}" />
             </div>
             <div class="col s8 padding-0 ">
                 <h3 class="title-h3">{{$item->name}}</h3>

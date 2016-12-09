@@ -1,3 +1,4 @@
+<a href="{{route('manga',['manga'=>$item->slug])}}">
 <div class="col s6 m3 l2">
     <div class="card">
         <div class="card-image">
@@ -6,3 +7,4 @@
         </div>
     </div>
 </div>
+</a>

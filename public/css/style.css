@@ -1,212 +1,266 @@
-#search{
-	
-}
-.card .card-title-img{
-	padding: 0px;
-	font-size:14px;
-	font-weight: bold;
-	height: 40px;
+#search {
 
 }
-.item{
-	padding-right: 20px
-}
-.item .card .card-title-chap{
-	padding: 0px
-}
-.item .card .card-title-genre{
-	padding: 0px
-}
-.title-h2{
-	font-size: 20px;
-	/*text-transform: uppercase;*/
-}
-.title-h1-list{
-	font-size: 2.75rem;
-	padding: 0px;
-	margin: 0px
-}
-.title-h3{
-	font-size: 16px;
-	font-weight: bold;
-	margin:0px;
+
+.card .card-title-img {
+    padding: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+
 }
 
-.padding-0{
-	padding:0px;
+.item {
+    padding-right: 20px
 }
 
-.row-poster{
-	margin-bottom: 0px;
+.item .card .card-title-chap {
+    padding: 0px
 }
 
-.margin-0{
-	margin: 0px;
+.item .card .card-title-genre {
+    padding: 0px
 }
 
-.small-tag{
-	height: 22px;
-	line-height: 24px;
-	padding:0px 6px 0px 6px;
-	margin-right: 0px;
-}
-.short-infomation{
-	position: relative;
-	margin-bottom: 0px;
+.title-h2 {
+    font-size: 20px;
+    /*text-transform: uppercase;*/
 }
 
-.past-timer{
-	position: absolute;
-	bottom: 0px;
-	right: 0px
+.title-h1-list {
+    font-size: 2.75rem;
+    padding: 0px;
+    margin: 0px
 }
-.loader-container{
-	padding: 20px
+
+.title-h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
 }
-.header-section-list{
-	width: 100%;
-	padding-top: 10px 	
+
+.padding-0 {
+    padding: 0px;
 }
-.collapsible span.badge.new{
-	z-index: inherit;
+
+.row-poster {
+    margin-bottom: 0px;
 }
-.collapsible p{
-	padding: 2px 2px 0px 3px;
+
+.margin-0 {
+    margin: 0px;
 }
-.manga-show-header{
-	padding-top:20px;
-	font-size: 1.1em;
+
+.small-tag {
+    height: 22px;
+    line-height: 24px;
+    padding: 0px 6px 0px 6px;
+    margin-right: 0px;
 }
-.manga-show-header p{
-	margin-top:0px;
-	margin-bottom: 3px
+
+.short-infomation {
+    position: relative;
+    margin-bottom: 0px;
 }
-.manga-show-header h2{
-	font-size: 22px;
-	margin: 5px 0 0 0 ;
-	font-weight: bold;
+
+.past-timer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px
 }
-.manga-show-button{
-	padding-top: 20px;
-	padding-bottom: 5px
+
+.loader-container {
+    padding: 20px
 }
-.manga-show-button-mobile{
-	padding-top: 5px
+
+.header-section-list {
+    width: 100%;
+    padding-top: 10px
 }
-.manga-show-button-mobile .btn{
-	width: 100%
+
+.collapsible span.badge.new {
+    z-index: inherit;
 }
+
+.collapsible p {
+    padding: 2px 2px 0px 3px;
+}
+
+.manga-show-header {
+    padding-top: 20px;
+    font-size: 1.1em;
+}
+
+.manga-show-header p {
+    margin-top: 0px;
+    margin-bottom: 3px
+}
+
+.manga-show-header h2 {
+    font-size: 22px;
+    margin: 5px 0 0 0;
+    font-weight: bold;
+}
+
+.manga-show-button {
+    padding-top: 20px;
+    padding-bottom: 5px
+}
+
+.manga-show-button-mobile {
+    padding-top: 5px
+}
+
+.manga-show-button-mobile .btn {
+    width: 100%
+}
+
 .btn-rewind {
-	left:23px;
-	opacity: 0.6
+    left: 23px;
+    opacity: 0.6
 }
-.btn-forward{
-	opacity: 0.6
+
+.btn-forward {
+    opacity: 0.6;
+    z-index: 999;
 }
-.btn-chapter{
-	left: 83px
+
+.btn-chapter {
+    left: 83px
 }
-.collapsible-body .go-to-page{
-	width: 50px
+
+.collapsible-body .go-to-page {
+    width: 50px
 }
-.slide-navi{
-	margin-top: 1.78rem;
-	padding:0 10px 0 10px;
+
+.slide-navi {
+    margin-top: 1.78rem;
+    padding: 0 10px 0 10px;
 }
-.slider-loading{
-	padding-top: 85px
+
+.slider-loading {
+    padding-top: 85px
 }
-.slide-container{
+
+.slide-container {
     display: none;
 }
-.nav-extended input{
-	margin :0;
-}
-.manga-show-header .manga-description{
-	margin: 10px
+
+.nav-extended input {
+    margin: 0;
 }
 
-.you-may-also-like .card-title{
-	font-size: 18px;
-	background: rgba(22, 23, 25,0.4);
-	width: 100%
+.manga-show-header .manga-description {
+    margin: 10px
 }
-.breadcrumb:before{
-	color:inherit;
+
+.you-may-also-like .card-title {
+    font-size: 18px;
+    background: rgba(22, 23, 25, 0.4);
+    width: 100%
 }
-.inline{
-	display: inline;
+
+.breadcrumb:before {
+    color: inherit;
 }
-li form .input-field{
-	height: 64px;
+
+.inline {
+    display: inline;
 }
-.mega-menu{
-	position: absolute;
-	z-index: 999;
-	display: none;
-	margin:0;
-	padding-top: 0;
-	padding-bottom: 0;
-	padding-left: 11px;
-	padding-right: 11px;
+
+li form .input-field {
+    height: 64px;
 }
-.mega-menu .row{
-	margin-bottom: 0
+
+.mega-menu {
+    position: absolute;
+    max-width: 800px;
+    z-index: 999;
+    display: none;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 11px;
+    padding-right: 11px;
 }
+
+.mega-menu .row {
+    margin-bottom: 0
+}
+
 /*li>div:hover,*/
-li:hover .mega-menu{
-	display: unset;
+li:hover .mega-menu {
+    display: unset;
 }
 
-.mega-menu .mega-menu-content{
-	transition: background-color .3s;
-	transition-property: background-color;
-	transition-duration: 0.3s;
-	transition-timing-function: initial;
-	transition-delay: initial;
-	border-bottom: thin;
+.mega-menu .mega-menu-content {
+    transition: background-color .3s;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+    border-bottom: thin solid #00acc1;
+}
 
-}
-.mega-menu-content a:hover{
-background-color: #ea454b;
-
-}
-.mega-menu-content a{
-	color: #000711;
-	padding: 14px 16px 14px 16px;
-	line-height: 1.5rem
-}
-.mega-menu .card-panel{
-	
+.mega-menu-content a:hover {
+    background-color: #ea454b;
 
 }
 
-.carousel.carousel-slider{
+.mega-menu-content a {
+    color: #000711;
+    padding: 14px 16px 14px 16px;
+    line-height: 1.5rem
+}
+
+.mega-menu .card-panel {
+
+}
+
+/*.breadcrumb {*/
+    /*line-height: normal;*/
+/*}*/
+
+.in-progress-section {
+    display: none;
+}
+
+.carousel.carousel-slider {
     height: 250px;
 }
-.carousel.carousel-slider span{
+
+.carousel.carousel-slider span {
     font-size: 2em;
     position: absolute;
-    background: rgba(22, 23, 25,0.4);
+    background: rgba(22, 23, 25, 0.4);
     top: 0;
-    left:0;
+    left: 0;
     padding-left: 10px;
 }
 
-.manga-poster{
-    width: auto;
-    height: 180px;
-}
-@media screen and (max-width: 600px) { 
-	.container { width: 100%; padding: 2px } 
-	.breadcrumb{
-		font-size: 15px
-	}
+.manga-poster {
+    max-width: 100%;
+    height: 165px;
 }
 
-@media only screen and (min-width: 993px)
-{
-.container {
-	width: 80%;
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 2px
+    }
+
+    .breadcrumb {
+        font-size: 15px
+    }
+
+    .manga-poster {
+        max-width: 100%;
+        height: auto;
+    }
 }
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 80%;
+    }
 }

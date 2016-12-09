@@ -20,4 +20,18 @@ class IndexController extends Controller
         });
         return view('index',compact('latestHotUpdate','newRelease','recommend','latestUpdate','topToday'));
     }
+
+    public function full(){
+        $title_page='Free full manga';
+        $page_description='Read free full manga for free :D';
+        $mangas=Manga::whereStatus('Finished')->paginate(24);
+        return view('manga.manga_list_custom',compact('mangas','title_page','page_description'));
+    }
+
+    public function latest(){
+        $title_page='Free latest manga';
+        $page_description='Read free latest manga for free :D';
+        $mangas=Manga::orderBy('updated_at','desc')->paginate(24);
+        return view('manga.manga_list_custom',compact('mangas','title_page','page_description'));
+    }
 }

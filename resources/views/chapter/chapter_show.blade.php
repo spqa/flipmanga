@@ -25,10 +25,10 @@
     <div class="container ">
         <div class="nav-wrapper">
             <div class="col s12">
-                <a href="#!" class="breadcrumb "><i class="material-icons">home</i>Home</a>
+                <a href="/" class="breadcrumb "><i class="material-icons">home</i>Home</a>
                 <a href="#!" class="breadcrumb">Romance</a>
-                <a href="#!" class="breadcrumb ">Rules of the land</a>
-                <a href="#!" class="breadcrumb">Chapter 2</a>
+                <a href="{{route('manga',['manga'=>$manga->slug])}}" class="breadcrumb ">{{$manga->name}}</a>
+                <a href="#" class="breadcrumb active">{{$chapter->name}}</a>
             </div>
         </div>
     </div>
@@ -39,8 +39,11 @@
     <div class="row">
         <div class="col s12">
             <div class="card-panel z-depth-0">
-                <h3 class="inline">Naruto</h3>
-                <h5 class="grey-text inline">Chapter 2</h5>
+                <h3 class="inline">{{$manga->name}}</h3>
+                @if(!empty($manga->alias))
+                <h4 class="inline">({{$manga->alias}})</h4><br/>
+                @endif
+                <h5 class="grey-text inline">{{$chapter->name}}</h5>
                 <div>
                     <a href="#" class="chip light-green darken-4 white-text">action</a>
                     <a href="#" class="chip light-green darken-4 white-text">action</a>
@@ -52,12 +55,13 @@
         </div>
     </div>
     <div class="fixed-action-btn btn-forward">
-        <a class="btn-floating btn-large red">
+{{--        {!! dd($next_link) !!}--}}
+        <a  href="{{isset($next_link)?route('manga',['manga'=>$manga->slug,'chapter'=>$next_link]):'#'}}" class="btn-floating btn-large red">
             <i class="material-icons">keyboard_arrow_right</i>
         </a>
     </div>
     <div class="fixed-action-btn btn-rewind">
-        <a class="btn-floating btn-large red">
+        <a href="{{isset($prev_link)?route('manga',['manga'=>$manga->slug,'chapter'=>$prev_link]):'#'}}" class="btn-floating btn-large red">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
     </div>
@@ -78,13 +82,9 @@
         <div class="modal-content">
             <h4>Chapter List</h4>
             <ul class="collection">
-                <a class="collection-item">Chapter 1</a>
-                <a class="collection-item">Chapter 2</a>
-                <a class="collection-item">Chapter 3</a>
-                <a class="collection-item">Chapter 4</a>
-                <a class="collection-item">Chapter 5</a>
-                <a class="collection-item">Chapter 6</a>
-                <a class="collection-item">Chapter 7</a>
+                @foreach($manga->chapters as $chapter)
+                <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$chapter->id])}}" class="collection-item">{{$chapter->name}}</a>
+                    @endforeach
             </ul>
         </div>
     </div>
