@@ -13,11 +13,11 @@ class AjaxController extends Controller
         if ($genre == null) {
             return '';
         }
-        if ($genre=='random'){
+        if ($genre == 'random') {
             $mangas = Manga::inRandomOrder()->select(['poster', 'slug', 'updated_at', 'name'])->take(12)->get();
 //            dd($mangas);
             $temp = function ($array) {
-                return '<a class="black-text" href="' . $array->name . '" rel="contents">
+                return '<a class="black-text" href="' . route('manga', ['manga' => $array->slug]) . '" rel="contents">
 <div class="col s12 m6 l4">
     <div class="card-panel padding-0 short-infomation">
         <div class="row row-poster">
@@ -39,18 +39,18 @@ class AjaxController extends Controller
 </div>
 </a>';
             };
-            $text='';
+            $text = '';
             foreach ($mangas as $manga) {
-                $text.=$temp($manga);
+                $text .= $temp($manga);
             }
             return $text;
         }
-        return Cache::remember('genre:'.$genre,30, function () {
+        return Cache::remember('genre:' . $genre, 30, function () {
             $mangas = Manga::inRandomOrder()->select(['poster', 'slug', 'updated_at', 'name'])->take(12)->get();
 //            $mangas = Manga::orderBy('updated_at', 'desc')->select(['poster', 'slug', 'updated_at', 'name'])->take(12)->get();
 //            dd($mangas);
             $temp = function ($array) {
-                return '<a class="black-text" href="' . $array->name . '" rel="contents">
+                return '<a class="black-text" href="' . route('manga', ['manga' => $array->slug]) . '" rel="contents">
 <div class="col s12 m6 l4">
     <div class="card-panel padding-0 short-infomation">
         <div class="row row-poster">
@@ -72,13 +72,18 @@ class AjaxController extends Controller
 </div>
 </a>';
             };
-            $text='';
+            $text = '';
             foreach ($mangas as $manga) {
-                $text.=$temp($manga);
+                $text .= $temp($manga);
             }
             return $text;
         });
 
 
+    }
+
+    public function getMangaProgress(Request $request){
+        $json=request()->cookie('flmhistory');
+        dd(json_decode($json));
     }
 }

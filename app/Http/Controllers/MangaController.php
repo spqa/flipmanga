@@ -23,11 +23,26 @@ class MangaController extends Controller
         $prev_link=$manga->chapters()->where('id','<',$chapter->id)->where('manga_id',$manga->id)->select(['id'])->max('id');
 //        dd($next_link);
         $array_img=preg_split("/[\s,]+/", $chapter->img,-1,PREG_SPLIT_NO_EMPTY);
-        $array=request()->cookie('flmhistory');
-//        foreach ($array as $key=>$value){
+        $json=request()->cookie('flmhistory');
+        dd($json);
+        if ($json!=null) {
+            $array_history = json_decode($json, true);
+        }
+            $array_history[$manga->id]=$chapter->id;
+
+        if (count($array_history)>3){
+                foreach ($array_history as $key=>$value){
+                    unset($array_history[$key]);
+                    break;
+                }
+            }
+//        dd($array_history);
+
+//        dd($array_history);
+//        $array_history[$manga->id]=$chapter->id;
+        $json=json_encode($array_history);
 //
-//        }
 //        dd($array_img);
-        return response()->view('chapter.chapter_show',compact('manga','chapter','array_img','next_link','prev_link'))->cookie('name',$chapter->id,5040);
+        return response()->view('chapter.chapter_show',compact('manga','chapter','array_img','next_link','prev_link'))->cookie('flmhistory',$json,5040);
     }
 }

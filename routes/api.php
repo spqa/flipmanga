@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/genres/{genre?}','AjaxController@genre');
+Route::get('/manga-in-progress','AjaxController@getMangaProgress');

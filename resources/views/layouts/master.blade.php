@@ -24,7 +24,7 @@
 <nav>
     <div class="nav-wrapper  blue darken-4">
         {{--<div class="container">--}}
-            <a href="/" class="brand-logo center">Flip</a>
+            <a href="/" class="brand-logo center"><img height="68px" src="{{asset('img/flip.png')}}"/></a>
             <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
@@ -61,7 +61,7 @@
             </ul>
         {{--</div>--}}
         <ul class="side-nav" id="mobile-sidebar">
-            <li><a href="/">FlipM</a></li>
+            <li class="indigo darken-4 center"><a href="/"><img height="50px" src="{{asset('img/flip.png')}}"/></a></li>
             <li class="black-text">
 {{--                <form action="{{route}}">--}}
                 <input id="search" type="text" placeholder="Search manga" required>
