@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('/genres/{genre?}','AjaxController@genre');
+Route::get('/manga-in-progress','AjaxController@getMangaProgress');
