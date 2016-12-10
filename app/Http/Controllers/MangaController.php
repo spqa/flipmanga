@@ -24,7 +24,7 @@ class MangaController extends Controller
 //        dd($next_link);
         $array_img=preg_split("/[\s,]+/", $chapter->img,-1,PREG_SPLIT_NO_EMPTY);
         $json=request()->cookie('flmhistory');
-        dd($json);
+//        dd($json);
         if ($json!=null) {
             $array_history = json_decode($json, true);
         }
