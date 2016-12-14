@@ -19,6 +19,8 @@
             @foreach($mangas as $item)
                 @include('manga.partial._manga_suggestion')
             @endforeach
+
+
         </div>
     </div>
 @endsection
