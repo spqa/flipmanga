@@ -172,6 +172,10 @@ li form .input-field {
     height: 64px;
 }
 
+.nav-breadcrumb{
+    margin-top: 2px;
+}
+
 .mega-menu {
     position: absolute;
     max-width: 800px;
@@ -224,7 +228,9 @@ li:hover .mega-menu {
 .in-progress-section {
     display: none;
 }
-
+.in-progress-card{
+    margin: 0px auto 4px;
+}
 .carousel.carousel-slider {
     height: 250px;
 }
@@ -243,10 +249,43 @@ li:hover .mega-menu {
     height: 165px;
 }
 
+.manga-image{
+    display: block;
+    margin:auto;
+}
+#search{
+    cursor: pointer;
+}
+
+.login-container{
+    margin-top: 30px;
+}
+
+.user-avatar{
+    height: 63px;
+}
+.login-container .btn{
+    width: 100%;
+    margin-bottom: 8px;
+}
+.btn-favorite i{
+font-size: 2.3rem;
+}
 @media screen and (max-width: 600px) {
+    .user-avatar{
+        height: 40px;
+    }
     .container {
         width: 100%;
         padding: 2px
+    }
+
+    .row{
+        margin-bottom: 0;
+    }
+
+    .section{
+        padding-top: 0;
     }
 
     .breadcrumb {

@@ -1,15 +1,20 @@
 @extends('layouts.master')
+@section('title',$title_page.' - Read '.$title_page.' online for free')
+@section('meta_des',$page_description)
+@section('og_url',url()->current())
 @section('content')
     <div class="container ">
+        <nav class="white z-depth-0 nav-breadcrumb">
         <div class="nav-wrapper">
             <div class="col s12">
                 <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
                 <a href="#!" class="breadcrumb grey-text">{{$title_page}}</a>
             </div>
         </div>
+        </nav>
     </div>
 
-    </nav>
+    {{--</nav>--}}
     <div class="container ">
         <div class="section header-section-list padding-0">
             <div class="row">

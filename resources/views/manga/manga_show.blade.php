@@ -1,9 +1,26 @@
 @extends('layouts.master')
+@section('title',$manga->name.'('.$manga->alias.')'.' - Read '.$manga->name.' online for free')
+@section('meta_des',$manga->description)
+@section('og_url',url()->current())
+@section('image',$manga->poster)
 @section('content')
     <!-- start content -->
     <div class="container ">
-        <div class="section manga-show-header">
+        <nav class="white z-depth-0 nav-breadcrumb">
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
+                @if(isset($main_genre))
+                    <a href="{{route('genre',['genre'=>$main_genre->slug])}}" class="breadcrumb grey-text">{{$main_genre->name}}</a>
+
+                @endif
+                <a href="{{route('manga',['manga'=>$manga->slug])}}" class="breadcrumb grey-text active">{{$manga->name}}</a>
+            </div>
+        </div>
+        </nav>
+        <div class="section manga-show-header no-padding">
             <div class="row z-depth-2">
+
                 <div class="col s5 m3 l2">
                     <img class="materialboxed responsive-img" src="{{$manga->poster}}">
                 </div>
@@ -16,12 +33,22 @@
                     <p class="">Translator: <a href="#" rel="author">{{$manga->translator}}</a></p>
                     <p class="">Year of Release : {{empty($manga->released_at)?'N/A':$manga->released_at->toFormattedDateString()}}</p>
                     <p class=""> Status : {{$manga->status}}</p>
-                    <span>Genres: <div class="chip small-tag">harem</div><div class="chip small-tag">romance</div><div
-                                class="chip small-tag">ecchi</div><div class="chip small-tag">hen</div></span>
+                    <p class=""> View : {{$manga->view}}</p>
+                    <p class=""> <i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
+                    <span>Genres:
+                        @foreach($manga->getCachedGenres() as $genre)
+                        <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip small-tag white-text indigo">{{$genre->name}}</a>
+                    @endforeach
+                    </span>
                     <div class="manga-show-button hide-on-small-only">
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->first()->id])}}" class="waves-effect waves-light btn green darken-3">Chapter 1</a>
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->last()->id])}}" class="waves-effect waves-light btn green darken-3">Last Chapter</a>
+                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',1)->first()->id])}}" class="waves-effect waves-light btn green darken-3">Chapter 1</a>
+                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn green darken-3">Last Chapter</a>
                         <a class="waves-effect waves-light btn green darken-3">Continue Read</a>
+                        @if(isset($is_fav) && $is_fav==true)
+                            <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite</i>Added to Favorites</button>
+                        @else
+                            <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite_border</i>Add to Favorites</button>
+                        @endif
                     </div>
                 </div>
                 <div class="col s12">
@@ -29,6 +56,11 @@
                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->first()->id])}}" class="waves-effect waves-light btn">Chapter 1</a>
                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->last()->id])}}" class="waves-effect waves-light btn">Last Chapter</a>
                         <a class="waves-effect waves-light btn">Continue Read</a>
+                        @if(isset($is_fav))
+                            <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite</i>Added to Favorites</button>
+                        @else
+                            <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite_border</i>Add to Favorites</button>
+                        @endif
                     </div>
                     <!-- <a class="col s4 padding-0">
                         dfsdf
@@ -47,6 +79,8 @@
                 </div>
             </div>
         </div>
+        <div class="addthis_inline_share_toolbox_t23u"></div>
+
         <div class="section padding-0">
             <div class="row">
                 <div class="col s12">

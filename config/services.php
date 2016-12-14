@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => '613058618881383',
+        'client_secret' => 'a2f99909794f4b92b02c3c5d93b84bf8',
+        'redirect' =>'http://flipmanga.dev/callback/facebook',
+    ]
 
 ];

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--Import Google Icon Font-->
-
-
+    <title>@yield('title','FLipmanga.com - Read manga, manhwa, manhua online for free')</title>
     <!--Let browser know website is optimized for mobile-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}" >
+    <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
 
     <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
@@ -15,60 +13,125 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" >
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="language" content="en">
+    <meta name="description"
+          content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')">
+    <meta name="keywords"
+          content="free manga, free mangas, free mangas online, watch free mangas online, watch manga online free, watch free manga, free full manga, free online manga, free manga websites">
+    <link rel="canonical" href="@yield('canonical','http://flipmanga.com/')"/>
+    <meta itemprop="name" content="flipmanga.com"/>
+    <meta itemprop="description"
+          content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')"/>
+    <meta itemprop="image" content="@yield('image',asset('/img/flip.png'))"/>
+    <meta property="fb:app_id" content="1729477510640705">
+    <meta property="og:title" content="@yield('title','Flipmanga.com | Read Free manga Online Website') ">
+    <meta property="og:url" content="@yield('og_url','http://flipmanga.com')"/>
+    <meta property="og:type" content="@yield('og_type','website')"/>
+    <meta property="og:description"
+          content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')">
+    <meta property="og:image" content="@yield('image','/img/flip.png')"/>
+    <meta property="og:site_name" content="flipmanga.com"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset('/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('/manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{asset('/ms-icon-144x144.png')}}">
+    <meta name="theme-color" content="#0D47A1">
+    <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 
-<body >
+<body>
 <nav>
     <div class="nav-wrapper  blue darken-4">
         {{--<div class="container">--}}
-            <a href="/" class="brand-logo center"><img height="68px" src="{{asset('img/flip.png')}}"/></a>
-            <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="/">Home</a></li>
-                <li><a href="#" class="genres-mega-menu">Genres</a>
-                    <div class="card-panel mega-menu white-text white z-depth-4" >
-                        <div class="row black-text no-padding" >
-                            @foreach($allGenres as $genre)
-                                <div class="col s2 mega-menu-content no-padding"><a href="{{route('genre',['genre'=>$genre->slug])}}" class="truncate">{{$genre->name}}</a></div>
-                            @endforeach
-                        </div>
+        <a href="/" class="brand-logo center"><img height="68px" src="{{asset('img/flip.png')}}"/></a>
+        <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="#" class="genres-mega-menu">Genres</a>
+                <div class="card-panel mega-menu white-text white z-depth-4">
+                    <div class="row black-text no-padding">
+                        @foreach($allGenres as $genre)
+                            <div class="col s2 mega-menu-content no-padding"><a
+                                        href="{{route('genre',['genre'=>$genre->slug])}}"
+                                        class="truncate">{{$genre->name}}</a></div>
+                        @endforeach
                     </div>
-                </li>
+                </div>
+            </li>
 
-                <li><a href="{{route('manga.full')}}">Full</a></li>
-                <li><a href="{{route('manga.latest')}}">Latest Releases</a></li>
-            </ul>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{route('manga.full')}}">Full</a></li>
+            <li><a href="{{route('manga.latest')}}">Latest Releases</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                <li>
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
+            <li>
+                <form action="/search">
+                    <div class="input-field">
+                        <form action="/search">
+                            <input name="query" id="search" type="search" required>
                             <label for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </li>
-                <li>
-                    <a class="btn-flat white-text green">Contact</a>
-                </li>
-                <li>
-                    <button class="btn-flat white-text orange">Login</button>
-                </li>
-            </ul>
+                        </form>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <a class="btn-flat white-text green">Contact</a>
+            </li>
+            @if(auth()->check() && auth()->user()->avatar)
+                <li><img class="user-avatar" src="{{auth()->user()->avatar}}"/></li>
+            @endif
+            <li>
+                @if(auth()->check())
+                    <a style="min-width: 136px" class="dropdown-button" href="#!" data-activates="dropdown1">{{auth()->user()->name}}<i
+                                class="material-icons right">arrow_drop_down</i></a>
+                @else
+                    <a href="{{route('login')}}" class="btn-flat white-text orange">Login</a>
+                @endif
+            </li>
+        </ul>
         {{--</div>--}}
         <ul class="side-nav" id="mobile-sidebar">
             <li class="indigo darken-4 center"><a href="/"><img height="50px" src="{{asset('img/flip.png')}}"/></a></li>
             <li class="black-text">
-{{--                <form action="{{route}}">--}}
-                <input id="search" type="text" placeholder="Search manga" required>
-                {{--</form>--}}
+                <form action="/search">
+                    <input id="search" name="query" type="search" placeholder="Search manga" required>
+                </form>
             </li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
+                    @if(!auth()->check())
+                        <li><a class="orange-text" href="{{route('login')}}"><i class="material-icons">person
+                                    outline</i>Login</a></li>
+                    @else
+                        <li>
+                            <a class="collapsible-header"><img class="user-avatar right"
+                                                               src="{{auth()->user()->avatar}}"> {{auth()->user()->name}}
+                                <i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="white-text red">Favorite<i
+                                                    class="material-icons">favorite</i></a></li>
+                                    <li><a href="#" class="btn-logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    @endif
                     <li>
                         <a class="collapsible-header">Genres<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
@@ -85,13 +148,18 @@
             <li><a href="{{route('manga.full')}}">Full manga</a></li>
             <li><a href="{{route('manga.latest')}}">Latest Releases</a></li>
             <li>
-                <a href="#" class="left no-padding"><img  src="{{asset('img/fb4848.png')}}"></a>
-                <a href="#" class="left no-padding"><img  src="{{asset('img/ggplus4848.png')}}"></a>
-                <a href="#" class="left no-padding"><img  src="{{asset('img/tw4848.png')}}"></a>
-                <a href="#" ><img  src="{{asset('img/pin4848.png')}}"></a>
+                <a href="#" class="left no-padding"><img src="{{asset('img/fb4848.png')}}"></a>
+                <a href="#" class="left no-padding"><img src="{{asset('img/ggplus4848.png')}}"></a>
+                <a href="#" class="left no-padding"><img src="{{asset('img/tw4848.png')}}"></a>
+                <a href="#"><img src="{{asset('img/pin4848.png')}}"></a>
             </li>
         </ul>
     </div>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{route('favorite')}}" class="white-text red">Favorite<i class="material-icons right">favorite</i></a></li>
+        {{--<li class="divider"></li>--}}
+        <li><a class="btn-logout">Logout</a></li>
+    </ul>
 
 </nav>
 <!-- end nav -->
@@ -131,22 +199,26 @@
 <script src="{{asset('js/jquery.lazyloadxt.simple.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
         FB.init({
-            appId      : '204795013306485',
-            xfbml      : true,
-            version    : 'v2.8'
+            appId: '613058618881383',
+            xfbml: true,
+            version: 'v2.8'
         });
     };
 
-    (function(d, s, id){
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
 </body>
 </html>

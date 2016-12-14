@@ -2,8 +2,12 @@
 
 namespace App\Console;
 
+use App\Console\Commands\UpdateTrending;
+use App\Console\Commands\UpdateViewCache;
+use App\Console\Commands\UpdateViewToday;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Redis;
 
 class Kernel extends ConsoleKernel
 {
@@ -13,7 +17,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        UpdateViewCache::class,
+        UpdateTrending::class,
+        UpdateViewToday::class
     ];
 
     /**
@@ -26,6 +32,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+    $schedule->command('updateView')->everyMinute();
+    $schedule->command('updateTreding')->everyTenMinutes();
+    $schedule->command('updateToday')->everyThirtyMinutes();
     }
 
     /**
