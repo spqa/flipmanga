@@ -21,3 +21,14 @@ Route::get('/genre/{genre?}','GenreController@show')->name('genre');
 Route::get('/free-full-mangas-online','IndexController@full')->name('manga.full');
 Route::get('/read-free-latest-mangas-online','IndexController@latest')->name('manga.latest');
 //Route::get('search/manga/{query}','SearchController@search');
+Route::get('/search','SearchController@search');
+Route::get('/favorite','UserController@favorites')->middleware('auth')->name('favorite');
+
+//Auth
+Route::get('/redirect/{provider}', 'SocialAuthController@redirect')->name('social.redirect');
+Route::get('/callback/{provider}', 'SocialAuthController@callback');
+
+//api fav
+Route::get('/api/favorite/{manga}','AjaxController@toggleFavorite')->middleware('auth');
+Route::post('/update-view/{manga}','AjaxController@updateView');
+

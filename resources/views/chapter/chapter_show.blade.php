@@ -17,8 +17,9 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" >
-    <script src="{{asset('js/script.js')}}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="manga-id" content="{{$manga->id}}"/>
+    <meta name="csrf-token" content="{{csrf_token()}}"/>
 </head>
 <body>
 <nav class="grey darken-4">
@@ -26,7 +27,9 @@
         <div class="nav-wrapper">
             <div class="col s12">
                 <a href="/" class="breadcrumb "><i class="material-icons">home</i>Home</a>
-                <a href="#!" class="breadcrumb">Romance</a>
+                @if($main_genre)
+                <a href="{{route('genre',['genres'=>$main_genre->slug])}}" class="breadcrumb">{{$main_genre->name}}</a>
+                @endif
                 <a href="{{route('manga',['manga'=>$manga->slug])}}" class="breadcrumb ">{{$manga->name}}</a>
                 <a href="#" class="breadcrumb active">{{$chapter->name}}</a>
             </div>
@@ -45,11 +48,9 @@
                 @endif
                 <h5 class="grey-text inline">{{$chapter->name}}</h5>
                 <div>
-                    <a href="#" class="chip light-green darken-4 white-text">action</a>
-                    <a href="#" class="chip light-green darken-4 white-text">action</a>
-                    <a href="#" class="chip light-green darken-4 white-text">action</a>
-                    <a href="#" class="chip light-green darken-4 white-text">action</a>
-                    <a href="#" class="chip light-green darken-4 white-text">action</a>
+                    @foreach($manga->getCachedGenres() as $item)
+                        <a href="{{route('genre',['genres'=>$item->slug])}}" class="chip light-green darken-4 white-text">{{$item->name}}</a>
+                        @endforeach
                 </div>
             </div>
         </div>
@@ -73,7 +74,7 @@
     <div class="row">
         <div class="col s12 center">
             @foreach($array_img as $value)
-                <img class="responsive-img" src="{{'//i1.heymanga.me/'.$value}}">
+                <img class="responsive-img manga-image" src="{{'//i1.heymanga.me/'.$value}}">
             @endforeach
         </div>
     </div>
@@ -91,6 +92,7 @@
     <!-- model chapter -->
     <div id="end-of-page"></div>
     <div id="disqus_thread"></div>
+    <script src="{{asset('js/chapter.js')}}"></script>
     <script>
 
         /**

@@ -4,45 +4,52 @@ namespace App\Http\Controllers;
 
 use App\Manga;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class MangaController extends Controller
 {
-    public function show($manga,$chapter=null){
+    public function show($manga, $chapter = null)
+    {
 
-        if ($manga==null){
+        if ($manga == null) {
+
             abort(404);
-        }elseif($chapter==null){
-            $manga=Manga::whereSlug($manga)->firstOrFail()->load('chapters');
-//            $chapters=$manga->chapters()->paginate();
-            $suggestion=Manga::inRandomOrder()->take(6)->get();
-            return view('manga.manga_show',compact('manga','suggestion'));
+
+        } elseif ($chapter == null) {
+            $manga = Manga::whereSlug($manga)->firstOrFail()->load('chapters');;
+//            dd($manga->getCacheKey('favorite'));
+            $suggestion = Manga::inRandomOrder()->take(6)->get();
+            $main_genre = $manga->getCachedGenres()->sortBy('name')->first();
+            if (auth()->check()){
+                $is_fav=Redis::sismember($manga->getCacheKey('favorite'),auth()->user()->id);
+            }
+            return view('manga.manga_show', compact('manga', 'suggestion', 'main_genre','is_fav'));
+
         }
-        $manga=Manga::whereSlug($manga)->first()->load('chapters');
-        $chapter=$manga->chapters()->findOrFail($chapter);
-        $next_link=$manga->chapters()->where('id','>',$chapter->id)->where('manga_id',$manga->id)->select(['id'])->min('id');
-        $prev_link=$manga->chapters()->where('id','<',$chapter->id)->where('manga_id',$manga->id)->select(['id'])->max('id');
-//        dd($next_link);
-        $array_img=preg_split("/[\s,]+/", $chapter->img,-1,PREG_SPLIT_NO_EMPTY);
-        $json=request()->cookie('flmhistory');
-        dd($json);
-        if ($json!=null) {
+
+
+        $manga = Manga::whereSlug($manga)->first()->load('chapters');
+        $chapter = $manga->chapters()->findOrFail($chapter);
+        $next_link = $manga->chapters()->whereChapterNumber(DB::raw('(SELECT MIN(chapter_number) FROM chapters WHERE chapter_number > ' . $chapter->chapter_number . ' AND manga_id =' . $manga->id . ')'))->first();
+        $prev_link = $manga->chapters()->whereChapterNumber(DB::raw('(SELECT MAX(chapter_number) FROM chapters WHERE chapter_number < ' . $chapter->chapter_number . ' AND manga_id =' . $manga->id . ')'))->first();
+        $array_img = preg_split("/[\s,]+/", $chapter->img, -1, PREG_SPLIT_NO_EMPTY);
+        $json = request()->cookie('flmhistory');
+        if ($json != null) {
             $array_history = json_decode($json, true);
         }
-            $array_history[$manga->id]=$chapter->id;
+        $array_history[$manga->id] = $chapter->id;
 
-        if (count($array_history)>3){
-                foreach ($array_history as $key=>$value){
-                    unset($array_history[$key]);
-                    break;
-                }
+        if (count($array_history) > 3) {
+            foreach ($array_history as $key => $value) {
+                unset($array_history[$key]);
+                break;
             }
-//        dd($array_history);
+        }
+        $json = json_encode($array_history);
+        $main_genre = $manga->getCachedGenres()->sortBy('name')->first();
 
-//        dd($array_history);
-//        $array_history[$manga->id]=$chapter->id;
-        $json=json_encode($array_history);
-//
-//        dd($array_img);
-        return response()->view('chapter.chapter_show',compact('manga','chapter','array_img','next_link','prev_link'))->cookie('flmhistory',$json,5040);
+
+        return response()->view('chapter.chapter_show', compact('manga', 'chapter', 'array_img', 'next_link', 'prev_link', 'main_genre'))->cookie('flmhistory', $json, 5040);
     }
 }

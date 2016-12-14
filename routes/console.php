@@ -141,13 +141,42 @@ Artisan::command('chapterNumber', function () {
         $number=array_pop($number_array);
         try{
             $chapter->chapter_number=$number;
-            $chapter->save();
         }catch(Exception $ex){
-
+            $this->comment($chapter->name.' error!');
         }
-
+        if (is_double($number)) {
+            $chapter->save();
+        }
+            $this->comment($chapter->name.' updated');
         }
     });
+});
+
+Artisan::command('updateGenre',function (){
+//    $mangasCloud=DB::connection('sqlsrv')->table('MANGA')->get();
+    $mangas=\App\Manga::all();
+    foreach ($mangas as $manga){
+        $cloud=DB::connection('sqlsrv')->table('MANGA')->where('TITLE',$manga->name)->first();
+//        dd($cloud);
+        $genres=$cloud->genre;
+        if (!empty($genres)) {
+            $array_genre = preg_split("/,\s/", $genres, -1, PREG_SPLIT_NO_EMPTY);
+//        dd($array_genre);
+//        $genres_id=\App\Genre::whereIn('name',$array_genre)->get(['id']);
+            $genres_id = [];
+            foreach ($array_genre as $item) {
+                $id = \App\Genre::firstOrCreate([
+                    'name' => $item,
+                    'slug' => str_slug($item),
+//                'avatar'=>'',
+//                'description'=>''
+                ])->id;
+                array_push($genres_id, $id);
+            }
+            $manga->genres()->sync($genres_id);
+            $this->comment($manga->name);
+        }
+    }
 });
 
 

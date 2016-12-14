@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Traits\ReCaptchaTrait;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -21,13 +22,13 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
-
+    use ReCaptchaTrait;
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -42,22 +43,30 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
+        $data['captcha'] = $this->captchaCheck();
+//        dd($this->captchaCheck());
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-        ]);
+            'g-recaptcha-response'  => 'required',
+            'captcha'               => 'required|min:1'
+        ],
+            [
+                'g-recaptcha-response.required' => 'Captcha is required',
+                'captcha.min' => 'Wrong captcha, please try again.'
+            ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)

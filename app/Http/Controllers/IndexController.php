@@ -6,17 +6,37 @@ use App\Manga;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $latestHotUpdate=Manga::take(12)->get();
+        $latestHotUpdate=Manga::orderBy('updated_at','desc')->orderBy('view','desc')->take(12)->get();
         $newRelease=Manga::orderBy('created_at','desc')->take(12)->get();
-        $recommend=Manga::inRandomOrder()->take(12)->get();
+        $recommend = Cache::remember('manga.list.hour',10,function (){
+            $list=collect(Redis::zrevrange('manga.trending.hour',0,16))->map(function ($id){
+                return Manga::find($id);
+            });
+            if ($list->count()<6){
+                Manga::orderBy('view','desc')->take(6)->get()->each(function ($item)use($list){
+                    $list->push($item);
+                });
+            }
+            return $list->unique('id');
+        });
+//        dd(Redis::zrevrange('manga.trending',0,16));
         $latestUpdate=Manga::orderBy('updated_at','desc')->take(12)->get();
-        $topToday=Cache::rememberForever(Carbon::today(),function (){
-            return Manga::orderBy('view')->take(10)->get();
+        $topToday=Cache::remember('manga.list.day',15,function (){
+            $list=collect(Redis::zrevrange('manga.trending.day',0,16))->map(function ($id){
+                return Manga::find($id);
+            });
+            if ($list->count()<6){
+                Manga::orderBy('view','desc')->take(6)->get()->each(function ($item)use($list){
+                    $list->push($item);
+                });
+            }
+            return $list->unique('id');
         });
         return view('index',compact('latestHotUpdate','newRelease','recommend','latestUpdate','topToday'));
     }

@@ -1,16 +1,18 @@
 @extends('layouts.master')
 @section('content')
     <div class="container ">
+        <nav class="white z-depth-0 nav-breadcrumb">
         <div class="nav-wrapper">
             <div class="col s12">
                 <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
                 <a href="{{route('genre')}}" class="breadcrumb grey-text">Genres</a>
-                <a href="{{route('genre',['genre'=>$genre->slug])}}" class="breadcrumb grey-text">{{$genre->name}}</a>
+                <a href="{{route('genre',['genre'=>$genre->slug])}}" class="breadcrumb grey-text active">{{$genre->name}}</a>
             </div>
         </div>
+        </nav>
     </div>
 
-    </nav>
+    {{--</nav>--}}
     <div class="container ">
         <div class="section header-section-list padding-0">
             <div class="row">
