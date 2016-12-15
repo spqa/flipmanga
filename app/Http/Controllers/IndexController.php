@@ -48,10 +48,24 @@ class IndexController extends Controller
         return view('manga.manga_list_custom',compact('mangas','title_page','page_description'));
     }
 
-    public function latest(){
+    public function latest_manga(){
         $title_page='Free latest manga';
         $page_description='Read free latest manga for free :D';
         $mangas=Manga::orderBy('updated_at','desc')->paginate(24);
+        return view('manga.manga_list_custom',compact('mangas','title_page','page_description'));
+    }
+
+    public function latest_manhwa(){
+        $title_page='Free latest manhwa';
+        $page_description='Manhwa (Hangul: 만화, Korean pronunciation: [manhwa]) is the general Korean term for comics and print cartoons (common usage also includes animated cartoons). Outside of Korea, the term usually refers specifically to South Korean comics. Read free latest manhwa for free :D';
+        $mangas=Manga::inRandomOrder()->orderBy('updated_at','desc')->paginate(24);
+        return view('manga.manga_list_custom',compact('mangas','title_page','page_description'));
+    }
+
+    public function latest_manhua(){
+        $title_page='Free latest manhua';
+        $page_description=' Manhua (simplified Chinese: 漫画; traditional Chinese: 漫畫; pinyin: Mànhuà; Jyutping: maan6 waa2) are Chinese comics produced in Mainland China, Hong Kong, and Taiwan., read free latest manhua for free :D';
+        $mangas=Manga::inRandomOrder()->orderBy('updated_at','desc')->paginate(24);
         return view('manga.manga_list_custom',compact('mangas','title_page','page_description'));
     }
 }

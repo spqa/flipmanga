@@ -16,11 +16,11 @@
                         <div class="col s12 hide-on-small-only">
                             <div class="carousel carousel-slider ">
                                 {{--<a class="carousel-item" href="#one!"><img src="{{asset('img/banner/1.jpg')}}"></a>--}}
-                                <a class="carousel-item" href="#one!"><img src="{{asset('img/banner/1.jpg')}}">
-                                <span class="white-text slider-title">Naruto chapter 134</span></a>
-                                <a class="carousel-item" href="#two!"><img src="img/banner1.jpg"></a>
+                                <a class="carousel-item" href="/manga/bleach"><img src="{{asset('img/banner/1.jpg')}}">
+                                {{--<span class="white-text slider-title">Naruto chapter 134</span></a>--}}
+                                <a class="carousel-item" href="#"><img src="img/banner1.jpg"></a>
                                 <a class="carousel-item" href="#three!"><img src="img/banner2.jpg "></a>
-                                <a class="carousel-item" href="#four!"><img src="{{asset('img/banner/tail.jpg')}}"></a>
+                                <a class="carousel-item" href="/manga/fairy-tail"><img src="{{asset('img/banner/tail.jpg')}}"></a>
                             </div>
                         </div>
                         <div class="in-progress-section">
@@ -60,9 +60,6 @@
                     </div><!-- row -->
                     <!-- </div> -->
                     <!-- section -->
-
-                    <!-- <div class="divider"></div> -->
-                    <!-- <div class="section card-panel no-padding hide-on-small-only z-depth-0"> -->
                     <div class="row hide-on-small-only">
                         <div class="col s12">
                             <h2 class="left title-h2 brown-text darken-4">New Release Manga</h2>
@@ -80,15 +77,6 @@
 
                         </div><!-- col-s12 -->
                     </div><!-- row -->
-                    <!-- </div> -->
-                    <!-- <div class="divider"></div> -->
-                    <!-- <div class="section card-panel padding-0 hide-on-small-only z-depth-0"> -->
-                    <!-- <div class="row"> -->
-                    <!-- <div class="col s12 m4 l4"> -->
-                    <!-- <div class="card-panel teal">
-                    <span class="white-text"> -->
-                    <!-- </span>
-                  </div> -->
                     <!-- </div> -->
                     <!-- </div> -->
                     <div class="row hide-on-small-only">

@@ -146,7 +146,7 @@
             </div>
             <div class="row you-may-also-like">
                 <div class="col s12">
-                    <h4 class="grey-text">You may also like</h4>
+                    <h4 class="grey-text">Mangas you may also like</h4>
                 </div>
                 @foreach($suggestion as $item)
                     @include('manga.partial._manga_suggestion')
@@ -155,10 +155,10 @@
             <div class="row">
                 <div class="col s12">
                     <div class="chip">Tags</div>
-                    <h4 class="chip indigo darken-1"><a class="white-text" href="">Romance</a></h4>
-                    <h4 class="chip indigo darken-1"><a class="white-text" href="">school</a></h4>
-                    <h4 class="chip indigo darken-1"><a class="white-text" href="">triangle</a></h4>
-                    <h4 class="chip indigo darken-1"><a class="white-text" href="">threesome</a></h4>
+                    <h4 class="chip indigo darken-1"><a rel="tag" class="white-text" href="{{route('manga.latest')}}">latest manga</a></h4>
+                    <h4 class="chip indigo darken-1"><a rel="tag" class="white-text" href="{{route('manhwa.latest')}}">latest manhwa</a></h4>
+                    <h4 class="chip indigo darken-1"><a rel="tag" class="white-text" href="{{route('manhua.latest')}}">latest manhua</a></h4>
+                    <h4 class="chip indigo darken-1"><a rel="tag" class="white-text" href="{{route('genre',['genre'=>'adult'])}}">adult manga</a></h4>
                 </div>
             </div>
         </div>
