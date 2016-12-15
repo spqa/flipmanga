@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\UpdateSitemap;
 use App\Console\Commands\UpdateTrending;
 use App\Console\Commands\UpdateViewCache;
 use App\Console\Commands\UpdateViewToday;
@@ -19,7 +20,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         UpdateViewCache::class,
         UpdateTrending::class,
-        UpdateViewToday::class
+        UpdateViewToday::class,
+        UpdateSitemap::class
     ];
 
     /**
@@ -35,6 +37,7 @@ class Kernel extends ConsoleKernel
     $schedule->command('updateView')->everyMinute();
     $schedule->command('updateTreding')->everyTenMinutes();
     $schedule->command('updateToday')->everyThirtyMinutes();
+    $schedule->command('sitemap')->hourly();
     }
 
     /**

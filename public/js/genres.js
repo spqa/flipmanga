@@ -14,8 +14,12 @@ $(document).ready(function () {
         $.ajax({
             url:'/api/genre',
             method:'POST',
+            dataType:'json',
             data:{
                 data:genres
+            },
+            success:function (data) {
+                data.data.each();
             }
         });
     });

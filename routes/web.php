@@ -34,4 +34,7 @@ Route::post('/update-view/{manga}','AjaxController@updateView');
 //genre
 Route::get('/genre/{genre?}','GenreController@show')->name('genre');
 
+//sitemap
+Route::get('sitemap','SitemapController@sitemap');
+
 
