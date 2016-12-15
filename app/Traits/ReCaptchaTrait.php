@@ -18,7 +18,7 @@ trait ReCaptchaTrait
 
         $response = request('g-recaptcha-response');
         $remoteip = isset($_SERVER["HTTP_CF_CONNECTING_IP"])?$_SERVER["HTTP_CF_CONNECTING_IP"]:$_SERVER['REMOTE_ADDR'];
-        $secret   = env('RE_CAP_SECRET');
+        $secret   = '6Le5tA4UAAAAAKkFqIMb5_rq8ZTO_sOYD7MfNnCU';
         $recaptcha = new ReCaptcha($secret);
         $resp = $recaptcha->verify($response, $remoteip);
         if ($resp->isSuccess()) {
