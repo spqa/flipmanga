@@ -27,6 +27,20 @@
     /*text-transform: uppercase;*/
 }
 
+.title-h1-manga{
+    font-size: 2rem;
+}
+
+.title-h1{
+    font-size: 1.2rem;
+    margin: 0;
+}
+.title-h3-normal{
+    font-size: 1rem;
+    margin: 0px;
+    font-weight: bold;
+
+}
 .title-h1-list {
     font-size: 2.75rem;
     padding: 0px;
@@ -95,7 +109,12 @@
     margin-top: 0px;
     margin-bottom: 3px
 }
-
+.manga-show-genre{
+   margin: 10px;
+}
+.img-suggestion{
+    height: 230px;
+}
 .manga-show-header h2 {
     font-size: 22px;
     margin: 5px 0 0 0;

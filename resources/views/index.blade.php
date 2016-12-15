@@ -12,7 +12,7 @@
             <div class="col l9 s12 m12">
                 <div class="card-panel no-padding z-depth-0">
 
-                    <div class="row ">
+                    <div class="row">
                         <div class="col s12 hide-on-small-only">
                             <div class="carousel carousel-slider ">
                                 {{--<a class="carousel-item" href="#one!"><img src="{{asset('img/banner/1.jpg')}}"></a>--}}
@@ -25,7 +25,7 @@
                         </div>
                         <div class="in-progress-section">
                         <div class="col s12">
-                            <h2 class="left title-h2 brown-text darken-4">In Progress</h2>
+                            <h2 class="left title-h2 brown-text darken-4">Manga In Progress</h2>
                         </div>
 
                         </div>
@@ -65,7 +65,7 @@
                     <!-- <div class="section card-panel no-padding hide-on-small-only z-depth-0"> -->
                     <div class="row hide-on-small-only">
                         <div class="col s12">
-                            <h2 class="left title-h2 brown-text darken-4">New Release</h2>
+                            <h2 class="left title-h2 brown-text darken-4">New Release Manga</h2>
                             <button data-role="slide-next-2" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_right</i></button>
                             <button data-role="slide-prev-2" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_left</i></button>
                         </div>
@@ -93,7 +93,7 @@
                     <!-- </div> -->
                     <div class="row hide-on-small-only">
                         <div class="col s12">
-                            <h2 class="left title-h2 brown-text darken-4">Trending</h2>
+                            <h2 class="left title-h2 brown-text darken-4">Trending Manga</h2>
                             <button data-role="slide-next-3" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_right</i></button>
                             <button data-role="slide-prev-3" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_left</i></button>
                         </div>
@@ -112,6 +112,7 @@
             </div>
             <div class="col hide-on-med-and-down l3 sidebar">
                 <div class="card-panel center ">
+                    <h1 class="title-h1">Flipmanga.com - Read manga, manhwa, manhua online for free</h1>
                     <p>Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free. Follow us!</p>
 
                     <!-- <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/fb4848.png"></a>
@@ -133,9 +134,9 @@
                             <div class="collection">
                                 @foreach($topToday as $item)
                                     @if($loop->index<=2)
-                                        <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate">{{$item->name}}<span class="white-text badge red">{{$loop->index+1}}</span></a>
+                                        <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate"><h3 class="title-h3-normal">{{$item->name}}</h3><span class="white-text badge red">{{$loop->index+1}}</span></a>
                                         @else
-                                        <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate">{{$item->name}}</a>
+                                        <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate"><h3 class="title-h3-normal">{{$item->name}}</h3></a>
                                     @endif
                                 @endforeach
                             </div>

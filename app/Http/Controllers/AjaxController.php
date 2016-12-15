@@ -7,6 +7,7 @@ use App\Genre;
 use App\Manga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
 class AjaxController extends Controller
@@ -181,6 +182,26 @@ class AjaxController extends Controller
 
 
 //        dd(auth()->user());
+    }
+
+    public function genres(){
+        if (!empty($data=request('data'))){
+//            $array=[];
+//            $genres=Genre::whereIn('id',$data)->get();
+//            foreach ($genres as $genre){
+//                array_push($array,$genre->id);
+//            }
+//            dd($array);
+//            dd(Genre::whereIn('id',$data)->get());
+            $temp=DB::table('genre_manga')->whereIn('genre_id',$data)->get();
+            $array=[];
+            foreach ($temp as $t){
+                array_push($array,$t->manga_id);
+            }
+
+            $mangas=Manga::whereIn('id',$array)->paginate(24);
+            return $mangas;
+        }
     }
 
 }

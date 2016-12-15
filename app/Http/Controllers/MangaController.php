@@ -52,4 +52,5 @@ class MangaController extends Controller
 
         return response()->view('chapter.chapter_show', compact('manga', 'chapter', 'array_img', 'next_link', 'prev_link', 'main_genre'))->cookie('flmhistory', $json, 5040);
     }
+
 }

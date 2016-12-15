@@ -25,7 +25,7 @@
                     <img class="materialboxed responsive-img" src="{{$manga->poster}}">
                 </div>
                 <div class="col s7 m9 l0">
-                    <h2 class="inline">{{$manga->name}}</h2>
+                    <h1 class="inline title-h1-manga">{{$manga->name}}</h1>
                     @if(!empty($manga->alias))
                         <h2 class="grey-text inline">({{$manga->alias}})</h2>
                         @endif
@@ -35,11 +35,7 @@
                     <p class=""> Status : {{$manga->status}}</p>
                     <p class=""> View : {{$manga->view}}</p>
                     <p class=""> <i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
-                    <span>Genres:
-                        @foreach($manga->getCachedGenres() as $genre)
-                        <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip small-tag white-text indigo">{{$genre->name}}</a>
-                    @endforeach
-                    </span>
+
                     <div class="manga-show-button hide-on-small-only">
                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',1)->first()->id])}}" class="waves-effect waves-light btn green darken-3">Chapter 1</a>
                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn green darken-3">Last Chapter</a>
@@ -75,6 +71,12 @@
                     <!-- <a class="waves-effect waves-light btn">Last Chapter</a>
                     <a class="waves-effect waves-light btn">Continue Read</a>
                   </div> -->
+                    <div class="manga-show-genre">
+                        <a class="chip black-text grey lighten-3" href="/genre">Genres</a>
+                        @foreach($manga->getCachedGenres() as $genre)
+                            <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip white-text orange darken-2">{{$genre->name}}</a>
+                        @endforeach
+                    </div>
                     <p class="manga-description">{!! $manga->description !!}</p>
                 </div>
             </div>

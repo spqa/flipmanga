@@ -3,8 +3,8 @@
     <div class="card-panel padding-0 short-infomation">
         <div class="row row-poster">
             <div class="col s4 padding-0">
-                <a class="black-text" href="{{route('manga',['manga'=>$item->slug])}}" rel="contents">
-                <img class="manga-poster" src="{{'http://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&gadget=a&no_expand=1&resize_h=0&rewriteMime=image%2F*&url='.$item->poster}}" />
+                <a title="{{$item->name}}" class="black-text" href="{{route('manga',['manga'=>$item->slug])}}" rel="contents">
+                <img alt="Read latest {{$item->name}} manga online for free" title="Read latest {{$item->name}} manga online for free" class="manga-poster" src="{{'http://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&gadget=a&no_expand=1&resize_h=0&rewriteMime=image%2F*&url='.$item->poster}}" />
                 </a>
             </div>
             <div class="col s8 padding-0 ">
@@ -17,7 +17,7 @@
                 <p class="padding-0 margin-0">Chap: {{$item->getCacheLatestChap()}}</p>
                 <p class="truncate padding-0 margin-0">Author:
                     @foreach($item->getCachedAuthors() as $author)
-                        <a href="">{{$author->name}}</a>
+                        <a title="{{$author->name}}" href="">{{$author->name}}</a>
                 @endforeach
                 </p>
                 <p class="padding-0 margin-0">View :{{$item->view}}</p>

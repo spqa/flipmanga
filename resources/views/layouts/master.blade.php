@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>@yield('title','FLipmanga.com - Read manga, manhwa, manhua online for free')</title>
     <!--Let browser know website is optimized for mobile-->
@@ -18,11 +18,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="language" content="en">
     <meta name="description"
-          content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')">
+          content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free with latest chapter')">
     <meta name="keywords"
-          content="free manga, free mangas, free mangas online, watch free mangas online, watch manga online free, watch free manga, free full manga, free online manga, free manga websites">
+          content="free manga, free mangas, free mangas online, watch free mangas online, watch manga online free, watch free manga, free full manga, free online manga, free manga websites, manga, mangas, manhwa, manhua">
     <link rel="canonical" href="@yield('canonical','http://flipmanga.com/')"/>
-    <meta itemprop="name" content="flipmanga.com"/>
+    <meta itemprop="name" content="Flipmanga"/>
     <meta itemprop="description"
           content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')"/>
     <meta itemprop="image" content="@yield('image',asset('/img/flip.png'))"/>
@@ -30,8 +30,7 @@
     <meta property="og:title" content="@yield('title','Flipmanga.com | Read Free manga Online Website') ">
     <meta property="og:url" content="@yield('og_url','http://flipmanga.com')"/>
     <meta property="og:type" content="@yield('og_type','website')"/>
-    <meta property="og:description"
-          content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')">
+    <meta property="og:description" content="@yield('meta_des','Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free')">
     <meta property="og:image" content="@yield('image','/img/flip.png')"/>
     <meta property="og:site_name" content="flipmanga.com"/>
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/apple-icon-57x57.png')}}">
@@ -62,11 +61,11 @@
         <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="/">Home</a></li>
-            <li><a href="#" class="genres-mega-menu">Genres</a>
+            <li><a href="/genre" class="genres-mega-menu">Genres</a>
                 <div class="card-panel mega-menu white-text white z-depth-4">
                     <div class="row black-text no-padding">
                         @foreach($allGenres as $genre)
-                            <div class="col s2 mega-menu-content no-padding"><a
+                            <div class="col s2 mega-menu-content no-padding"><a title="{{$genre->name}}"
                                         href="{{route('genre',['genre'=>$genre->slug])}}"
                                         class="truncate">{{$genre->name}}</a></div>
                         @endforeach
@@ -133,11 +132,11 @@
                         </li>
                     @endif
                     <li>
-                        <a class="collapsible-header">Genres<i class="material-icons">arrow_drop_down</i></a>
+                        <a href="/genre" class="collapsible-header">Genres<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
                                 @foreach($allGenres as $genre)
-                                    <li><a href="{{route('genre',['genre'=>$genre->slug])}}">{{$genre->name}}</a></li>
+                                    <li><a title="{{$genre->name}}" href="{{route('genre',['genre'=>$genre->slug])}}">{{$genre->name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -147,12 +146,12 @@
             <li><a href="/">Return Home</a></li>
             <li><a href="{{route('manga.full')}}">Full manga</a></li>
             <li><a href="{{route('manga.latest')}}">Latest Releases</a></li>
-            <li>
-                <a href="#" class="left no-padding"><img src="{{asset('img/fb4848.png')}}"></a>
-                <a href="#" class="left no-padding"><img src="{{asset('img/ggplus4848.png')}}"></a>
-                <a href="#" class="left no-padding"><img src="{{asset('img/tw4848.png')}}"></a>
-                <a href="#"><img src="{{asset('img/pin4848.png')}}"></a>
-            </li>
+            {{--<li>--}}
+                {{--<a href="#" class="left no-padding"><img src="{{asset('img/fb4848.png')}}"></a>--}}
+                {{--<a href="#" class="left no-padding"><img src="{{asset('img/ggplus4848.png')}}"></a>--}}
+                {{--<a href="#" class="left no-padding"><img src="{{asset('img/tw4848.png')}}"></a>--}}
+                {{--<a href="#"><img src="{{asset('img/pin4848.png')}}"></a>--}}
+            {{--</li>--}}
         </ul>
     </div>
     <ul id="dropdown1" class="dropdown-content">
@@ -198,6 +197,7 @@
 {{--<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>--}}
 <script src="{{asset('js/jquery.lazyloadxt.simple.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
+@yield('page_script')
 <script>
     window.fbAsyncInit = function () {
         FB.init({

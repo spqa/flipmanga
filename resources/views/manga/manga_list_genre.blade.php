@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title',$genre->name.' | Read free '.$genre->name.' manga, manhwa, manhua online for free')
+@section('meta_des',$genre->name.' manga | '.$genre->description)
+@section('og_url',url()->current())
 @section('content')
     <div class="container ">
         <nav class="white z-depth-0 nav-breadcrumb">
@@ -17,7 +20,7 @@
         <div class="section header-section-list padding-0">
             <div class="row">
                 <div class="col s12">
-                    <h2 class="no-margin title-h1-list grey-text darken-4">{{$genre->name}}</h2>
+                    <h1 class="no-margin title-h1-list grey-text darken-4">{{$genre->name}} Manga</h1>
                 </div>
                 <div class="col s12 m8 offset-m2 l6 offset-l3">
                     <div class="card-panel z-depth-0 no-padding margin-0">
