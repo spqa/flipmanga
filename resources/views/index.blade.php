@@ -151,10 +151,10 @@
                 <div class="row">
                     <div class="col s12 ">
                         <ul class="tabs z-depth-1">
-                            <li class="tab"><a class="active" href="#tab-container1">Latest Update</a></li>
-                            <li class="tab"><a data-content="random" data-role="tab-genre" href="#tab-container2">Random</a></li>
-                            <li class="tab"><a data-content="shoujo" data-role="tab-genre" href="#tab-container3">Shoujo</a></li>
-                            <li class="tab"><a data-content="shounen" data-role="tab-genre" href="#tab-container4">Shounen</a></li>
+                            <li class="tab"><a class="active" href="#tab-container1">Latest Update Manga</a></li>
+                            <li class="tab"><a data-content="random" data-role="tab-genre" href="#tab-container2">Random Manga</a></li>
+                            <li class="tab"><a data-content="shoujo" data-role="tab-genre" href="#tab-container3">Shoujo Manga</a></li>
+                            <li class="tab"><a data-content="shounen" data-role="tab-genre" href="#tab-container4">Shounen Manga</a></li>
                         </ul>
 
                     </div>
@@ -162,6 +162,9 @@
                         @foreach($latestUpdate as $item)
                         @include('manga.partial._manga')
                             @endforeach
+                        <div class="col s12 center">
+                            <a href="{{route('manga.latest')}}" class="btn btn-more white grey-text">read more latest manga</a>
+                        </div>
                     </div>
                     <div id="tab-container2">
                         <div class="col s12 center ">
@@ -225,6 +228,10 @@
                 <a href="{{route('genre',['genre'=>'shoujo'])}}" rel="tag" class="chip white-text indigo darken-1">#shoujo</a>
                 <a href="{{route('genre',['genre'=>'shounen'])}}" rel="tag" class="chip white-text teal darken-3">#shounen</a>
                 <a href="{{route('genre',['genre'=>'mecha'])}}" rel="tag" class="chip white-text orange darken-4">#mecha</a>
+                <a href="{{route('genre',['genre'=>'ecchi'])}}" rel="tag" class="chip white-text teal darken-4">#ecchi</a>
+                <a href="#" rel="tag" class="chip white-text red darken-4">#manga</a>
+                <a href="#" rel="tag" class="chip white-text purple darken-4">#manhwa</a>
+                <a href="#" rel="tag" class="chip white-text blue darken-4">#manhua</a>
 
             </div>
         </div>

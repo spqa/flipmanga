@@ -60,7 +60,7 @@ class AjaxController extends Controller
             $mangas = Genre::whereSlug($genre)->first()->mangas()->orderBy('updated_at','desc')->take(12)->get();
 //            $mangas = Manga::orderBy('updated_at', 'desc')->select(['poster', 'slug', 'updated_at', 'name'])->take(12)->get();
 //            dd($mangas);
-            $temp = function ($array) {
+            $temp = function ($array)use($genre) {
                 $genres = '';
                 foreach ($array->getCachedGenres() as $item) {
                     $genres .= '<div class="chip small-tag">' . $item->name . '</div>';
@@ -94,6 +94,9 @@ class AjaxController extends Controller
             foreach ($mangas as $manga) {
                 $text .= $temp($manga);
             }
+            $text.='<div class="col s12 center">
+                            <a href="'.route('genre',['genre'=>$genre]).'" class="btn btn-more white grey-text">read more '.$genre.' manga</a>
+                        </div>';
             return $text;
         });
 

@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title','FLipmanga.com - Read manga, manhwa, manhua online for free')</title>
-    <!--Let browser know website is optimized for mobile-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
-
-    <!-- Important Owl stylesheet -->
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
-
-    <!-- Default Theme -->
-    <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
-
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
+    <title>@yield('title','FLipmanga.com|Read manga, manhwa, manhua latest chap free online')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="language" content="en">
     <meta name="description"
@@ -51,9 +38,33 @@
     <meta name="msapplication-TileImage" content="{{asset('/ms-icon-144x144.png')}}">
     <meta name="theme-color" content="#0D47A1">
     <meta name="csrf-token" content="{{csrf_token()}}">
+
+    <!--Let browser know website is optimized for mobile-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
+
+    <!-- Important Owl stylesheet -->
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
+
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 
 <body>
+<script type="application/ld+json">
+        {
+          "@context" : "https://schema.org",
+          "@type" : "Organization",
+          "name" : "flipmanga",
+          "url" : "http://flipmanga.com",
+          "sameAs" : [
+          "https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
+          ]
+      }
+  </script>
 <nav>
     <div class="nav-wrapper  blue darken-4">
         {{--<div class="container">--}}
@@ -61,7 +72,7 @@
         <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="/">Home</a></li>
-            <li><a href="/genre" class="genres-mega-menu">Genres</a>
+            <li><a href="/genre" class="genres-mega-menu">Manga Genres</a>
                 <div class="card-panel mega-menu white-text white z-depth-4">
                     <div class="row black-text no-padding">
                         @foreach($allGenres as $genre)
@@ -73,8 +84,8 @@
                 </div>
             </li>
 
-            <li><a href="{{route('manga.full')}}">Full</a></li>
-            <li><a href="{{route('manga.latest')}}">Latest Releases</a></li>
+            <li><a href="{{route('manga.full')}}">Full Manga</a></li>
+            <li><a href="{{route('manga.latest')}}">Latest Releases Manga</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
 
@@ -132,7 +143,7 @@
                         </li>
                     @endif
                     <li>
-                        <a href="/genre" class="collapsible-header">Genres<i class="material-icons">arrow_drop_down</i></a>
+                        <a href="/genre" class="collapsible-header">Manga Genres<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
                                 @foreach($allGenres as $genre)
@@ -145,7 +156,7 @@
             </li>
             <li><a href="/">Return Home</a></li>
             <li><a href="{{route('manga.full')}}">Full manga</a></li>
-            <li><a href="{{route('manga.latest')}}">Latest Releases</a></li>
+            <li><a href="{{route('manga.latest')}}">Latest Releases Manga</a></li>
             {{--<li>--}}
                 {{--<a href="#" class="left no-padding"><img src="{{asset('img/fb4848.png')}}"></a>--}}
                 {{--<a href="#" class="left no-padding"><img src="{{asset('img/ggplus4848.png')}}"></a>--}}
@@ -168,17 +179,28 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Flipmanga.com</h5>
-                <p class="grey-text text-lighten-4">Read manga, manhwa, manhua, comic,... online for free</p>
+                <h4 class="white-text title-h2">Flipmanga.com</h4>
+                <p class="grey-text text-lighten-4">Read manga, manhwa, manhua, comic,... with latest chapters online for free</p>
+                <h4 class="white-text title-h2">Latest Manga</h4>
+                <a href="#" class="grey-text text-lighten-4">Read latest manga online for free</a>
+                <h4 class="white-text title-h2">Latest Manhua</h4>
+                <a href="#" class="grey-text text-lighten-4">Read latest manhua online for free</a>
+                <h4 class="white-text title-h2">Latest Manhwa</h4>
+                <a href="#" class="grey-text text-lighten-4">Read latest manhwa online for free</a>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
                     <li><a class="grey-text text-lighten-3" href="#!">DMCA</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Request Manga</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Request Manga ,Manhua, Manhwa</a></li>
                     <li><a class="grey-text text-lighten-3" href="#!">Contact us!</a></li>
                 </ul>
+            </div>
+            <div class="col s12 center">
+                <a class="chip indigo white-text" href="/manga/sweet-guy"><h5 class="title-h5">Sweet Guy manhwa</h5></a>
+                <a class="chip indigo white-text" href="/manga/tales-of-demons-and-gods"><h5 class="title-h5">Tales of Demons and Gods manhua</h5></a>
+                <a class="chip indigo white-text" href="/manga/relife"><h5 class="title-h5">ReLIFE (Re LIFE) manga</h5></a>
             </div>
         </div>
     </div>
