@@ -18,7 +18,6 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index');
 Route::get('/manga/{manga}/{chapter?}','MangaController@show')->name('manga');
 Route::get('/free-full-mangas-online','IndexController@full')->name('manga.full');
-Route::get('/read-free-latest-mangas-online','IndexController@latest')->name('manga.latest');
 Route::get('/read-free-latest-mangas-online','IndexController@latest_manga')->name('manga.latest');
 Route::get('/read-free-latest-manhua-online','IndexController@latest_manhua')->name('manhua.latest');
 Route::get('/read-free-latest-manhwa-online','IndexController@latest_manhwa')->name('manhwa.latest');
