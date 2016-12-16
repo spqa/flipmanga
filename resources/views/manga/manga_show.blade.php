@@ -18,7 +18,7 @@
             </div>
         </div>
         </nav>
-        <div class="section manga-show-header no-padding">
+        <div class="section manga-show-header ">
             <div class="row z-depth-2">
 
                 <div class="col s5 m3 l2">
@@ -37,9 +37,9 @@
                     <p class=""> <i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
 
                     <div class="manga-show-button hide-on-small-only">
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',1)->first()->id])}}" class="waves-effect waves-light btn green darken-3">Chapter 1</a>
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn green darken-3">Last Chapter</a>
-                        <a class="waves-effect waves-light btn green darken-3">Continue Read</a>
+                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',1)->first()->id])}}" class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
+                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn  pink darken-3">Last Chapter</a>
+                        {{--<a class="waves-effect waves-light btn green darken-3">Continue Read</a>--}}
                         @if(isset($is_fav) && $is_fav==true)
                             <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite</i>Added to Favorites</button>
                         @else
@@ -49,9 +49,9 @@
                 </div>
                 <div class="col s12">
                     <div class="manga-show-button-mobile hide-on-med-and-up">
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->first()->id])}}" class="waves-effect waves-light btn">Chapter 1</a>
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->last()->id])}}" class="waves-effect waves-light btn">Last Chapter</a>
-                        <a class="waves-effect waves-light btn">Continue Read</a>
+                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->first()->id])}}" class="waves-effect waves-light btn   pink darken-3">Chapter 1</a>
+                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->last()->id])}}" class="waves-effect waves-light btn   pink darken-3">Last Chapter</a>
+                        {{--<a class="waves-effect waves-light btn">Continue Read</a>--}}
                         @if(isset($is_fav))
                             <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite</i>Added to Favorites</button>
                         @else
@@ -74,7 +74,7 @@
                     <div class="manga-show-genre">
                         <a class="chip black-text grey lighten-3" href="/genre">Genres</a>
                         @foreach($manga->getCachedGenres() as $genre)
-                            <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip white-text orange darken-2">{{$genre->name}}</a>
+                            <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip white-text orange darken-4">{{$genre->name}}</a>
                         @endforeach
                     </div>
                     <p class="manga-description">{{ $manga->description }}</p>
@@ -168,7 +168,7 @@
             @if($genre->name=='Adult')
         <div id="adult-modal" class="modal">
             <div class="modal-content">
-                <h4><i class="material-icons">warning</i>Caution to under-aged viewers</h4>
+                <h4><i class="material-icons red-text medium">warning</i>Caution to under-aged viewers</h4>
                 <p>The series {{$manga->name}} contain themes or scenes that may not be suitable for very young readers thus is blocked for their protection.</p>
             </div>
             <div class="modal-footer">
@@ -179,27 +179,28 @@
                 @break
             @endif
         @endforeach
-        <div id="disqus_thread"></div>
-        <script>
+        <div class="fb-comments" data-width="100%" data-href="{{url()->current()}}" data-numposts="5"></div>
+        {{--<div id="disqus_thread"></div>--}}
+        {{--<script>--}}
 
-            /**
-             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-            /*
-             var disqus_config = function () {
-             this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-             this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-             };
-             */
-            (function () { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'http://kmanga-me.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-                Disqus.</a></noscript>
+            {{--/**--}}
+             {{--*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.--}}
+             {{--*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/--}}
+            {{--/*--}}
+             {{--var disqus_config = function () {--}}
+             {{--this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable--}}
+             {{--this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable--}}
+             {{--};--}}
+             {{--*/--}}
+            {{--(function () { // DON'T EDIT BELOW THIS LINE--}}
+                {{--var d = document, s = d.createElement('script');--}}
+                {{--s.src = 'http://kmanga-me.disqus.com/embed.js';--}}
+                {{--s.setAttribute('data-timestamp', +new Date());--}}
+                {{--(d.head || d.body).appendChild(s);--}}
+            {{--})();--}}
+        {{--</script>--}}
+        {{--<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by--}}
+                {{--Disqus.</a></noscript>--}}
 
     </div><!-- container -->
     <!-- end content -->

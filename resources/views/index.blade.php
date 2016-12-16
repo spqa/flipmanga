@@ -37,9 +37,11 @@
                         <div class="col s12 m12 l12 hide-on-small-only">
 
                             <div class="slide-container slide-1">
-                                @foreach($latestHotUpdate as $item)
-                                @include('manga.partial._manga_slider')
-                                @endforeach
+                                @each('manga.partial._manga_slider', $latestHotUpdate, 'item')
+
+                                {{--@foreach($latestHotUpdate as $item)--}}
+                                {{--@include('manga.partial._manga_slider')--}}
+                                {{--@endforeach--}}
                                 {{--<div class="slider-loading center">--}}
                                     {{--<div class="preloader-wrapper active ">--}}
                                         {{--<div class="spinner-layer spinner-green-only">--}}
@@ -69,9 +71,11 @@
                         <div class="col s12 m12 l12">
 
                             <div class="slide-container slide-2">
-                                @foreach($newRelease as $item)
-                                    @include('manga.partial._manga_slider')
-                                    @endforeach
+                                @each('manga.partial._manga_slider', $newRelease, 'item')
+
+                                {{--@foreach($newRelease as $item)--}}
+                                    {{--@include('manga.partial._manga_slider')--}}
+                                    {{--@endforeach--}}
                             </div><!-- slide-container -->
 
 
@@ -88,9 +92,10 @@
                         <div class="col s12 m12 l12">
 
                             <div class="slide-container slide-3">
-                                @foreach($recommend as $item)
-                                    @include('manga.partial._manga_slider')
-                                    @endforeach
+                                @each('manga.partial._manga_slider', $recommend, 'item')
+                                {{--@foreach($recommend as $item)--}}
+                                    {{--@include('manga.partial._manga_slider')--}}
+                                    {{--@endforeach--}}
                             </div><!-- slide-container -->
 
 
@@ -147,9 +152,10 @@
 
                     </div>
                     <div id="tab-container1">
-                        @foreach($latestUpdate as $item)
-                        @include('manga.partial._manga')
-                            @endforeach
+                        @each('manga.partial._manga', $latestUpdate, 'item')
+                        {{--@foreach($latestUpdate as $item)--}}
+                        {{--@include('manga.partial._manga')--}}
+                            {{--@endforeach--}}
                         <div class="col s12 center">
                             <a href="{{route('manga.latest')}}" class="btn btn-more white grey-text">read more latest manga</a>
                         </div>

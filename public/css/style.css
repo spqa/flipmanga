@@ -327,4 +327,11 @@ font-size: 2.3rem;
     .container {
         width: 80%;
     }
+
+}
+
+@media only screen and (max-width: 992px){
+    .modal {
+        width: 90%;
+    }
 }

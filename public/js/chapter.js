@@ -5,8 +5,11 @@ $(document).ready(function () {
         if (st > lastScrollTop){
             // console.log('up');
             $(".fixed-action-btn").hide();
+            $('#navbar-wrapper').removeClass('navbar-fixed').fadeOut();
+
         } else {
             $(".fixed-action-btn").show();
+            $('#navbar-wrapper').addClass('navbar-fixed').fadeIn();
 
         }
         lastScrollTop = st;

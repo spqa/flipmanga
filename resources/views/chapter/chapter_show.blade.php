@@ -22,7 +22,8 @@
     <meta name="csrf-token" content="{{csrf_token()}}"/>
 </head>
 <body>
-<nav class="grey darken-4">
+<div id="navbar-wrapper">
+<nav class="blue darken-4 ">
     <div class="container ">
         <div class="nav-wrapper">
             <div class="col s12">
@@ -37,7 +38,7 @@
     </div>
 
 </nav>
-
+</div>
 <div class="container">
     <div class="row">
         <div class="col s12">
@@ -49,7 +50,7 @@
                 <h5 class="grey-text inline">{{$chapter->name}}</h5>
                 <div>
                     @foreach($manga->getCachedGenres() as $item)
-                        <a href="{{route('genre',['genres'=>$item->slug])}}" class="chip light-green darken-4 white-text">{{$item->name}}</a>
+                        <a href="{{route('genre',['genres'=>$item->slug])}}" class="chip deep-orange darken-3 white-text">{{$item->name}}</a>
                         @endforeach
                 </div>
             </div>
