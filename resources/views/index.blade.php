@@ -13,16 +13,16 @@
                 <div class="card-panel no-padding z-depth-0">
 
                     <div class="row">
-                        <div class="col s12 hide-on-small-only">
-                            <div class="carousel carousel-slider ">
+                        {{--<div class="col s12 hide-on-small-only">--}}
+                            {{--<div class="carousel carousel-slider ">--}}
                                 {{--<a class="carousel-item" href="#one!"><img src="{{asset('img/banner/1.jpg')}}"></a>--}}
-                                <a class="carousel-item" href="/manga/bleach"><img src="{{asset('img/banner/1.jpg')}}">
+                                {{--<a class="carousel-item" href="/manga/bleach"><img src="{{asset('img/banner/1.jpg')}}"></a>--}}
                                 {{--<span class="white-text slider-title">Naruto chapter 134</span></a>--}}
-                                <a class="carousel-item" href="#"><img src="img/banner1.jpg"></a>
-                                <a class="carousel-item" href="#three!"><img src="img/banner2.jpg "></a>
-                                <a class="carousel-item" href="/manga/fairy-tail"><img src="{{asset('img/banner/tail.jpg')}}"></a>
-                            </div>
-                        </div>
+                                {{--<a class="carousel-item" href="#"><img src="img/banner1.jpg"></a>--}}
+                                {{--<a class="carousel-item" href="#three!"><img src="img/banner2.jpg "></a>--}}
+                                {{--<a class="carousel-item" href="/manga/fairy-tail"><img src="{{asset('img/banner/tail.jpg')}}"></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="in-progress-section">
                         <div class="col s12">
                             <h2 class="left title-h2 brown-text darken-4">Manga In Progress</h2>
@@ -114,7 +114,7 @@
                     <div class="row  no-padding">
                         <div class="col s12">
                             <ul class="tabs">
-                                <li class="tab col s6"><a class="active" href="#test1">Top Today</a></li>
+                                <li class="tab col s12"><a class="active" href="#test1">Top Today</a></li>
                                 {{--<li class="tab col s6"><a  href="#test2">Top Week</a></li>--}}
                             </ul>
                         </div>
@@ -122,7 +122,7 @@
                             <div class="collection">
                                 @foreach($topToday as $item)
                                     @if($loop->index<=2)
-                                        <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate"><h3 class="title-h3-normal">{{$item->name}}</h3><span class="white-text badge red">{{$loop->index+1}}</span></a>
+                                        <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate"><h3 class="title-h3-normal left">{{$item->name}}</h3><span class="white-text badge red ">{{$loop->index+1}}</span></a>
                                         @else
                                         <a href="{{route('manga',['manga'=>$item->slug])}}" class="collection-item truncate"><h3 class="title-h3-normal">{{$item->name}}</h3></a>
                                     @endif

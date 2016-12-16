@@ -1,15 +1,38 @@
+function getCookie(cname) {
+    // console.log('get-cookie-called');
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 $(document).ready(function () {
     $(".button-collapse").sideNav();
     $(".slide-1").owlCarousel({
         navigation: false,
         items: 6,
-        itemsDesktop: [1645, 5],
+        itemsDesktop: [1645, 5.5],
         itemsDesktopSmall: [1461, 5],
         itemsTabletSmall: [992, 4],
         itemsTablet: [1248, 3.5],
         itemsMobile: [600, 2.5],
         pagination: false,
-        scrollPerPage: true,
+        scrollPerPage: false,
         afterInit: function () {
             $('.slide-container').show();
         }
@@ -18,22 +41,24 @@ $(document).ready(function () {
     $(".slide-2").owlCarousel({
         navigation: false,
         items: 6,
-        itemsDesktop: [1645, 5],
+        itemsDesktop: [1645, 5.5],
         itemsDesktopSmall: [1461, 5],
         itemsTabletSmall: [992, 4],
         itemsTablet: [1248, 3.5],
         itemsMobile: [600, 2.5],
-        pagination: false
+        pagination: false,
+        scrollPerPage: false
     });
     $(".slide-3").owlCarousel({
         navigation: false,
         items: 6,
-        itemsDesktop: [1645, 5],
+        itemsDesktop: [1645, 5.5],
         itemsDesktopSmall: [1461, 5],
         itemsTabletSmall: [992, 4],
         itemsTablet: [1248, 3.5],
         itemsMobile: [600, 2.5],
-        pagination: false
+        pagination: false,
+        scrollPerPage: false
     });
     $("button[data-role='slide-next-1']").on("click", function () {
         console.log('clicked');
@@ -96,7 +121,17 @@ $(document).ready(function () {
         }
     });
     $(".dropdown-button").dropdown();
-    $('.modal').modal();
+    $('.modal').modal({
+        ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+            $('#adult-continue').click(function () {
+                setCookie("adult-check",1,15);
+            });
+            // console.log(modal, trigger);
+        }
+    });
+    if(getCookie("adult-check")!=1){
+        $('#adult-modal').modal('open');
+    }
     // $('.tooltipped').tooltip({delay: 50});
     $('.carousel.carousel-slider').carousel({full_width: true, dist: 0});
     setInterval(function () {
@@ -137,3 +172,5 @@ $(document).ready(function () {
         });
     });
 });
+
+

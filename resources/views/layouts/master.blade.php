@@ -155,7 +155,7 @@
                         </li>
                     @endif
                     <li>
-                        <a href="/genre" class="collapsible-header">Manga Genres<i class="material-icons">arrow_drop_down</i></a>
+                        <a href="#" class="collapsible-header">Manga Genres<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
                                 @foreach($allGenres as $genre)

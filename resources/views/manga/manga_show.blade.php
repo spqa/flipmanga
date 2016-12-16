@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title',$manga->name.'('.$manga->alias.')'.' - Read '.$manga->name.' online for free')
-@section('meta_des',$manga->description)
+@section('meta_des',e($manga->description))
 @section('og_url',url()->current())
 @section('image',$manga->poster)
 @section('content')
@@ -77,7 +77,7 @@
                             <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip white-text orange darken-2">{{$genre->name}}</a>
                         @endforeach
                     </div>
-                    <p class="manga-description">{!! $manga->description !!}</p>
+                    <p class="manga-description">{{ $manga->description }}</p>
                 </div>
             </div>
         </div>
@@ -162,6 +162,23 @@
                 </div>
             </div>
         </div>
+
+        {{--adult modal--}}
+        @foreach($manga->getCachedGenres() as $genre)
+            @if($genre->name=='Adult')
+        <div id="adult-modal" class="modal">
+            <div class="modal-content">
+                <h4><i class="material-icons">warning</i>Caution to under-aged viewers</h4>
+                <p>The series {{$manga->name}} contain themes or scenes that may not be suitable for very young readers thus is blocked for their protection.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" id="adult-continue" class=" modal-action modal-close waves-effect waves-green btn-flat">i am above 18, continue</a>
+                <a href="/" class=" modal-action modal-close waves-effect waves-green btn-flat">Take me back</a>
+            </div>
+        </div>
+                @break
+            @endif
+        @endforeach
         <div id="disqus_thread"></div>
         <script>
 

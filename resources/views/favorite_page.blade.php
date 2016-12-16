@@ -16,6 +16,9 @@
             <div class="col s12">
                 <h2 class="no-margin title-h1-list grey-text darken-4">Favorites</h2>
             </div>
+            @if(empty($mangas->first()))
+                <h3 style="min-height: 300px" class="center grey-text text-lighten-3">Oops! Nothing here</h3>
+                @endif
             @foreach($mangas as $item)
                 @include('manga.partial._manga_suggestion')
             @endforeach

@@ -83,14 +83,20 @@
                             <a href="{{route('register')}}" class="btn orange">Register</a>
 
                         </div>
-                        <div class="col s12 m6 offset-m3 ">
-                            <a href="{{route('social.redirect',['provider'=>'facebook'])}}" class="btn blue">Login with Facebook</a>
+
+                        <div class="col s12 center">
+                            <h2 class="title-h2">Login with social network</h2>
+                            <a href="{{route('social.redirect',['provider'=>'facebook'])}}"><img src="{{asset('/img/fb4848.png')}}"></a>
+                            <a href="{{route('social.redirect',['provider'=>'facebook'])}}"><img src="{{asset('/img/ggplus4848.png')}}"></a>
 
                         </div>
-                        <div class="col s12 m6 offset-m3 ">
-                            <a href="{{route('social.redirect',['provider'=>'facebook'])}}" class="btn red">Login with Google+</a>
+                        {{--<div class="col s12 m6 offset-m3 ">--}}
+                            {{--<a href="{{route('social.redirect',['provider'=>'facebook'])}}" class="btn blue">Login with Facebook</a>--}}
 
-                        </div>
+                        {{--</div>--}}
+                        {{--<div class="col s12 m6 offset-m3 ">--}}
+
+                        {{--</div>--}}
                     </div>
                         </form>
                     </div>
