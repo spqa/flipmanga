@@ -12,8 +12,12 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $latestHotUpdate=Manga::orderBy('updated_at','desc')->orderBy('view','desc')->take(12)->get();
-        $newRelease=Manga::orderBy('created_at','desc')->take(12)->get();
+        $latestHotUpdate=Cache::tags('index')->rememberForever('latest.hot.update',function (){
+            return Manga::orderBy('updated_at','desc')->orderBy('view','desc')->take(12)->get();
+        });
+        $newRelease=Cache::tags('index')->rememberForever('new.release',function (){
+            return Manga::orderBy('created_at','desc')->take(12)->get();
+        });
         $recommend = Cache::remember('manga.list.hour',10,function (){
             $list=collect(Redis::zrevrange('manga.trending.hour',0,16))->map(function ($id){
                 return Manga::find($id);
@@ -26,7 +30,9 @@ class IndexController extends Controller
             return $list->unique('id');
         });
 //        dd(Redis::zrevrange('manga.trending',0,16));
-        $latestUpdate=Manga::orderBy('updated_at','desc')->take(12)->get();
+        $latestUpdate=Cache::tags('index')->rememberForever('latest.update',function (){
+            return Manga::orderBy('updated_at','desc')->take(12)->get();
+        });
         $topToday=Cache::remember('manga.list.day',15,function (){
             $list=collect(Redis::zrevrange('manga.trending.day',0,16))->map(function ($id){
                 return Manga::find($id);
