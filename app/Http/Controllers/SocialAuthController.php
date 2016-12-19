@@ -14,25 +14,36 @@ class SocialAuthController extends Controller
         if ($provider=='facebook'){
             return Socialite::driver('facebook')->redirect();
         }
+        if ($provider=='google'){
+            return Socialite::driver('google')->redirect();
+
+        }
+        abort('404');
     }
 
     public function callback($provider)
     {
         if ($provider=='facebook'){
             $providerUser = Socialite::driver('facebook')->user();
-            $existSocialAcc=SocialAccount::whereProvider('facebook')->whereProviderUserId($providerUser->id)->first();
+        }else{
+            $providerUser = Socialite::driver('google')->user();
+//dd('haha');
+        }
+            $existSocialAcc=SocialAccount::whereProvider($provider)->whereProviderUserId($providerUser->id)->first();
             if ($existSocialAcc){
                 auth()->login($existSocialAcc->user);
                 return redirect()->route('home');
             }else{
                 $sc=new SocialAccount([
-                    'provider'=>'facebook',
+                    'provider'=>$provider,
                     'provider_user_id'=>$providerUser->id
                 ]);
 
                 $user=User::whereEmail($providerUser->email)->first();
                 if ($user){
                     $user->social_accounts()->save($sc);
+                    $user->avatar=$providerUser->avatar;
+                    $user->save();
                     auth()->login($user);
                     return redirect()->route('home');
                 }else{
@@ -46,6 +57,6 @@ class SocialAuthController extends Controller
                     return redirect()->route('home');
                 }
             }
-        }
+//        }
     }
 }

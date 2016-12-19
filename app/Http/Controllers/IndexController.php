@@ -83,4 +83,12 @@ class IndexController extends Controller
         $mangas = Manga::inRandomOrder()->orderBy('updated_at', 'desc')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
+
+    public function tos(){
+        return view('tos');
+    }
+
+    public function priv(){
+        return view('priv');
+    }
 }

@@ -38,6 +38,11 @@ return [
         'client_id' => '613058618881383',
         'client_secret' => 'a2f99909794f4b92b02c3c5d93b84bf8',
         'redirect' =>env('FACEBOOK_CALLBACK'),
+    ],
+    'google'=>[
+        'client_id'=>'528183897953-n1hn359ckas74r1lklip0uluipug19c7.apps.googleusercontent.com',
+        'client_secret'=>'2JB2XaN85-UtAcEVEbNEWrNJ',
+        'redirect'=>env('GOOGLE_CALLBACK')
     ]
 
 ];

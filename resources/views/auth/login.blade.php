@@ -87,7 +87,7 @@
                         <div class="col s12 center">
                             <h2 class="title-h2">Login with social network</h2>
                             <a href="{{route('social.redirect',['provider'=>'facebook'])}}"><img src="{{asset('/img/fb4848.png')}}"></a>
-                            <a href="{{route('social.redirect',['provider'=>'facebook'])}}"><img src="{{asset('/img/ggplus4848.png')}}"></a>
+                            <a href="{{route('social.redirect',['provider'=>'google'])}}"><img src="{{asset('/img/ggplus4848.png')}}"></a>
 
                         </div>
                         {{--<div class="col s12 m6 offset-m3 ">--}}
