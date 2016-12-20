@@ -73,9 +73,11 @@ class UpdateChapter extends Command
         $url = "https:". $url;
         $html=HtmlDomParser::file_get_html($url);
         $listChapter=[];
+        $this->comment('start url:'.$url);
         foreach($html->find('#manga-list')[0]->find('option') as $select){
             if ($select->value!=null){
                 $link=$select->value;
+                $this->comment($link);
                 if ($link == $endSlug) break;
                 $text=trim($select->innertext());
                 $array=explode(' ',$text);
