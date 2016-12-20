@@ -74,7 +74,7 @@ class UpdateChapter extends Command
                     $endSlug .= $lastest;
                 }
                 $endSlug .= "/1";
-                dd($endSlug);
+//                dd($endSlug);
                 $this->getFromURL($item,$endSlug,$manga);
             }
         }
