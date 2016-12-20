@@ -40,6 +40,7 @@ class UpdateChapter extends Command
      */
     public function handle()
     {
+
         $html=HtmlDomParser::file_get_html('https://www.heymanga.me/');
         $listManga=[];
 
@@ -49,15 +50,24 @@ class UpdateChapter extends Command
             array_push($listManga,$href);
         }
 
+//        dd($listManga);
+
         foreach ($listManga as $item) {
-            $pos = strrpos($item,"/manga/");
-            $last = strpos($item,"/",$pos);
-            $endSlug = substr($item,0,$last-($pos+6)+1);
-            $title = substr($item,($pos+7),$last-($pos+6));
+//            $pos = strrpos($item,"/manga/");
+//            $last = strpos($item,"/",$pos);
+//            $endSlug = substr($item,0,$last-($pos+6)+1);
+//            $this->comment($endSlug);
+//            $title = substr($item,($pos+7),$last-($pos+6));
+            $array_split=explode('/',$item);
+//            dd($array_split);
+            $title=$array_split[4];
             $title = str_replace("_","-",$title);
-            $manga = Manga::where('slug',$title)->first();
+            $this->comment($title);
+
+            $manga = Manga::where('slug','like','%'.$title.'%')->first();
             if (!empty($manga)){
                 $lastest = $manga->getCacheLatestChap();
+                $endSlug='//www.heymanga.me/manga/'.$array_split[4];
                 if((int)$lastest == $lastest) {
                     $endSlug .= (int)$lastest;
                 } else {
