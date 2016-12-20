@@ -40,7 +40,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('updateTrending')->everyTenMinutes();
         $schedule->command('updateToday')->everyThirtyMinutes();
         $schedule->command('sitemap')->hourly();
-        $schedule->command('update:Chapter')->name('change1')->everyTenMinutes()->withoutOverlapping();
+        $schedule->command('update:Chapter')->name('change1.1')->everyTenMinutes()->withoutOverlapping();
     }
 
     /**

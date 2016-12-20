@@ -67,13 +67,14 @@ class UpdateChapter extends Command
             $manga = Manga::where('slug','like','%'.$title.'%')->first();
             if (!empty($manga)){
                 $lastest = $manga->getCacheLatestChap();
-                $endSlug='//www.heymanga.me/manga/'.$array_split[4];
+                $endSlug='//www.heymanga.me/manga/'.$array_split[4].'/';
                 if((int)$lastest == $lastest) {
                     $endSlug .= (int)$lastest;
                 } else {
                     $endSlug .= $lastest;
                 }
                 $endSlug .= "/1";
+                dd($endSlug);
                 $this->getFromURL($item,$endSlug,$manga);
             }
         }
