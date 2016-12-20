@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
             Cache::tags('genre')->forget($manga->getCacheKey());
             Cache::tags('author')->forget($manga->getCacheKey());
             Cache::tags('latest.chap')->forget($manga->getCacheKey());
+            Cache::tags('index')->flush();
         });
         $allGenres=Cache::rememberForever('allGenres',function(){
             return Genre::all();
