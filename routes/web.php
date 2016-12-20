@@ -41,7 +41,8 @@ Route::get('/genre/{genre?}','GenreController@show')->name('genre');
 //sitemap
 Route::get('sitemap','SitemapController@sitemap');
 //update chap
-Route::get('update-chap','UpdateChapController@index');
+Route::get('update-chap','UpdateChapController@getFromURL');
+Route::get('update-index','UpdateChapController@getFromIndex');
 Route::get('test','TestController@index');
 
 

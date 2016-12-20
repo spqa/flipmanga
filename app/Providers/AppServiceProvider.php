@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Chapter;
 use App\Genre;
 use App\Manga;
 use Illuminate\Support\Facades\Cache;
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
         Manga::saved(function($manga){
             Cache::tags('genre')->forget($manga->getCacheKey());
             Cache::tags('author')->forget($manga->getCacheKey());
+            Cache::tags('latest.chap')->forget($manga->getCacheKey());
         });
         $allGenres=Cache::rememberForever('allGenres',function(){
             return Genre::all();

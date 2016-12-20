@@ -92,7 +92,7 @@
                                         class="material-icons">send</i></div>
                             <div class="collapsible-body">
                                 <div class="collection">
-                                    @foreach($manga->chapters->sortBy('id')->take(5) as $chapter)
+                                    @foreach($manga->chapters->sortByDesc('chapter_number')->take(5) as $chapter)
                                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$chapter->id])}}"
                                            class="collection-item">{{$chapter->name}}
                                             {{--<span class="new badge red "></span>--}}
@@ -118,7 +118,7 @@
                                             {{--</li>--}}
                                         {{--</ul>--}}
                                     {{--</div>--}}
-                                    @foreach($manga->chapters->sortByDesc('id') as $chapter)
+                                    @foreach($manga->chapters->sortBy('chapter_number') as $chapter)
                                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$chapter->id])}}"
                                            class="collection-item">{{$chapter->name}}<span
                                                     class="secondary-content">{{$chapter->created_at->toFormattedDateString()}}</span></a>
