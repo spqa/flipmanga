@@ -36,7 +36,7 @@ class IndexController extends Controller
                 return Manga::orderBy('updated_at', 'desc')->take(12)->get();
             });
             $topToday = Cache::remember('manga.list.day', 15, function () {
-                $list = collect(Redis::zrevrange('manga.trending.day', 0, 16))->map(function ($id) {
+                $list = collect(Redis::zrevrange('manga.trending.day', 0, 10))->map(function ($id) {
                     return Manga::find($id);
                 });
                 if ($list->count() < 6) {
