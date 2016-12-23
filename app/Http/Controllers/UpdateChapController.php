@@ -85,7 +85,6 @@ class UpdateChapController extends Controller
                     $endSlug .= $lastest;
                 }
                 $endSlug .= "/1";
-                dd($manga);
                 $this->getFromURL($item['link'],$endSlug,$manga);
             } else {
                 $detaiPage = HtmlDomParser::file_get_html('https://www.heymanga.me/manga/'.$array_split[4]);
@@ -128,9 +127,52 @@ class UpdateChapController extends Controller
                     ]);
                     $insertManga->genres()->attach($insertGenre);
                 }
-                $this->getFullManga($item1,$insertManga);
+                $this->getFullManga($item,$insertManga);
             }
         }
         return "done";
+    }
+
+    public function getMangaFox(){
+        $html=HtmlDomParser::file_get_html('http://mangafox.me/directory/1?az');
+        $listManga = $html->find('ul[class=list]')[0];
+        $link = [];
+        foreach ($listManga->find('li') as $item) {
+            array_push($link,$item->find('a[class=manga_img]')[0]->href);
+        }
+        dd(Carbon::createFromDate('2014'));
+        foreach ($link as $item) {
+            $mangaPage=HtmlDomParser::file_get_html($item);
+            $divTitle = $mangaPage->find('div[id=title]')[0];
+            $tmpManga = [];
+            $titleAndType = $divTitle->find('h1')[0]->innertext();
+            $tmpManga['oriTitle'] = substr($titleAndType,0,strrpos($titleAndType,' '));
+            $tmpManga['type'] = substr($titleAndType,strrpos($titleAndType,' ')+1,strlen($titleAndType));
+            $aliasText = $divTitle->find('h3')[0]->innertext();
+            $alias = $divTitle->find('h3')[0];
+            $tmpManga['alias'] = '';
+            $tmpManga['alias'] .= substr($aliasText,0,strpos($aliasText,';')) . ',';
+            foreach ($alias->find('a') as $item1) {
+                $tmpManga['alias'] .= $item1->innertext() . ',';
+            }
+            $tmpManga['alias'] = substr($tmpManga['alias'],0,strlen($tmpManga['alias'])-1);
+            //$tmpManga['alias'] = ;
+            $tmpManga['released'] = $divTitle->find('td')[0]->find('a')[0]->innertext();
+            $tmpManga['author'] = $divTitle->find('td')[1]->find('a')[0]->innertext();
+            $tmpManga['artist'] = $divTitle->find('td')[2]->find('a')[0]->innertext();
+            $tmpManga['genre'] = '';
+            foreach ($divTitle->find('td')[3]->find('a') as $item2) {
+                $tmpManga['genre'] .= $item2->innertext() .',';
+            }
+            $tmpManga['genre'] = substr($tmpManga['genre'],0,strlen($tmpManga['genre'])-1);
+            $tmpManga['cover'] = $mangaPage->find('div[class=cover]')[0]->find('img')[0]->src;
+            $urlMangaM = str_replace('mangafox.me','m.mangafox.me',$item);
+            $mangaPageM=HtmlDomParser::file_get_html($urlMangaM);
+            $status = explode(' ',$mangaPageM->find('div[class=detail-info]')[0]->find('p')[1]->innertext());
+            $tmpManga['status'] = $status[2];
+            $tmpManga['description'] = trim($mangaPageM->find('div[class=manga-summary]')[0]->innertext());
+            $tmpManga['description'] = preg_replace('/\s+/', ' ',$tmpManga['description']);
+            array_push();
+        }
     }
 }

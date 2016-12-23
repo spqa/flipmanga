@@ -43,6 +43,8 @@ Route::get('sitemap','SitemapController@sitemap');
 //update chap
 Route::get('update-chap','UpdateChapController@getFromURL');
 Route::get('update-index','UpdateChapController@getFromIndex');
+Route::get('update-fox','UpdateChapController@getMangaFox');
+
 Route::get('test','TestController@index');
 
 

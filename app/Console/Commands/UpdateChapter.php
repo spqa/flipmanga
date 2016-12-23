@@ -112,7 +112,7 @@ class UpdateChapter extends Command
                     $insertManga->genres()->attach($insertGenre);
                 }
                 $this->comment('Insert manga: '.$name);
-                $this->getFullManga($item1,$insertManga);
+                $this->getFullManga($item,$insertManga);
 
             }
         }
