@@ -11,4 +11,8 @@ class Chapter extends Model
     public function manga(){
         return $this->belongsTo(Manga::class);
     }
+
+    public function typeImg(){
+        return $this->belongsTo(TypeImg::class,'type_img_id');
+    }
 }

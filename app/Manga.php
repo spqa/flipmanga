@@ -56,4 +56,8 @@ class Manga extends Model
     public function users(){
         return $this->belongsToMany(User::class);
     }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
 }
