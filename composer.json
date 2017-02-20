@@ -15,7 +15,8 @@
         "google/recaptcha": "^1.1",
         "roumen/sitemap": "^2.6",
         "sunra/php-simple-html-dom-parser": "^1.5",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "j0k3r/php-imgur-api-client": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
