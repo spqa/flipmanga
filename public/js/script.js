@@ -121,14 +121,7 @@ $(document).ready(function () {
         }
     });
     $(".dropdown-button").dropdown();
-    $('.modal').modal({
-        ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
-            $('#adult-continue').click(function () {
-                setCookie("adult-check",1,15);
-            });
-            // console.log(modal, trigger);
-        }
-    });
+
     if(getCookie("adult-check")!=1){
         $('#adult-modal').modal('open');
     }
@@ -142,35 +135,15 @@ $(document).ready(function () {
         $.ajax({
             url: '/logout',
             method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
             success: function () {
                 location.reload();
             }
         });
     });
-    $('.btn-favorite').click(function () {
-        $.ajax({
-            url:'/api/favorite/'+$(this).attr('data-id'),
-            success:function (data) {
-                console.log(data);
-                if(data==1){
-                    $('button[data-id]').html('<i class="material-icons red-text text-accent-4 left">favorite</i>Added to Favorites');
-                    Materialize.toast('Added to Favorites', 4000);
-                }
-                if(data==0){
-                    $('button[data-id]').html('<i class="material-icons  red-text text-accent-4 left">favorite_border</i>Add to Favorite');
-                    Materialize.toast('Removed from Favorites', 4000);
-                }
-            },
-            statusCode:{
-                401:function () {
-                        Materialize.toast('Error! You need to login to use this function', 4000);
-                }
-            }
-        });
-    });
+
 });
 
 

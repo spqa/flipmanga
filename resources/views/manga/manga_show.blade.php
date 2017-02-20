@@ -25,7 +25,7 @@
                     <img class="materialboxed responsive-img" src="{{$manga->poster}}">
                 </div>
                 <div class="col s7 m9 l0">
-                    <h1 class="inline title-h1-manga">{{$manga->name}}</h1>
+                    <h1 class="inline title-h1-manga">{{$manga->name}} <small>Read free manga online</small></h1>
                     @if(!empty($manga->alias))
                         <h2 class="grey-text inline">({{$manga->alias}})</h2>
                         @endif
@@ -205,3 +205,7 @@
     </div><!-- container -->
     <!-- end content -->
 @endsection
+
+@section('page_script')
+    <script src="{{asset('/js/mangashow.js')}}"></script>
+    @endsection

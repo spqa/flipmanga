@@ -239,7 +239,6 @@
 <script src="{{asset('js/owl.carousel.min.js')}} "></script>
 {{--<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>--}}
 <script src="{{asset('js/jquery.lazyloadxt.simple.js')}}"></script>
-<script src="{{asset('js/script.js')}}"></script>
 @yield('page_script')
 <script>
     window.fbAsyncInit = function () {
@@ -262,7 +261,7 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script src="{{elixir('js/app.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
 </body>
 </html>
