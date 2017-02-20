@@ -296,14 +296,24 @@ li:hover .mega-menu {
 .btn-favorite i{
 font-size: 2.3rem;
 }
+.scroll-breadcrumb{
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: top 0.2s ease-in-out;
+}
+.nav-up {
+    top: -40px;
+}
 @media screen and (max-width: 600px) {
     .user-avatar{
         height: 40px;
     }
-    .container {
-        width: 100%;
-        padding: 2px
-    }
+    /*.container {*/
+        /*width: 100%;*/
+        /*padding: 2px*/
+    /*}*/
 
     .row{
         margin-bottom: 0;

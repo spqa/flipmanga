@@ -26,7 +26,7 @@
 <nav class="blue darken-4 ">
     <div class="container ">
         <div class="nav-wrapper">
-            <div class="col s12">
+            <div class="col s12 scroll-breadcrumb transparent">
                 <a href="/" class="breadcrumb "><i class="material-icons">home</i>Home</a>
                 @if($main_genre)
                 <a href="{{route('genre',['genres'=>$main_genre->slug])}}" class="breadcrumb">{{$main_genre->name}}</a>
@@ -93,7 +93,7 @@
     <!-- model chapter -->
     <div id="end-of-page"></div>
     <div id="disqus_thread"></div>
-    <script src="{{asset('js/chapter.js')}}"></script>
+    <script src="{{asset('js/chapter.js?v=0.1')}}"></script>
     <script>
 
         /**
