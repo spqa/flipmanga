@@ -382,6 +382,7 @@ class UpdateChapController extends Controller
             $tmpManga['alias'] = trim($tmpManga['alias']);
             $tmpManga['released'] = $info->find('td')[5]->innertext();
             $tmpManga['released'] = trim($tmpManga['released']);
+
             $tmpManga['status'] = $info->find('td')[7]->innertext();
             $tmpManga['status'] = trim($tmpManga['status']);
             $tmpManga['author'] = $info->find('td')[9]->innertext();

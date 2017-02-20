@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Manga;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
@@ -34,6 +33,11 @@ class MangaController extends Controller
         $next_link = $manga->chapters()->whereChapterNumber(DB::raw('(SELECT MIN(chapter_number) FROM chapters WHERE chapter_number > ' . $chapter->chapter_number . ' AND manga_id =' . $manga->id . ')'))->first();
         $prev_link = $manga->chapters()->whereChapterNumber(DB::raw('(SELECT MAX(chapter_number) FROM chapters WHERE chapter_number < ' . $chapter->chapter_number . ' AND manga_id =' . $manga->id . ')'))->first();
         $array_img = preg_split("/[\s,]+/", $chapter->img, -1, PREG_SPLIT_NO_EMPTY);
+        if (empty($chapter->typeImg)){
+            for ($i=0;$i<count($array_img);$i++){
+                $array_img[$i]='//i1.heymanga.me/'.$array_img[$i];
+            }
+        }
         $json = request()->cookie('flmhistory');
         if ($json != null) {
             $array_history = json_decode($json, true);

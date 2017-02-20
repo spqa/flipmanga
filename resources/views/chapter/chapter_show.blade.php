@@ -75,7 +75,7 @@
     <div class="row">
         <div class="col s12 center">
             @foreach($array_img as $value)
-                <img class="responsive-img manga-image" src="{{'//i1.heymanga.me/'.$value}}">
+                <img class="responsive-img manga-image" src="{{$value}}">
             @endforeach
         </div>
     </div>

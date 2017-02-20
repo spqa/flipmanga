@@ -3,13 +3,13 @@
 namespace App\Console;
 
 use App\Console\Commands\UpdateChapter;
+use App\Console\Commands\UpdateMangaReader;
 use App\Console\Commands\UpdateSitemap;
 use App\Console\Commands\UpdateTrending;
 use App\Console\Commands\UpdateViewCache;
 use App\Console\Commands\UpdateViewToday;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Illuminate\Support\Facades\Redis;
 
 class Kernel extends ConsoleKernel
 {
@@ -23,7 +23,8 @@ class Kernel extends ConsoleKernel
         UpdateTrending::class,
         UpdateViewToday::class,
         UpdateSitemap::class,
-        UpdateChapter::class
+        UpdateChapter::class,
+        UpdateMangaReader::class
     ];
 
     /**
