@@ -121,7 +121,8 @@ class UpdateChapter extends Command
             }
         }
         catch (\Exception $exception){
-            Log::error('Heymanga: '.$exception->getMessage());
+            $this->comment($exception->getLine());
+            Log::error('Heymanga: '.$exception->getLine());
         }
 
     }
