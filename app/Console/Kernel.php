@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\UpdateChapter;
 use App\Console\Commands\UpdateMangaReader;
+use App\Console\Commands\UpdateOldMangareader;
 use App\Console\Commands\UpdateSitemap;
 use App\Console\Commands\UpdateTrending;
 use App\Console\Commands\UpdateViewCache;
@@ -24,7 +25,8 @@ class Kernel extends ConsoleKernel
         UpdateViewToday::class,
         UpdateSitemap::class,
         UpdateChapter::class,
-        UpdateMangaReader::class
+        UpdateMangaReader::class,
+        UpdateOldMangareader::class
     ];
 
     /**
@@ -43,6 +45,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('sitemap')->hourly();
 //        $schedule->command('update:Chapter')->name('change1.1')->everyTenMinutes()->withoutOverlapping();
         $schedule->command('update:mangareader')->name('mangareader1')->everyMinute()->withoutOverlapping();
+        $schedule->command('update:old')->name('mangareader1.old')->everyThirtyMinutes()->withoutOverlapping();
     }
 
     /**
