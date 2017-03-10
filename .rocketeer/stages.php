@@ -10,7 +10,7 @@ return [
 
     // Adding entries to this array will split the remote folder in stages
     // Like /var/www/yourapp/staging and /var/www/yourapp/production
-    'stages'  => ['stage','production'],
+    'stages'  => ['stage','production','truyentranh18'],
 
     // The default stage to execute tasks on when --stage is not provided
     // Falsey means all of them

@@ -7,7 +7,7 @@ return [
     // The name of the application to deploy
     // This will create a folder of the same name in the root directory
     // configured above, so be careful about the characters used
-    'application_name' => 'flipmanga',
+    'application_name' => 'truyentranh18',
 
     // Plugins
     ////////////////////////////////////////////////////////////////////
@@ -40,7 +40,7 @@ return [
         'production' => [
             'host' => '108.61.199.167',
             'username' => 'root',
-            'password' => 'A[z9Jy.g++3Z1LEc',
+            'password' => '952388lpo!@#',
             'key' => '',
             'keyphrase' => '',
             'agent' => '',
@@ -91,6 +91,9 @@ return [
             'production' => array(
                 'scm' => array('branch' => 'master'),
             ),
+            'truyentranh18' => [
+                'scm' => array('branch' => 'truyentranh18')
+            ]
         ),
         // Connections configuration
         'connections' => [],
