@@ -4,15 +4,15 @@
         <nav class="white z-depth-0 nav-breadcrumb">
             <div class="nav-wrapper">
                 <div class="col s12">
-                    <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
-                    <a href="/genre" class="breadcrumb grey-text active">Genres Filter</a>
+                    <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
+                    <a href="/genre" class="breadcrumb grey-text active">Tìm kiếm thể loại</a>
                 </div>
             </div>
         </nav>
         <div class="section">
             <div class="row">
                 <div class="col s12">
-                    <h1 class="title-h1-list">Genres Filter</h1>
+                    <h1 class="title-h1-list">Lọc thể loại</h1>
                 </div>
                 <div class="col s12">
                     <div class="card-panel z-depth-0">

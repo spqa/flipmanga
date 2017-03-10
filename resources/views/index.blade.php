@@ -25,12 +25,12 @@
                         {{--</div>--}}
                         <div class="in-progress-section">
                         <div class="col s12">
-                            <h2 class="left title-h2 brown-text darken-4">Manga In Progress</h2>
+                            <h2 class="left title-h2 brown-text darken-4">Truyện đang đọc</h2>
                         </div>
 
                         </div>
                         <div class="col s12 hide-on-small-only">
-                            <h2 class="left title-h2 brown-text darken-4">Latest Hot Manga Update</h2>
+                            <h2 class="left title-h2 brown-text darken-4">Truyện Hot Mới Cập Nhật</h2>
                             <button data-role="slide-next-1" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_right</i></button>
                             <button data-role="slide-prev-1" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_left</i></button>
                         </div>
@@ -64,7 +64,7 @@
                     <!-- section -->
                     <div class="row hide-on-small-only">
                         <div class="col s12">
-                            <h2 class="left title-h2 brown-text darken-4">New Release Manga</h2>
+                            <h2 class="left title-h2 brown-text darken-4">Truyện mới ra</h2>
                             <button data-role="slide-next-2" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_right</i></button>
                             <button data-role="slide-prev-2" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_left</i></button>
                         </div>
@@ -85,7 +85,7 @@
                     <!-- </div> -->
                     <div class="row hide-on-small-only">
                         <div class="col s12">
-                            <h2 class="left title-h2 brown-text darken-4">Trending Manga</h2>
+                            <h2 class="left title-h2 brown-text darken-4">Truyện đang hot</h2>
                             <button data-role="slide-next-3" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_right</i></button>
                             <button data-role="slide-prev-3" class="btn right grey lighten-4 slide-navi"><i class="material-icons medium grey-text">keyboard_arrow_left</i></button>
                         </div>
@@ -105,8 +105,8 @@
             </div>
             <div class="col hide-on-med-and-down l3 sidebar">
                 <div class="card-panel center ">
-                    <h1 class="title-h1">Flipmanga.com - Read manga, manhwa, manhua online for free</h1>
-                    <p>Flipmanga.com is a site dedicated to bringing you the coolest manga, manhwa, manhua resources for free. Follow us!</p>
+                    <h1 class="title-h1">Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa</h1>
+                    <p>Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,truyentranh18</p>
 
                     <!-- <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/fb4848.png"></a>
                     <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/pin4848.png"></a>
@@ -144,10 +144,10 @@
                 <div class="row">
                     <div class="col s12 ">
                         <ul class="tabs z-depth-1">
-                            <li class="tab"><a class="active" href="#tab-container1">Latest Update Manga</a></li>
-                            <li class="tab"><a data-content="random" data-role="tab-genre" href="#tab-container2">Random Manga</a></li>
-                            <li class="tab"><a data-content="shoujo" data-role="tab-genre" href="#tab-container3">Shoujo Manga</a></li>
-                            <li class="tab"><a data-content="shounen" data-role="tab-genre" href="#tab-container4">Shounen Manga</a></li>
+                            <li class="tab"><a class="active" href="#tab-container1">Truyện mới cập nhật</a></li>
+                            <li class="tab"><a data-content="random" data-role="tab-genre" href="#tab-container2">Truyện ngẫu nhiên</a></li>
+                            <li class="tab"><a data-content="shoujo" data-role="tab-genre" href="#tab-container3">Con gái</a></li>
+                            <li class="tab"><a data-content="shounen" data-role="tab-genre" href="#tab-container4">Con trai</a></li>
                         </ul>
 
                     </div>
@@ -157,7 +157,7 @@
                         {{--@include('manga.partial._manga')--}}
                             {{--@endforeach--}}
                         <div class="col s12 center">
-                            <a href="{{route('manga.latest')}}" class="btn btn-more white grey-text">read more latest manga</a>
+                            <a href="{{route('manga.latest')}}" class="btn btn-more white grey-text">more</a>
                         </div>
                     </div>
                     <div id="tab-container2">

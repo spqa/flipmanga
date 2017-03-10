@@ -7,8 +7,8 @@
         <nav class="white z-depth-0 nav-breadcrumb">
         <div class="nav-wrapper">
             <div class="col s12">
-                <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
-                <a href="{{route('genre')}}" class="breadcrumb grey-text">Genres</a>
+                <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
+                <a href="{{route('genre')}}" class="breadcrumb grey-text">Thể loại</a>
                 <a href="{{route('genre',['genre'=>$genre->slug])}}" class="breadcrumb grey-text active">{{$genre->name}}</a>
             </div>
         </div>
@@ -20,7 +20,7 @@
         <div class="section header-section-list padding-0">
             <div class="row">
                 <div class="col s12">
-                    <h1 class="no-margin title-h1-list grey-text darken-4">{{$genre->name}} Manga</h1>
+                    <h1 class="no-margin title-h1-list grey-text darken-4">Truyện {{$genre->name}} miễn phí</h1>
                 </div>
                 <div class="col s12 m8 offset-m2 l6 offset-l3">
                     <div class="card-panel z-depth-0 no-padding margin-0">
