@@ -93,7 +93,11 @@ class UpdateOldMangareader extends Command
                     } else {
                         //$$manga=null
                         $this->comment('starting new'.$tmpManga['oriTitle']);
-
+                        try {
+                            $date = Carbon::createFromDate($tmpManga['released']);
+                        } catch (\Exception $ex) {
+                            $date = null;
+                        }
                         $insertManga = Manga::create([
                             'name' => $tmpManga['oriTitle'],
                             'slug' => str_slug($tmpManga['oriTitle']),
@@ -103,7 +107,7 @@ class UpdateOldMangareader extends Command
                             'translator' => '',
                             'alias' => $tmpManga['alias'],
                             'view' => 1,
-                            'released_at' => Carbon::createFromDate($tmpManga['released'])
+                            'released_at' => $date
                         ]);
                         foreach ($info->find('td')[15]->find('span') as $item) {
                             $genre = $item->innertext();
