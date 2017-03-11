@@ -72,12 +72,14 @@ class UpdateOldMangareader extends Command
                     $listChap = $mangaPage->find('table[id=listing]')[0]->find('a');
 
                     if (!empty($manga)) {//$manga !=null
-                        $this->comment('starting '.$manga->name);
+                        $this->comment('starting old '.$manga->name);
                         $lastest = $manga->chapters()->max('chapter_number');
                         for ($i =sizeof($listChap)-1;$i>=0;$i--) {
                             $nameChap = trim(explode(':',$listChap[$i]->innertext())[0]);
                             $numOfChap = substr($nameChap,strlen($tmpManga['oriTitle'])+1);
-                            if (strcmp($lastest,$numOfChap)==0) continue;
+//                            if (strcmp($lastest,$numOfChap)==0) break;
+                            $existChap =  $manga->chapters()->where('chapter_number',$numOfChap)->first();
+                            if (isset($existChap)) continue;
                             $textImg = $this->getImage($listChap[$i]->href);
                             $insertChap = new \App\Chapter();
                             $insertChap->name = $nameChap;
@@ -130,6 +132,8 @@ class UpdateOldMangareader extends Command
                 }
             }
         }catch (\Exception $exception){
+            $this->comment($exception->getMessage());
+            $this->comment($exception->getTraceAsString());
             Log::error('Old manga :'.$exception->getLine());
             Log::error('Old manga :'.$exception->getMessage());
         }
