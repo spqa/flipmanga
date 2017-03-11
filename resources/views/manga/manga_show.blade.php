@@ -78,6 +78,13 @@
                         @endforeach
                     </div>
                     <p class="manga-description">{{ $manga->description }}</p>
+                    <p class="hide">
+                        <h3>Đọc truyện {{$manga->name}} miễn phí</h3>
+                        <h3>Đọc truyện online {{$manga->name}} miễn phí</h3>
+                        <h3>Đọc truyện tranh {{$manga->name}} miễn phí</h3>
+                        <h3>Đọc truyện tranh {{$manga->name}} online</h3>
+                        <h3>{{$manga->name}} đọc truyện tranh online</h3>
+                    </p>
                 </div>
             </div>
         </div>
