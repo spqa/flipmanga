@@ -217,8 +217,8 @@
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.tos')}}">Term of service</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.priv')}}">Privacy Policy</a></li>
                     <li><a class="grey-text text-lighten-3" href="#!">Yêu cầu nhờ vả Manga ,Manhua, Manhwa</a></li>
-                    <li><a class="grey-text text-lighten-3" href="mailto:contact.flipmanga@gmail.com">Liên hệ !</a>
-                    </li>
+                    <li><a class="grey-text text-lighten-3" href="mailto:contact.flipmanga@gmail.com">Liên hệ !</a></li>
+                    <li>@include('dmca')</li>
                 </ul>
             </div>
             <div class="col s12 center">

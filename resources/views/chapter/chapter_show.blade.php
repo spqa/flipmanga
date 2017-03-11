@@ -27,7 +27,7 @@
     <div class="container ">
         <div class="nav-wrapper">
             <div class="col s12 scroll-breadcrumb transparent">
-                <a href="/" class="breadcrumb "><i class="material-icons">home</i>Home</a>
+                <a href="/" class="breadcrumb "><i class="material-icons">home</i>Trang chủ</a>
                 @if($main_genre)
                 <a href="{{route('genre',['genres'=>$main_genre->slug])}}" class="breadcrumb">{{$main_genre->name}}</a>
                 @endif
@@ -113,7 +113,9 @@
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+<footer>
+@include('dmca')
+</footer>
 </div>
 </body>
 </html>
