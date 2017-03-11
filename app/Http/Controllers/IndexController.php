@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Manga;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
 

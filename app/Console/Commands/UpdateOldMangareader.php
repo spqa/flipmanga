@@ -130,6 +130,8 @@ class UpdateOldMangareader extends Command
                 }
             }
         }catch (\Exception $exception){
+            $this->comment($exception->getMessage());
+            $this->comment($exception->getTraceAsString());
             Log::error('Old manga :'.$exception->getLine());
             Log::error('Old manga :'.$exception->getMessage());
         }
