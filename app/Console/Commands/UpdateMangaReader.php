@@ -92,6 +92,11 @@ class UpdateMangaReader extends Command
                 } else {
                     //$manga=null
                     $this->comment('Detect new manga! Start create new manga');
+                    try {
+                        $date = Carbon::createFromDate($tmpManga['released']);
+                    } catch (\Exception $ex) {
+                        $date = null;
+                    }
                     $insertManga = Manga::create([
                         'name' => $tmpManga['oriTitle'],
                         'slug' => str_slug($tmpManga['oriTitle']),
@@ -101,14 +106,7 @@ class UpdateMangaReader extends Command
                         'translator' => '',
                         'alias' => $tmpManga['alias'],
                         'view' => 1,
-                        'released_at' => function () use ($tmpManga) {
-                            try {
-                                $date = Carbon::createFromDate($tmpManga['released']);
-                                return $date;
-                            } catch (\Exception $ex) {
-                                return null;
-                            }
-                        }
+                        'released_at' => $date
                     ]);
                     foreach ($info->find('td')[15]->find('span') as $item) {
                         $genre = $item->innertext();
