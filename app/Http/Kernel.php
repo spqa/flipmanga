@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CountryMiddleware;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -17,6 +18,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        CountryMiddleware::class
     ];
 
     /**
