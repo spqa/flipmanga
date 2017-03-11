@@ -129,6 +129,7 @@ class UpdateMangaReader extends Command
             }
         } catch (\Exception $exception) {
             Log::error('Mangareader: '.$exception->getMessage());
+            Log::error('Mangareader: '.$exception->getTraceAsString());
         }
 
 
