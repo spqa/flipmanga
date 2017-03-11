@@ -111,13 +111,11 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
 
             <li>
-                <form action="/search">
+                <form action="/tim-kiem">
                     <div class="input-field">
-                        <form action="/search">
                             <input name="query" id="search" type="search" required>
                             <label for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons">close</i>
-                        </form>
                     </div>
                 </form>
             </li>
