@@ -101,7 +101,14 @@ class UpdateMangaReader extends Command
                         'translator' => '',
                         'alias' => $tmpManga['alias'],
                         'view' => 1,
-                        'released_at' => Carbon::createFromDate($tmpManga['released'])
+                        'released_at' => function () use ($tmpManga) {
+                            try {
+                                $date = Carbon::createFromDate($tmpManga['released']);
+                                return $date;
+                            } catch (\Exception $ex) {
+                                return null;
+                            }
+                        }
                     ]);
                     foreach ($info->find('td')[15]->find('span') as $item) {
                         $genre = $item->innertext();
