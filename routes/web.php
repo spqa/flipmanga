@@ -48,6 +48,7 @@ Route::get('uploadimg','UpdateChapController@uploadImg');
 Route::get('google','UpdateChapController@googleUpload');
 Route::get('get-reader','UpdateChapController@getMangaReader');
 Route::get('update-reader','UpdateChapController@getFromReaderIndex');
+Route::get('comicvn','UpdateChapController@getComicVN');
 
 Route::get('test','TestController@index');
 
