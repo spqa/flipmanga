@@ -144,7 +144,7 @@ class UpdateComicVN extends Command
                 if (isset($existChap)) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
-                $insertChap->name = $nameChap;
+                $insertChap->name = empty($nameChap) ? $manga->name . ' ' . $numOfChap : $nameChap;
                 $insertChap->img = $textImg;
                 $insertChap->chapter_number = $numOfChap;
                 $manga->chapters()->save($insertChap);
@@ -197,7 +197,7 @@ class UpdateComicVN extends Command
                 if (strpos($numOfChap, '-') !== false) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
-                $insertChap->name = $nameChap;
+                $insertChap->name = empty($nameChap) ? $manga->name . ' ' . $numOfChap : $nameChap;
                 $insertChap->img = $textImg;
                 $insertChap->chapter_number = $numOfChap;
                 $insertManga->chapters()->save($insertChap);
