@@ -46,18 +46,18 @@ class UpdateComicVN extends Command
         $type = TypeImg::firstOrCreate([
             'prefix' => 'http://comicvn.net/'
         ]);
-        $i = 1;
-        while ($i < 14000) {
+        $comicId = 1;
+        while ($comicId < 14000) {
             $mangaPage = null;
             try {
-                $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-' . $i));
+                $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-' . $comicId));
             } catch (\Exception $exception) {
-                $i++;
+                $comicId++;
                 continue;
             }
 
-            $this->comment('ComicVN id url :' . $i);
-            Log::info('ComicVN id url :' . $i);
+            $this->comment('ComicVN id url :' . $comicId);
+            Log::info('ComicVN id url :' . $comicId);
 //            if (sizeof($mangaPage->find('div[class=404-main text-center]'))==1) {
 //                $i++;
 //                continue;
@@ -126,6 +126,9 @@ class UpdateComicVN extends Command
                     } else {
                         $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
                     }
+                    for($char = 'A';$char<='Z';$char++){
+                        $numOfChap = str_replace($char,'.'.(ord($char)-64),$numOfChap);
+                    }
 //              if (strcmp($lastest,$numOfChap)==0) break;
                     $existChap = $manga->chapters()->where('chapter_number', $numOfChap)->first();
                     if (isset($existChap)) continue;
@@ -179,6 +182,9 @@ class UpdateComicVN extends Command
                     } else {
                         $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
                     }
+                    for($char = 'A';$char<='Z';$char++){
+                        $numOfChap = str_replace($char,'.'.(ord($char)-64),$numOfChap);
+                    }
                     $textImg = $this->getImageComic($listChap[$i]->href);
                     $insertChap = new \App\Chapter();
                     $insertChap->name = $nameChap;
@@ -191,6 +197,7 @@ class UpdateComicVN extends Command
                     Log::info('created new chap :' . $insertChap->chapter_number);
                 }
             }
+            $comicId++;
         }
     }
 
