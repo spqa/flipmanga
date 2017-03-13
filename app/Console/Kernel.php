@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\UpdateChapter;
+use App\Console\Commands\UpdateComicVN;
 use App\Console\Commands\UpdateMangaReader;
 use App\Console\Commands\UpdateOldMangareader;
 use App\Console\Commands\UpdateSitemap;
@@ -26,7 +27,8 @@ class Kernel extends ConsoleKernel
         UpdateSitemap::class,
         UpdateChapter::class,
         UpdateMangaReader::class,
-        UpdateOldMangareader::class
+        UpdateOldMangareader::class,
+        UpdateComicVN::class
     ];
 
     /**
