@@ -144,13 +144,17 @@ class UpdateComicVN extends Command
                 if (isset($existChap)) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
-                $insertChap->name = $nameChap;
-                $insertChap->img = $textImg;
-                $insertChap->chapter_number = $numOfChap;
-                $manga->chapters()->save($insertChap);
-                $insertChap->typeImg()->associate($type);
-                $insertChap->save();
-                $this->comment('chapter: ' . $insertChap->chapter_number);
+                try {
+                    $insertChap->name = $nameChap;
+                    $insertChap->img = $textImg;
+                    $insertChap->chapter_number = $numOfChap;
+                    $manga->chapters()->save($insertChap);
+                    $insertChap->typeImg()->associate($type);
+                    $insertChap->save();
+                    $this->comment('chapter: ' . $insertChap->chapter_number);
+                } catch (\Exception $exception){
+                    continue;
+                }
             }
         } else {
             //$$manga=null
@@ -197,13 +201,17 @@ class UpdateComicVN extends Command
                 if (strpos($numOfChap, '-') !== false) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
-                $insertChap->name = $nameChap;
-                $insertChap->img = $textImg;
-                $insertChap->chapter_number = $numOfChap;
-                $insertManga->chapters()->save($insertChap);
-                $insertChap->typeImg()->associate($type);
-                $insertChap->save();
-
+                try {
+                    $insertChap->name = $nameChap;
+                    $insertChap->img = $textImg;
+                    $insertChap->chapter_number = $numOfChap;
+                    $insertManga->chapters()->save($insertChap);
+                    $insertChap->typeImg()->associate($type);
+                    $insertChap->save();
+                    $this->comment('chapter: ' . $insertChap->chapter_number);
+                } catch (\Exception $exception){
+                    continue;
+                }
             }
         }
     }
