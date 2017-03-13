@@ -462,7 +462,7 @@ class UpdateChapController extends Controller
         while ($comicId < 14000) {
             $mangaPage = null;
             try{
-                $mangaPage = HtmlDomParser::str_get_html(file_get_contents());
+                $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-'.$comicId));
             } catch (\Exception $exception){
                 $comicId++;
                 continue;
