@@ -126,6 +126,9 @@ class UpdateComicVN extends Command
                     } else {
                         $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
                     }
+                    for($char = 'A';$char<='Z';$char++){
+                        $numOfChap = str_replace($char,'.'.(ord($char)-64),$numOfChap);
+                    }
 //              if (strcmp($lastest,$numOfChap)==0) break;
                     $existChap = $manga->chapters()->where('chapter_number', $numOfChap)->first();
                     if (isset($existChap)) continue;
@@ -178,6 +181,9 @@ class UpdateComicVN extends Command
                         $numOfChap = trim(explode(' ', explode(':', $listChap[$i]->innertext())[0])[1]);
                     } else {
                         $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
+                    }
+                    for($char = 'A';$char<='Z';$char++){
+                        $numOfChap = str_replace($char,'.'.(ord($char)-64),$numOfChap);
                     }
                     $textImg = $this->getImageComic($listChap[$i]->href);
                     $insertChap = new \App\Chapter();
