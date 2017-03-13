@@ -80,7 +80,13 @@ class UpdateOldMangareader extends Command
 //                            if (strcmp($lastest,$numOfChap)==0) break;
                             $existChap =  $manga->chapters()->where('chapter_number',$numOfChap)->first();
                             if (isset($existChap)) continue;
-                            $textImg = $this->getImage($listChap[$i]->href);
+                            try {
+                                $textImg = $this->getImage($listChap[$i]->href);
+                            } catch (\Exception $exception) {
+                                Log::error('Mangareader : Error at getImage()');
+                                Log::error($exception->getMessage());
+                                continue;
+                            }
                             $insertChap = new \App\Chapter();
                             $insertChap->name = $nameChap;
                             $insertChap->img = $textImg;
@@ -120,7 +126,14 @@ class UpdateOldMangareader extends Command
                         for ($i =sizeof($listChap)-1;$i>=0;$i--) {
                             $nameChap = trim(explode(':',$listChap[$i]->innertext())[0]);
                             $numOfChap = substr($nameChap,strlen($tmpManga['oriTitle'])+1);
-                            $textImg = $this->getImage($listChap[$i]->href);
+
+                            try {
+                                $textImg = $this->getImage($listChap[$i]->href);
+                            } catch (\Exception $exception) {
+                                Log::error('Mangareader : Error at getImage()');
+                                Log::error($exception->getMessage());
+                                continue;
+                            }
                             $insertChap = new \App\Chapter();
                             $insertChap->name = $nameChap;
                             $insertChap->img = $textImg;
