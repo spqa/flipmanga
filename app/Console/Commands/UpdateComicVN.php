@@ -198,7 +198,7 @@ class UpdateComicVN extends Command
                 for ($char = 'A'; $char <= 'Z'; $char++) {
                     $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
                 }
-                if (strpos($numOfChap, '-') !== false) continue;
+                $numOfChap = str_replace(',', '.', $numOfChap);
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
                 try {
