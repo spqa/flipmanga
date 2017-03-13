@@ -232,7 +232,3 @@
     </div><!-- container -->
     <!-- end content -->
     @endsection
-
-@section('page_script')
-    <script src="{{asset('js/script.js')}}"></script>
-@endsection
