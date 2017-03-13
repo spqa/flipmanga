@@ -79,7 +79,13 @@ class UpdateMangaReader extends Command
                         $numOfChap = substr($nameChap, strlen($tmpManga['oriTitle']) + 1);
                         $temp = $manga->chapters()->whereChapterNumber($numOfChap)->first();
                         if (!empty($temp)) continue;
-                        $textImg = $this->getImage($listChap[$i]->href);
+                        try {
+                            $textImg = $this->getImage($listChap[$i]->href);
+                        } catch (\Exception $exception) {
+                            Log::error('Mangareader : Error at getImage()');
+                            Log::error($exception->getMessage());
+                            continue;
+                        }
                         $insertChap = new \App\Chapter();
                         $insertChap->name = $nameChap;
                         $insertChap->img = $textImg;
@@ -88,10 +94,12 @@ class UpdateMangaReader extends Command
                         $insertChap->typeImg()->associate($type);
                         $insertChap->save();
                         $this->comment('successfully update chapter: ' . $numOfChap);
+                        Log::info('successfully update chapter: ' . $numOfChap);
                     }
                 } else {
                     //$manga=null
                     $this->comment('Detect new manga! Start create new manga');
+                    Log::info('Detect new manga! Start create new manga');
                     try {
                         $date = Carbon::createFromDate($tmpManga['released']);
                     } catch (\Exception $ex) {
@@ -119,7 +127,13 @@ class UpdateMangaReader extends Command
                     for ($i = sizeof($listChap) - 1; $i >= 0; $i--) {
                         $nameChap = trim(explode(':', $listChap[$i]->innertext())[0]);
                         $numOfChap = substr($nameChap, strlen($tmpManga['oriTitle']) + 1);
-                        $textImg = $this->getImage($listChap[$i]->href);
+                        try {
+                            $textImg = $this->getImage($listChap[$i]->href);
+                        } catch (\Exception $exception) {
+                            Log::error('Mangareader : Error at getImage()');
+                            Log::error($exception->getMessage());
+                            continue;
+                        }
                         $insertChap = new \App\Chapter();
                         $insertChap->name = $nameChap;
                         $insertChap->img = $textImg;
