@@ -139,7 +139,7 @@ class UpdateComicVN extends Command
                 for ($char = 'A'; $char <= 'Z'; $char++) {
                     $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
                 }
-                if (strpos($numOfChap, '-') !== false) continue;
+                $numOfChap = str_replace(',', '.', $numOfChap);
                 $existChap = $manga->chapters()->where('chapter_number', $numOfChap)->first();
                 if (isset($existChap)) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
