@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title',$title_page.' - Read '.$title_page.' online for free')
+@section('title',$title_page.' - Đọc '.$title_page.' online miễn phí')
 @section('meta_des',$page_description)
 @section('og_url',url()->current())
 @section('content')

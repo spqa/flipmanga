@@ -41,16 +41,16 @@ Route::get('/the-loai/{genre?}','GenreController@show')->name('genre');
 //sitemap
 Route::get('sitemap','SitemapController@sitemap');
 //update chap
-Route::get('update-chap','UpdateChapController@getFromURL');
-Route::get('update-index','UpdateChapController@getFromIndex');
-Route::get('update-fox','UpdateChapController@getMangaFox');
-Route::get('uploadimg','UpdateChapController@uploadImg');
-Route::get('google','UpdateChapController@googleUpload');
-Route::get('get-reader','UpdateChapController@getMangaReader');
-Route::get('update-reader','UpdateChapController@getFromReaderIndex');
-Route::get('comicvn','UpdateChapController@getComicVN');
-Route::get('comicindex','UpdateChapController@getIndexComic');
-
+//Route::get('update-chap','UpdateChapController@getFromURL');
+//Route::get('update-index','UpdateChapController@getFromIndex');
+//Route::get('update-fox','UpdateChapController@getMangaFox');
+//Route::get('uploadimg','UpdateChapController@uploadImg');
+//Route::get('google','UpdateChapController@googleUpload');
+//Route::get('get-reader','UpdateChapController@getMangaReader');
+//Route::get('update-reader','UpdateChapController@getFromReaderIndex');
+//Route::get('comicvn','UpdateChapController@getComicVN');
+//Route::get('comicindex','UpdateChapController@getIndexComic');
+Route::get('lien-he', 'IndexController@contact')->name('contact');
 Route::get('test','TestController@index');
 
 

@@ -52,32 +52,32 @@ class IndexController extends Controller
 
     public function full()
     {
-        $title_page = 'Free full manga';
-        $page_description = 'Read free full manga for free :D';
+        $title_page = 'Truyện manga, manhwa, manhua full';
+        $page_description = 'Đọc truyện tranh Nhật Bản, Trung Quốc, Hàn Quốc miễn phí';
         $mangas = Manga::whereStatus('Finished')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
 
     public function latest_manga()
     {
-        $title_page = 'Free latest manga';
-        $page_description = 'Read free latest manga for free :D';
+        $title_page = 'Truyện mới cập nhật';
+        $page_description = 'Danh sách truyện được cập nhật chapter mới nhất';
         $mangas = Manga::orderBy('updated_at', 'desc')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
 
     public function latest_manhwa()
     {
-        $title_page = 'Free latest manhwa';
-        $page_description = 'Manhwa (Hangul: 만화, Korean pronunciation: [manhwa]) is the general Korean term for comics and print cartoons (common usage also includes animated cartoons). Outside of Korea, the term usually refers specifically to South Korean comics. Read free latest manhwa for free :D';
+        $title_page = 'Thể loại truyện manhwa - Truyện Hàn Quốc manhwa mới nhất';
+        $page_description = 'Manhwa (Hangul: 만화, Korean phát âm: [manhwa]) Manhwa là thể loại truyện tranh của Hàn Quốc có sức ảnh hưởng lớn từ Manga Nhật Bản. Ngoài ra Manhwa cũng là thuật ngữ dùng cho tranh biếm họa hài hước và bản in. Tuy nhiên, tại Việt Nam, từ "manhwa" chỉ được dùng với nghĩa truyện tranh Hàn Quốc.';
         $mangas = Manga::inRandomOrder()->orderBy('updated_at', 'desc')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
 
     public function latest_manhua()
     {
-        $title_page = 'Free latest manhua';
-        $page_description = ' Manhua (simplified Chinese: 漫画; traditional Chinese: 漫畫; pinyin: Mànhuà; Jyutping: maan6 waa2) are Chinese comics produced in Mainland China, Hong Kong, and Taiwan., read free latest manhua for free :D';
+        $title_page = 'Thể loại truyện manhua - Truyện tranh Trung Quốc mới nhất';
+        $page_description = ' Manhua (simplified Chinese: 漫画; traditional Chinese: 漫畫; pinyin: Mànhuà; Jyutping: maan6 waa2) Thể loại truyện Manhua là các bộ truyện tranh của Trung Quốc, HongKong hoặc Đài Loan . :D';
         $mangas = Manga::inRandomOrder()->orderBy('updated_at', 'desc')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
@@ -88,5 +88,10 @@ class IndexController extends Controller
 
     public function priv(){
         return view('priv');
+    }
+
+    public function contact()
+    {
+        return view('contact');
     }
 }

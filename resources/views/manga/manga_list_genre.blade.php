@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title',$genre->name.' | Read free '.$genre->name.' manga, manhwa, manhua online for free')
-@section('meta_des',$genre->name.' manga | '.$genre->description)
+@section('title','Thể loại '.$genre->name.' | Đọc truyện '.$genre->name.' manga, manhwa, manhua online miễn phí')
+@section('meta_des','Thể loại '. $genre->name.' | '.$genre->description)
 @section('og_url',url()->current())
 @section('content')
     <div class="container ">
