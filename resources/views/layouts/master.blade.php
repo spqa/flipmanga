@@ -85,7 +85,7 @@
         <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="/">Trang chủ</a></li>
-            <li><a href="/genre" class="genres-mega-menu">Thể loại</a>
+            <li><a href="/the-loai" class="genres-mega-menu">Thể loại</a>
                 <div class="card-panel mega-menu white-text white z-depth-4">
                     <div class="row black-text no-padding">
                         @foreach($allGenres as $genre)
