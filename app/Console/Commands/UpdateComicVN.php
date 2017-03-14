@@ -172,7 +172,11 @@ class UpdateComicVN extends Command
                 'description' => ''
             ]);
             $imageName = str_slug($tmpManga['oriTitle'] . '-' . time()) . '.jpg';
-            Image::make($tmpManga['poster'])->save(storage_path('app/public/images/poster/' . $imageName));
+            try {
+                Image::make($tmpManga['poster'])->save(storage_path('app/public/images/poster/' . $imageName));
+            } catch (\Exception $exception) {
+                $imageName = url('placeholder.png');
+            }
             $insertManga = Manga::create([
                 'name' => $tmpManga['oriTitle'],
                 'slug' => str_slug($tmpManga['oriTitle']),
