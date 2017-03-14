@@ -37,7 +37,7 @@
                         : {{empty($manga->released_at)?'N/A':$manga->released_at->toFormattedDateString()}}</p>
                     <p class=""> Status : {{$manga->status}}</p>
                     <p class=""> Lượt xem : {{$manga->view}}</p>
-                    <p class=""><i class="material-icons red-text">Yêu thích</i> : {{$manga->getFavorite()}}</p>
+                    <p class=""><i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
 
                     <div class="manga-show-button hide-on-small-only">
                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
