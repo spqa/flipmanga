@@ -8,6 +8,7 @@ use App\Manga;
 use App\TypeImg;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 use Sunra\PhpSimple\HtmlDomParser;
 
 class UpdateComicVN extends Command
@@ -43,8 +44,13 @@ class UpdateComicVN extends Command
      */
     public function handle()
     {
+        try {
+            $this->getComicVN();
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+            Log::error($exception->getTraceAsString());
+        }
 
-        $this->getComicVN();
 
     }
 
@@ -145,14 +151,14 @@ class UpdateComicVN extends Command
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
                 try {
-                    $insertChap->name = $nameChap;
+                    $insertChap->name = empty($nameChap) ? $manga->name . ' ' . $numOfChap : $nameChap;
                     $insertChap->img = $textImg;
                     $insertChap->chapter_number = $numOfChap;
                     $manga->chapters()->save($insertChap);
                     $insertChap->typeImg()->associate($type);
                     $insertChap->save();
                     $this->comment('chapter: ' . $insertChap->chapter_number);
-                } catch (\Exception $exception){
+                } catch (\Exception $exception) {
                     continue;
                 }
             }
@@ -165,11 +171,12 @@ class UpdateComicVN extends Command
                 'avatar' => '',
                 'description' => ''
             ]);
-
+            $imageName = str_slug($tmpManga['oriTitle'] . '-' . time()) . '.jpg';
+            Image::make($tmpManga['poster'])->save(storage_path('app/public/images/poster/' . $imageName));
             $insertManga = Manga::create([
                 'name' => $tmpManga['oriTitle'],
                 'slug' => str_slug($tmpManga['oriTitle']),
-                'poster' => $tmpManga['poster'],
+                'poster' => url('images/poster/' . $imageName),
                 'status' => $tmpManga['status'],
                 'description' => $tmpManga['description'],
                 'translator' => '',
@@ -202,14 +209,14 @@ class UpdateComicVN extends Command
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
                 try {
-                    $insertChap->name = $nameChap;
+                    $insertChap->name = empty($nameChap) ? $manga->name . ' ' . $numOfChap : $nameChap;
                     $insertChap->img = $textImg;
                     $insertChap->chapter_number = $numOfChap;
                     $insertManga->chapters()->save($insertChap);
                     $insertChap->typeImg()->associate($type);
                     $insertChap->save();
                     $this->comment('chapter: ' . $insertChap->chapter_number);
-                } catch (\Exception $exception){
+                } catch (\Exception $exception) {
                     continue;
                 }
             }

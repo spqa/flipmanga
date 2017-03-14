@@ -29,7 +29,9 @@ return [
             'php artisan route:cache',
             'php artisan config:cache'
         ],
-        'cleanup' => [],
+        'cleanup' => [
+            'ln -s storage/app/public/images public/'
+        ],
     ],
 
     // Custom Tasks to register with Rocketeer
