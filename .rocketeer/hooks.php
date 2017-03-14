@@ -30,7 +30,7 @@ return [
             'php artisan config:cache'
         ],
         'cleanup' => [
-            'ln -s storage/app/public/images public/'
+            'ln -s /home/www/truyentranh18/truyentranh18/shared/storage/app/public/images public/'
         ],
     ],
 
