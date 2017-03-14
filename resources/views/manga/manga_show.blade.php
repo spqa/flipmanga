@@ -25,16 +25,19 @@
                     <img class="materialboxed responsive-img" src="{{$manga->poster}}">
                 </div>
                 <div class="col s7 m9 l0">
-                    <h1 class="inline title-h1-manga">{{$manga->name}} <small>Read free manga online</small></h1>
+                    <h1 class="inline title-h1-manga">{{$manga->name}}
+                        <small>Đọc truyện tranh online miễn phí</small>
+                    </h1>
                     @if(!empty($manga->alias))
                         <h2 class="grey-text inline">({{$manga->alias}})</h2>
                         @endif
-                    <p class="">Author: <a href="#" rel="author">{{$manga->author}}</a></p>
-                    <p class="">Translator: <a href="#" rel="author">{{$manga->translator}}</a></p>
-                    <p class="">Year of Release : {{empty($manga->released_at)?'N/A':$manga->released_at->toFormattedDateString()}}</p>
+                    <p class="">Tác giả: <a href="#" rel="author">{{$manga->author}}</a></p>
+                    <p class="">Nhóm dịch: <a href="#" rel="author">{{$manga->translator}}</a></p>
+                    <p class="">Năm
+                        : {{empty($manga->released_at)?'N/A':$manga->released_at->toFormattedDateString()}}</p>
                     <p class=""> Status : {{$manga->status}}</p>
-                    <p class=""> View : {{$manga->view}}</p>
-                    <p class=""> <i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
+                    <p class=""> Lượt xem : {{$manga->view}}</p>
+                    <p class=""><i class="material-icons red-text">Yêu thích</i> : {{$manga->getFavorite()}}</p>
 
                     <div class="manga-show-button hide-on-small-only">
                         <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
@@ -72,7 +75,7 @@
                     <a class="waves-effect waves-light btn">Continue Read</a>
                   </div> -->
                     <div class="manga-show-genre">
-                        <a class="chip black-text grey lighten-3" href="/genre">Genres</a>
+                        <a class="chip black-text grey lighten-3" href="/genre">Thể loại</a>
                         @foreach($manga->getCachedGenres() as $genre)
                             <a href="{{route('genre',['genre'=>$genre->slug])}}" class="chip white-text orange darken-4">{{$genre->name}}</a>
                         @endforeach
@@ -95,7 +98,7 @@
                 <div class="col s12">
                     <ul class="collapsible" data-collapsible="accordion">
                         <li>
-                            <div class="collapsible-header active">Latest Update Chapters <i
+                            <div class="collapsible-header active">Chapters mới nhất <i
                                         class="material-icons">send</i></div>
                             <div class="collapsible-body">
                                 <div class="collection">
@@ -109,7 +112,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header">Chapter List <i class="material-icons">send</i></div>
+                            <div class="collapsible-header">Danh sách chap <i class="material-icons">send</i></div>
                             <div class="collapsible-body">
                                 <div class="collection">
                                     {{--<div class="collection-item">--}}
@@ -153,7 +156,7 @@
             </div>
             <div class="row you-may-also-like">
                 <div class="col s12">
-                    <h4 class="grey-text">Mangas you may also like</h4>
+                    <h4 class="grey-text">Manga cùng thể loại</h4>
                 </div>
                 @foreach($suggestion as $item)
                     @include('manga.partial._manga_suggestion')
@@ -175,8 +178,9 @@
             @if($genre->name=='Adult')
         <div id="adult-modal" class="modal">
             <div class="modal-content">
-                <h4><i class="material-icons red-text medium">warning</i>Caution to under-aged viewers</h4>
-                <p>The series {{$manga->name}} contain themes or scenes that may not be suitable for very young readers thus is blocked for their protection.</p>
+                <h4><i class="material-icons red-text medium">warning</i>Cảnh báo độ tuổi</h4>
+                <p>Bộ truyện {{$manga->name}} có nội dung không phù hợp với người dưới 18 tuổi , bạn có chắc muốn tiếp
+                    tục</p>
             </div>
             <div class="modal-footer">
                 <a href="#!" id="adult-continue" class=" modal-action modal-close waves-effect waves-green btn-flat">i am above 18, continue</a>
