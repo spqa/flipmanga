@@ -113,7 +113,7 @@ class UpdateOldMangareader extends Command
                             'translator' => '',
                             'alias' => $tmpManga['alias'],
                             'view' => 1,
-                            'released_at' => $date
+                            'released_at' => null
                         ]);
                         foreach ($info->find('td')[15]->find('span') as $item) {
                             $genre = $item->innertext();
