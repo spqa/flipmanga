@@ -175,7 +175,7 @@ class UpdateComicVN extends Command
             try {
                 Image::make($tmpManga['poster'])->save(storage_path('app/public/images/poster/' . $imageName));
             } catch (\Exception $exception) {
-                $imageName = url('placeholder.png');
+                $imageName = 'placeholder.png';
             }
             $insertManga = Manga::create([
                 'name' => $tmpManga['oriTitle'],
