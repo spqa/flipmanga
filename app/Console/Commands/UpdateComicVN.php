@@ -45,7 +45,8 @@ class UpdateComicVN extends Command
     public function handle()
     {
         try {
-            $this->getComicVN();
+            return;
+//            $this->getComicVN();
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
             Log::error($exception->getTraceAsString());

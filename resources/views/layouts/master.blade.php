@@ -45,6 +45,7 @@
     <meta name="Charset" content="UTF-8"/>
     <meta name="Distribution" content="Global"/>
     <meta name="Rating" content="General"/>
+    <meta name="google-site-verification" content="apRpDG4wC-Ah-Yl93_u_QnwRXoCI5MXdw6cUFZaR_CY"/>
 
     <meta name="Revisit-after" content="1 Days"/>
     <meta content="1800" http-equiv="REFRESH"/>
