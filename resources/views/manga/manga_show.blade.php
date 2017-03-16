@@ -42,7 +42,7 @@
                     <div class="manga-show-button hide-on-small-only">
                         <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
                            class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
-                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
                            class="waves-effect waves-light btn  pink darken-3">Last Chapter</a>
                         {{--<a class="waves-effect waves-light btn green darken-3">Continue Read</a>--}}
                         @if(isset($is_fav) && $is_fav==true)
@@ -56,7 +56,7 @@
                     <div class="manga-show-button-mobile hide-on-med-and-up">
                         <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
                            class="waves-effect waves-light btn   pink darken-3">Chapter 1</a>
-                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
                            class="waves-effect waves-light btn   pink darken-3">Last Chapter</a>
                         {{--<a class="waves-effect waves-light btn">Continue Read</a>--}}
                         @if(isset($is_fav))
