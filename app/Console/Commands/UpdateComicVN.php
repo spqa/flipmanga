@@ -44,7 +44,8 @@ class UpdateComicVN extends Command
      */
     public function handle()
     {
-        $this->getComicVN();
+        return;
+//        $this->getComicVN();
 //        try {
 //            return;
 ////
