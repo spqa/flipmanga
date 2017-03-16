@@ -61,7 +61,7 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.1')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.2')}}">
 </head>
 
 <body>
@@ -115,7 +115,7 @@
                 <form action="/tim-kiem">
                     <div class="input-field">
                             <input name="query" id="search" type="search" required>
-                            <label for="search"><i class="material-icons">search</i></label>
+                        <label for="search"><i class="icon-search material-icons">search</i></label>
                             <i class="material-icons">close</i>
                     </div>
                 </form>
@@ -223,11 +223,10 @@
                 </ul>
             </div>
             <div class="col s12 center">
-                <a class="chip indigo white-text" href="/manga/sweet-guy"><h5 class="title-h5">Sweet Guy manhwa</h5></a>
-                <a class="chip indigo white-text" href="/manga/tales-of-demons-and-gods"><h5 class="title-h5">Tales of
-                        Demons and Gods manhua</h5></a>
-                <a class="chip indigo white-text" href="/manga/relife"><h5 class="title-h5">ReLIFE (Re LIFE) manga</h5>
-                </a>
+                <p class="grey-text">Mọi thông tin và hình ảnh trên website điều được thành viên sưu tầm trên internet.
+                    Toàn bộ nội dung trên web do thành viên đăng tải và chia sẻ. Chúng tôi không sở hữu hay chịu trách
+                    nhiệm bất kỳ thông tin nào trên web này. Nếu làm ảnh hưởng đến cá nhân hay tổ chức nào, khi được yêu
+                    cầu qua email, chúng tôi sẽ xem xét và gỡ bỏ ngay lập tức.</p>
             </div>
         </div>
     </div>

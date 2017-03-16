@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Redis;
 
 class MangaController extends Controller
 {
-    public function show($manga, $chapter = null)
+    public function show($manga, $chapter_number = null, $chapter = null)
     {
 
         if ($manga == null) {

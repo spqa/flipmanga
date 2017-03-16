@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title',$manga->name.'('.$manga->alias.')'.' - Read '.$manga->name.' online for free')
+@section('title',$manga->name.'('.$manga->alias.')'.' - Đọc truyện tranh '.$manga->name.' online miễn phí')
 @section('meta_des',e($manga->description))
 @section('og_url',url()->current())
 @section('image',$manga->poster)
@@ -25,7 +25,7 @@
                     <img class="materialboxed responsive-img" src="{{$manga->poster}}">
                 </div>
                 <div class="col s7 m9 l0">
-                    <h1 class="inline title-h1-manga">{{$manga->name}}
+                    <h1 class="inline title-h1-manga">Đọc truyện {{$manga->name}}
                         <small>Đọc truyện tranh online miễn phí</small>
                     </h1>
                     @if(!empty($manga->alias))
@@ -40,8 +40,10 @@
                     <p class=""><i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
 
                     <div class="manga-show-button hide-on-small-only">
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first()->id])}}" class="waves-effect waves-light btn  pink darken-3">Last Chapter</a>
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                           class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                           class="waves-effect waves-light btn  pink darken-3">Last Chapter</a>
                         {{--<a class="waves-effect waves-light btn green darken-3">Continue Read</a>--}}
                         @if(isset($is_fav) && $is_fav==true)
                             <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite</i>Added to Favorites</button>
@@ -52,8 +54,10 @@
                 </div>
                 <div class="col s12">
                     <div class="manga-show-button-mobile hide-on-med-and-up">
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->first()->id])}}" class="waves-effect waves-light btn   pink darken-3">Chapter 1</a>
-                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$manga->chapters->last()->id])}}" class="waves-effect waves-light btn   pink darken-3">Last Chapter</a>
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                           class="waves-effect waves-light btn   pink darken-3">Chapter 1</a>
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                           class="waves-effect waves-light btn   pink darken-3">Last Chapter</a>
                         {{--<a class="waves-effect waves-light btn">Continue Read</a>--}}
                         @if(isset($is_fav))
                             <button class="waves-effect waves-light btn white black-text btn-favorite" data-id="{{$manga->id}}" ><i class="material-icons  red-text text-accent-4 left">favorite</i>Added to Favorites</button>
@@ -103,7 +107,7 @@
                             <div class="collapsible-body">
                                 <div class="collection">
                                     @foreach($manga->chapters->sortByDesc('chapter_number')->take(5) as $chapter)
-                                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$chapter->id])}}"
+                                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$chapter->chapter_number,'chapter'=>$chapter->id])}}"
                                            class="collection-item">{{$chapter->name}}
                                             {{--<span class="new badge red "></span>--}}
                                             <span class="secondary-content">{{$chapter->updated_at->diffForHumans()}}</span></a>
@@ -129,7 +133,7 @@
                                         {{--</ul>--}}
                                     {{--</div>--}}
                                     @foreach($manga->chapters->sortBy('chapter_number') as $chapter)
-                                        <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$chapter->id])}}"
+                                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$chapter->chapter_number,'chapter'=>$chapter->id])}}"
                                            class="collection-item">{{$chapter->name}}<span
                                                     class="secondary-content">{{$chapter->created_at->toFormattedDateString()}}</span></a>
                                     @endforeach
