@@ -1,20 +1,4 @@
 $(document).ready(function () {
-    // var lastScrollTop = 0;
-    // $(window).scroll(function(event){
-    //     var st = $(this).scrollTop();
-    //     if (st > lastScrollTop){
-    //         // console.log('up');
-    //         $(".fixed-action-btn").hide();
-    //         $('#navbar-wrapper').removeClass('navbar-fixed').fadeOut();
-    //
-    //     } else {
-    //         $(".fixed-action-btn").show();
-    //         $('#navbar-wrapper').addClass('navbar-fixed').fadeIn();
-    //
-    //     }
-    //     lastScrollTop = st;
-    // });
-
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
