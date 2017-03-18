@@ -44,8 +44,8 @@ class UpdateComicVN extends Command
      */
     public function handle()
     {
-        return;
-//        $this->getComicVN();
+//        return;
+        $this->getComicVN();
 //        try {
 //            return;
 ////
@@ -59,7 +59,7 @@ class UpdateComicVN extends Command
 
     public function getComicVN()
     {
-        $comicId = 1;
+        $comicId = 67;
         while ($comicId < 14000) {
             $mangaPage = null;
             try {
@@ -139,14 +139,20 @@ class UpdateComicVN extends Command
             for ($i = sizeof($listChap) - 1; $i >= 0; $i--) {
                 $nameChap = '';
                 $numOfChap = '';
-                if (strrpos($listChap[$i]->innertext(), ':') !== false) {
-                    $nameChap = trim(explode(':', $listChap[$i]->innertext())[1]);
-                    $numOfChap = trim(explode(' ', explode(':', $listChap[$i]->innertext())[0])[1]);
-                } else {
-                    $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
-                }
-                for ($char = 'A'; $char <= 'Z'; $char++) {
-                    $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
+                try {
+                    if (strrpos($listChap[$i]->innertext(), ':') !== false) {
+                        $nameChap = trim(explode(':', $listChap[$i]->innertext())[1]);
+                        $numOfChap = trim(explode(' ', explode(':', $listChap[$i]->innertext())[0])[1]);
+                    } else {
+                        $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
+                    }
+                    for ($char = 'A'; $char <= 'Z'; $char++) {
+                        $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
+                    }
+                } catch (\Exception $exception) {
+                    Log::error($exception->getMessage());
+                    Log::error($exception->getTraceAsString());
+                    continue;
                 }
                 $numOfChap = str_replace(',', '.', $numOfChap);
                 $existChap = $manga->chapters()->where('chapter_number', $numOfChap)->first();
@@ -162,6 +168,8 @@ class UpdateComicVN extends Command
                     $insertChap->save();
                     $this->comment('chapter: ' . $insertChap->chapter_number);
                 } catch (\Exception $exception) {
+                    Log::error($exception->getMessage());
+                    Log::error($exception->getTraceAsString());
                     continue;
                 }
             }
@@ -203,14 +211,20 @@ class UpdateComicVN extends Command
             for ($i = sizeof($listChap) - 1; $i >= 0; $i--) {
                 $nameChap = '';
                 $numOfChap = '';
-                if (strrpos($listChap[$i]->innertext(), ':') !== false) {
-                    $nameChap = trim(explode(':', $listChap[$i]->innertext())[1]);
-                    $numOfChap = trim(explode(' ', explode(':', $listChap[$i]->innertext())[0])[1]);
-                } else {
-                    $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
-                }
-                for ($char = 'A'; $char <= 'Z'; $char++) {
-                    $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
+                try {
+                    if (strrpos($listChap[$i]->innertext(), ':') !== false) {
+                        $nameChap = trim(explode(':', $listChap[$i]->innertext())[1]);
+                        $numOfChap = trim(explode(' ', explode(':', $listChap[$i]->innertext())[0])[1]);
+                    } else {
+                        $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
+                    }
+                    for ($char = 'A'; $char <= 'Z'; $char++) {
+                        $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
+                    }
+                } catch (\Exception $exception) {
+                    Log::error($exception->getMessage());
+                    Log::error($exception->getTraceAsString());
+                    continue;
                 }
                 $numOfChap = str_replace(',', '.', $numOfChap);
                 $textImg = $this->getImageComic($listChap[$i]->href);
@@ -224,6 +238,8 @@ class UpdateComicVN extends Command
                     $insertChap->save();
                     $this->comment('chapter: ' . $insertChap->chapter_number);
                 } catch (\Exception $exception) {
+                    Log::error($exception->getMessage());
+                    Log::error($exception->getTraceAsString());
                     continue;
                 }
             }
