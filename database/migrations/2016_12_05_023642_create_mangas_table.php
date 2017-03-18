@@ -16,12 +16,12 @@ class CreateMangasTable extends Migration
         Schema::create('mangas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('alias');
+            $table->string('alias')->nullable();
             $table->string('slug');
             $table->string('poster');
-            $table->string('translator');
-            $table->text('description');
-            $table->string('status');
+            $table->string('translator')->nullable();
+            $table->text('description')->nullable();
+            $table->string('status')->nullable();
             $table->integer('view');
             $table->softDeletes();
             $table->timestamps();

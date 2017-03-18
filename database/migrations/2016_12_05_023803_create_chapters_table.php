@@ -18,6 +18,7 @@ class CreateChaptersTable extends Migration
             $table->text('img');
             $table->integer('manga_id');
             $table->string('name');
+            $table->double('chapter_number');
             $table->timestamps();
         });
     }
