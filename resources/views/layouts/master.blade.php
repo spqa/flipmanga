@@ -189,7 +189,11 @@
         </ul>
     </div>
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="{{route('favorite')}}" class="white-text red">Yêu thích<i class="material-icons right">favorite</i></a>
+        <li>
+            <a href="{{route('favorite')}}" class="white-text red">Yêu thích</a>
+        </li>
+        <li>
+            <a href="{{route('manga.create')}}">Đăng truyện</a>
         </li>
         {{--<li class="divider"></li>--}}
         <li><a class="btn-logout">Đăng xuất</a></li>
@@ -270,5 +274,55 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="{{asset('js/script.js?v=0.2')}}"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
+<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
+        style="width: 200px;height: 300px;">{
+        "handle"
+    :
+        "truyentranh18vn", "arch"
+    :
+        "js", "styles"
+    :
+        {
+            "a"
+        :
+            "336666", "b"
+        :
+            100, "c"
+        :
+            "FFFFFF", "d"
+        :
+            "FFFFFF", "k"
+        :
+            "336666", "l"
+        :
+            "336666", "m"
+        :
+            "336666", "n"
+        :
+            "FFFFFF", "p"
+        :
+            "10", "q"
+        :
+            "336666", "r"
+        :
+            100, "pos"
+        :
+            "br", "cv"
+        :
+            1, "cvfnt"
+        :
+            "monospace, sans-serif", "cvbg"
+        :
+            "336666", "cvw"
+        :
+            200, "cvh"
+        :
+            30, "ticker"
+        :
+            1, "fwtickm"
+        :
+            1
+        };;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    };;;;;;;;;;;;;;;;;;;;;</script>
 </body>
 </html>

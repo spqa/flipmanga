@@ -54,4 +54,7 @@ Route::get('sitemap','SitemapController@sitemap');
 Route::get('lien-he', 'IndexController@contact')->name('contact');
 Route::get('test','TestController@index');
 
+//up truyen
 
+Route::get('up-truyen', 'MangaController@create')->name('manga.create');
+Route::post('up-truyen', 'MangaController@store')->name('manga.store');

@@ -71,7 +71,7 @@
                                     <input id="password-confirm" type="password" class="form-control"
                                            name="password_confirmation" required>
                                 </div>
-                                <div class="g-recaptcha" data-sitekey="6Le5tA4UAAAAAOeZNbTZQzmrKBZDrF2JunX9p3Bl"></div>
+                                <div class="g-recaptcha" data-sitekey="6Le0cRkUAAAAALnUkAxPErs6vEkH69v7Es5P_1dN"></div>
                                 @if ($errors->has('capcha') || $errors->has('g-recaptcha-response'))
                                     <span class="help-block">
                                         <strong class="red-text">{{ $errors->first('capcha').$errors->first('g-recaptcha-response') }}</strong>
