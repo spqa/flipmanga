@@ -230,7 +230,7 @@ class UpdateComicVN extends Command
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
                 try {
-                    $insertChap->name = empty($nameChap) ? $manga->name . ' ' . $numOfChap : $nameChap;
+                    $insertChap->name = empty($nameChap) ? $insertManga->name . ' ' . $numOfChap : $nameChap;
                     $insertChap->img = $textImg;
                     $insertChap->chapter_number = $numOfChap;
                     $insertManga->chapters()->save($insertChap);
