@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Chapter;
 use App\Genre;
 use App\Manga;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -18,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        Carbon::setLocale('vi');
         Genre::saved(function($genres){
             Cache::forget('allGenres');
         });
