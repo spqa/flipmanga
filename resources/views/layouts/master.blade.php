@@ -276,50 +276,50 @@
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
 <script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
         style="width: 200px;height: 300px;">{
-        "handle";
+        "handle"
     :
-        "truyentranh18vn", "arch";
+        "truyentranh18vn", "arch"
     :
-        "js", "styles";
+        "js", "styles"
     :
         {
-            "a";
+            "a"
         :
-            "336666", "b";
+            "336666", "b"
         :
-            100, "c";
+            100, "c"
         :
-            "FFFFFF", "d";
+            "FFFFFF", "d"
         :
-            "FFFFFF", "k";
+            "FFFFFF", "k"
         :
-            "336666", "l";
+            "336666", "l"
         :
-            "336666", "m";
+            "336666", "m"
         :
-            "336666", "n";
+            "336666", "n"
         :
-            "FFFFFF", "p";
+            "FFFFFF", "p"
         :
-            "10", "q";
+            "10", "q"
         :
-            "336666", "r";
+            "336666", "r"
         :
-            100, "pos";
+            100, "pos"
         :
-            "br", "cv";
+            "br", "cv"
         :
-            1, "cvfnt";
+            1, "cvfnt"
         :
-            "monospace, sans-serif", "cvbg";
+            "monospace, sans-serif", "cvbg"
         :
-            "336666", "cvw";
+            "336666", "cvw"
         :
-            200, "cvh";
+            200, "cvh"
         :
-            30, "ticker";
+            30, "ticker"
         :
-            1, "fwtickm";
+            1, "fwtickm"
         :
             1
         }
