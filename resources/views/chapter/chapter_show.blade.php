@@ -59,12 +59,14 @@
     </div>
     <div class="fixed-action-btn btn-forward">
 {{--        {!! dd($next_link) !!}--}}
-        <a  href="{{isset($next_link)?route('manga',['manga'=>$manga->slug,'chapter'=>$next_link]):'#'}}" class="btn-floating btn-large red">
+        <a href="{{isset($next_link)?route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$next_link->chapter_number,'chapter'=>$next_link->id]):'#!'}}"
+           class="btn-floating btn-large {{isset($next_link)?'red':'grey'}}">
             <i class="material-icons">keyboard_arrow_right</i>
         </a>
     </div>
     <div class="fixed-action-btn btn-rewind">
-        <a href="{{isset($prev_link)?route('manga',['manga'=>$manga->slug,'chapter'=>$prev_link]):'#'}}" class="btn-floating btn-large red">
+        <a href="{{isset($prev_link)?route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$prev_link->chapter_number,'chapter'=>$prev_link->id]):'#!'}}"
+           class="btn-floating btn-large {{isset($prev_link)?'red':'grey'}}">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
     </div>
@@ -83,10 +85,11 @@
     <!-- model chapter -->
     <div id="modal3" class="modal bottom-sheet" >
         <div class="modal-content">
-            <h4>Chapter List</h4>
+            <h4>Danh sách chap</h4>
             <ul class="collection">
                 @foreach($manga->chapters as $chapter)
-                <a href="{{route('manga',['manga'=>$manga->slug,'chapter'=>$chapter->id])}}" class="collection-item">{{$chapter->name}}</a>
+                    <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$chapter->chapter_number,'chapter'=>$chapter->id])}}"
+                       class="collection-item">{{$chapter->name}}</a>
                     @endforeach
             </ul>
         </div>
@@ -95,28 +98,51 @@
     <div id="end-of-page"></div>
     <div id="disqus_thread"></div>
     <script src="{{asset('js/chapter.js?v=0.1')}}"></script>
-    <script>
 
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-         var disqus_config = function () {
-         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-         };
-         */
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'http://kmanga-me.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<footer>
-@include('dmca')
-</footer>
 </div>
+<footer class="page-footer grey darken-4">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h4 class="white-text title-h2">Truyentranh18.net</h4>
+                <p class="grey-text text-lighten-4">Đọc truyện manga, manhwa, manhua, comic,... với chap mới nhất miễn
+                    phí</p>
+                <h4 class="white-text title-h2">Truyện Nhật Bản mới nhất</h4>
+                <a href="{{route('manga.latest')}}" class="grey-text text-lighten-4">Đọc manga, Truyện Nhật Bản online
+                    mới nhất</a>
+                <h4 class="white-text title-h2">Truyện Trung Quốc mới nhất</h4>
+                <a href="{{route('manhua.latest')}}" class="grey-text text-lighten-4">Đọc manhua, truyện Trung Quốc
+                    online mới nhất</a>
+                <h4 class="white-text title-h2">Truyện Hàn Quốc mới nhất</h4>
+                <a href="{{route('manhwa.latest')}}" class="grey-text text-lighten-4">Đọc manhwa, truyện Hàn Quốc online
+                    mới nhất</a>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Trang chủ</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{route('manga.tos')}}">Term of service</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{route('manga.priv')}}">Privacy Policy</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Yêu cầu nhờ vả Manga ,Manhua, Manhwa</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{route('contact')}}">Liên hệ !</a></li>
+                    <li>@include('dmca')</li>
+                </ul>
+            </div>
+            <div class="col s12 center">
+                <p class="grey-text">Mọi thông tin và hình ảnh trên website điều được thành viên sưu tầm trên internet.
+                    Toàn bộ nội dung trên web do thành viên đăng tải và chia sẻ. Chúng tôi không sở hữu hay chịu trách
+                    nhiệm bất kỳ thông tin nào trên web này. Nếu làm ảnh hưởng đến cá nhân hay tổ chức nào, khi được yêu
+                    cầu qua email, chúng tôi sẽ xem xét và gỡ bỏ ngay lập tức.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 All Rights Reserved - truyentranh18.net
+            <a class="grey-text text-lighten-4 right" href="/">truyentranh18.net</a>
+        </div>
+    </div>
+
+</footer>
 </body>
 </html>

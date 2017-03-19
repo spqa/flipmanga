@@ -121,7 +121,7 @@ $(document).ready(function () {
         }
     });
     $(".dropdown-button").dropdown();
-
+    $('.parallax').parallax();
     if(getCookie("adult-check")!=1){
         $('#adult-modal').modal('open');
     }

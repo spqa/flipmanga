@@ -8,8 +8,8 @@
           content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,truyentranh18')">
     <meta name="keywords"
           content="truyện tranh, truyentranh 18+, truyen tranh 18+, manga, đọc truyện tranh online, cổng truyện dịch, truyện tranh online, manga online, xem truyện, xem truyện tranh online, xem truyện online, vechai, manga24h, blogtruyen, truyện tranh 18, manhua, manhwa">
-    <link rel="canonical" href="@yield('canonical','http://flipmanga.com/')"/>
-    <meta itemprop="name" content="Flipmanga"/>
+    <link rel="canonical" href="@yield('canonical',secure_url('/'))"/>
+    <meta itemprop="name" content="Truyentranh18"/>
     <meta itemprop="description"
           content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,truyentranh18')"/>
     <link hreflang="vi" href="{{secure_url('/')}}">
@@ -69,8 +69,8 @@
         {
           "@context" : "https://schema.org",
           "@type" : "Organization",
-          "name" : "flipmanga",
-          "url" : "http://flipmanga.com",
+          "name" : "Truyentranh18",
+          "url" : "{{secure_url('/')}}",
           "sameAs" : [
           "https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
           ]
@@ -276,50 +276,50 @@
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
 <script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
         style="width: 200px;height: 300px;">{
-        "handle"
+        "handle";
     :
-        "truyentranh18vn", "arch"
+        "truyentranh18vn", "arch";
     :
-        "js", "styles"
+        "js", "styles";
     :
         {
-            "a"
+            "a";
         :
-            "336666", "b"
+            "336666", "b";
         :
-            100, "c"
+            100, "c";
         :
-            "FFFFFF", "d"
+            "FFFFFF", "d";
         :
-            "FFFFFF", "k"
+            "FFFFFF", "k";
         :
-            "336666", "l"
+            "336666", "l";
         :
-            "336666", "m"
+            "336666", "m";
         :
-            "336666", "n"
+            "336666", "n";
         :
-            "FFFFFF", "p"
+            "FFFFFF", "p";
         :
-            "10", "q"
+            "10", "q";
         :
-            "336666", "r"
+            "336666", "r";
         :
-            100, "pos"
+            100, "pos";
         :
-            "br", "cv"
+            "br", "cv";
         :
-            1, "cvfnt"
+            1, "cvfnt";
         :
-            "monospace, sans-serif", "cvbg"
+            "monospace, sans-serif", "cvbg";
         :
-            "336666", "cvw"
+            "336666", "cvw";
         :
-            200, "cvh"
+            200, "cvh";
         :
-            30, "ticker"
+            30, "ticker";
         :
-            1, "fwtickm"
+            1, "fwtickm";
         :
             1
         }

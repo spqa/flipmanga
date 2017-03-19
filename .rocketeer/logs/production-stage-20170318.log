@@ -1,0 +1,8 @@
+$ mkdir -p /home/www/truyentranh18/stage/releases
+mkdir -p /home/www/truyentranh18/stage/releases
+
+$ mkdir -p /home/www/truyentranh18/stage/current
+mkdir -p /home/www/truyentranh18/stage/current
+
+$ mkdir -p /home/www/truyentranh18/stage/shared
+mkdir -p /home/www/truyentranh18/stage/shared

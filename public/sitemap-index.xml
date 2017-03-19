@@ -1,256 +1,300 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="http://flipmanga.dev/vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://flipmanga.dev</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/free-full-mangas-online</loc>
+      <loc>http://flipmanga.dev/doc-truyen-manga-mien-phi</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/read-free-latest-mangas-online</loc>
+      <loc>http://flipmanga.dev/doc-truyen-mien-phi-moi-nhat</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre</loc>
+      <loc>http://flipmanga.dev/the-loai</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/action</loc>
+      <loc>http://flipmanga.dev/the-loai/action</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/mystery</loc>
+      <loc>http://flipmanga.dev/the-loai/mystery</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/adult</loc>
+      <loc>http://flipmanga.dev/the-loai/adult</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/psychological</loc>
+      <loc>http://flipmanga.dev/the-loai/psychological</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/adventure</loc>
+      <loc>http://flipmanga.dev/the-loai/adventure</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/romance</loc>
+      <loc>http://flipmanga.dev/the-loai/romance</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/comedy</loc>
+      <loc>http://flipmanga.dev/the-loai/comedy</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/school-life</loc>
+      <loc>http://flipmanga.dev/the-loai/school-life</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/doujinshi</loc>
+      <loc>http://flipmanga.dev/the-loai/doujinshi</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/sci-fi</loc>
+      <loc>http://flipmanga.dev/the-loai/sci-fi</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/seinen</loc>
+      <loc>http://flipmanga.dev/the-loai/seinen</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/drama</loc>
+      <loc>http://flipmanga.dev/the-loai/drama</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/ecchi</loc>
+      <loc>http://flipmanga.dev/the-loai/ecchi</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/shotacon</loc>
+      <loc>http://flipmanga.dev/the-loai/shotacon</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/fantasy</loc>
+      <loc>http://flipmanga.dev/the-loai/fantasy</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/shoujo</loc>
+      <loc>http://flipmanga.dev/the-loai/shoujo</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/gender-bender</loc>
+      <loc>http://flipmanga.dev/the-loai/gender-bender</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/harem</loc>
+      <loc>http://flipmanga.dev/the-loai/harem</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/historical</loc>
+      <loc>http://flipmanga.dev/the-loai/historical</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/shounen-ai</loc>
+      <loc>http://flipmanga.dev/the-loai/shounen-ai</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/slice-of-life</loc>
+      <loc>http://flipmanga.dev/the-loai/slice-of-life</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/smut</loc>
+      <loc>http://flipmanga.dev/the-loai/smut</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/horror</loc>
+      <loc>http://flipmanga.dev/the-loai/horror</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/josei</loc>
+      <loc>http://flipmanga.dev/the-loai/josei</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/sports</loc>
+      <loc>http://flipmanga.dev/the-loai/sports</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/lolicon</loc>
+      <loc>http://flipmanga.dev/the-loai/lolicon</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/supernatural</loc>
+      <loc>http://flipmanga.dev/the-loai/supernatural</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/martial-arts</loc>
+      <loc>http://flipmanga.dev/the-loai/martial-arts</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/tragedy</loc>
+      <loc>http://flipmanga.dev/the-loai/tragedy</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/mature</loc>
+      <loc>http://flipmanga.dev/the-loai/mature</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/action</loc>
+      <loc>http://flipmanga.dev/the-loai/action</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/yaoi</loc>
+      <loc>http://flipmanga.dev/the-loai/yaoi</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/mecha</loc>
+      <loc>http://flipmanga.dev/the-loai/mecha</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/yuri</loc>
+      <loc>http://flipmanga.dev/the-loai/yuri</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/shounen</loc>
+      <loc>http://flipmanga.dev/the-loai/shounen</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/webtoons</loc>
+      <loc>http://flipmanga.dev/the-loai/webtoons</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/shoujo-ai</loc>
+      <loc>http://flipmanga.dev/the-loai/shoujo-ai</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
   <url>
-    <loc>http://flipmanga.dev/genre/one-shot</loc>
+      <loc>http://flipmanga.dev/the-loai/one-shot</loc>
 		<priority>1</priority>
-		<lastmod>2016-12-15T04:43:23+00:00</lastmod>
+      <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+      <changefreq>always</changefreq>
+  </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/hanh-dong-action</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+        <changefreq>always</changefreq>
+    </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/phieu-luu-adventure</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+        <changefreq>always</changefreq>
+    </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/hai-huoc-comedy</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+        <changefreq>always</changefreq>
+    </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/vo-thuat-martial-arts</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+        <changefreq>always</changefreq>
+    </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/vien-tuong-fantasy</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+        <changefreq>always</changefreq>
+    </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/manga</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
+        <changefreq>always</changefreq>
+    </url>
+    <url>
+        <loc>http://flipmanga.dev/the-loai/hoc-duong-school-life</loc>
+        <priority>1</priority>
+        <lastmod>2017-03-16T03:23:46+00:00</lastmod>
 		<changefreq>always</changefreq>
   </url>
 </urlset>
