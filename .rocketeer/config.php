@@ -38,9 +38,9 @@ return [
     // and store them locally
     'connections' => [
         'production' => [
-            'host' => '108.61.199.167',
+            'host' => '45.76.190.215',
             'username' => 'root',
-            'password' => '952388lpo!@#',
+            'password' => 'gV-5VEth=w][RWR)',
             'key' => '',
             'keyphrase' => '',
             'agent' => '',

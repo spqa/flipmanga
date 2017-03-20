@@ -7,6 +7,7 @@ use App\UserUpload;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 
 class MangaController extends Controller
 {
@@ -61,13 +62,17 @@ class MangaController extends Controller
 
     public function create()
     {
-
         return view('manga.manga_create');
     }
 
     public function store(\Illuminate\Http\Request $request)
     {
+
 //        dd($request->all());
+        $this->validate($request,[
+            'manga_name'=>'required',
+            'chap_name'=>'required',
+        ]);
         $image = '';
         foreach ($request->image as $item) {
             $image .= $item . ',';
@@ -78,7 +83,7 @@ class MangaController extends Controller
             'user_id' => auth()->user()->id,
             'image' => $image
         ]);
-        return back();
+        return back()->with('success',1);
     }
 
 }

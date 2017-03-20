@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title','Truyện tranh 18+,đọc truyện tranh online miễn phí,truyện manga,manhwa,manhua')</title>
+    <title>@yield('title','Truyentranh18 - Website đọc truyện tranh online miễn phí, đọc truyện tranh tổng hợp nhiều truyện nhất
+Việt Nam, manga, manhua, manhwa')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="language" content="en">
     <meta name="description"
-          content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,truyentranh18')">
+          content="@yield('meta_des','Website truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga, manhua, manhwa, truyentranh18, cộng đồng truyện dịch Việt Nam')">
     <meta name="keywords"
           content="truyện tranh, truyentranh 18+, truyen tranh 18+, manga, đọc truyện tranh online, cổng truyện dịch, truyện tranh online, manga online, xem truyện, xem truyện tranh online, xem truyện online, vechai, manga24h, blogtruyen, truyện tranh 18, manhua, manhwa">
     <link rel="canonical" href="@yield('canonical',secure_url('/'))"/>
@@ -48,6 +49,7 @@
     <meta name="google-site-verification" content="apRpDG4wC-Ah-Yl93_u_QnwRXoCI5MXdw6cUFZaR_CY"/>
 
     <meta name="Revisit-after" content="1 Days"/>
+
     <meta content="1800" http-equiv="REFRESH"/>
 
     <!--Let browser know website is optimized for mobile-->
@@ -195,6 +197,9 @@
         <li>
             <a href="{{route('manga.create')}}">Đăng truyện</a>
         </li>
+        <li>
+            <a href="{{route('request.show')}}">Yêu cầu truyện</a>
+        </li>
         {{--<li class="divider"></li>--}}
         <li><a class="btn-logout">Đăng xuất</a></li>
     </ul>
@@ -220,10 +225,11 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Trang chủ</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/">Trang chủ</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.tos')}}">Term of service</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.priv')}}">Privacy Policy</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Yêu cầu nhờ vả Manga ,Manhua, Manhwa</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{route('request.show')}}">Yêu cầu nhờ vả Manga ,Manhua, Manhwa</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{route('manga.create')}}">Tự up truyện</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('contact')}}">Liên hệ !</a></li>
                     <li>@include('dmca')</li>
                 </ul>

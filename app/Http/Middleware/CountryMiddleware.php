@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Request;
 
 class CountryMiddleware
 {
@@ -15,6 +16,10 @@ class CountryMiddleware
      */
     public function handle($request, Closure $next)
     {
+        $country_code=['CN','JP','KR'];
+        if (in_array(Request::server('HTTP_CF_IPCOUNTRY'),$country_code)){
+            abort('522');
+        }
 //        if (strcmp(config('app.env'), 'production') == 0) {
 //            if (isset($_SERVER["HTTP_CF_IPCOUNTRY"])) {
 //                if (strcmp($_SERVER["HTTP_CF_IPCOUNTRY"], 'VN') == 0) {

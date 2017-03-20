@@ -56,5 +56,7 @@ Route::get('test','TestController@index');
 
 //up truyen
 
-Route::get('up-truyen', 'MangaController@create')->name('manga.create');
-Route::post('up-truyen', 'MangaController@store')->name('manga.store');
+Route::get('up-truyen', 'MangaController@create')->name('manga.create')->middleware('auth');
+Route::post('up-truyen', 'MangaController@store')->name('manga.store')->middleware('auth');
+Route::get('yeu-cau-truyen','RequestMangaController@show')->name('request.show')->middleware('auth');
+Route::post('yeu-cau-truyen','RequestMangaController@store')->name('request.store')->middleware('auth');
