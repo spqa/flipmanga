@@ -139,55 +139,7 @@
             </li>
         </ul>
         {{--</div>--}}
-        <ul class="side-nav" id="mobile-sidebar">
-            <li class="indigo darken-4 center"><a href="/"><img height="50px" src="{{asset('img/flip.png')}}"/></a></li>
-            <li class="black-text">
-                <form action="/search">
-                    <input id="search" name="query" type="search" placeholder="Search manga" required>
-                </form>
-            </li>
-            <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
-                    @if(!auth()->check())
-                        <li><a class="orange-text" href="{{route('login')}}"><i class="material-icons">person
-                                    outline</i>Đăng nhập</a></li>
-                    @else
-                        <li>
-                            <a class="collapsible-header"><img class="user-avatar right"
-                                                               src="{{auth()->user()->avatar}}"> {{auth()->user()->name}}
-                                <i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="white-text red">Yêu thích<i
-                                                    class="material-icons">favorite</i></a></li>
-                                    <li><a href="#" class="btn-logout">Đăng xuất</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    @endif
-                    <li>
-                        <a href="#" class="collapsible-header">Thể loại<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                @foreach($allGenres as $genre)
-                                    <li><a title="{{$genre->name}}"
-                                           href="{{route('genre',['genre'=>$genre->slug])}}">{{$genre->name}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="/">Trang chủ</a></li>
-            <li><a href="{{route('manga.full')}}">Truyện Full</a></li>
-            <li><a href="{{route('manga.latest')}}">Truyện mới ra</a></li>
-            {{--<li>--}}
-            {{--<a href="#" class="left no-padding"><img src="{{asset('img/fb4848.png')}}"></a>--}}
-            {{--<a href="#" class="left no-padding"><img src="{{asset('img/ggplus4848.png')}}"></a>--}}
-            {{--<a href="#" class="left no-padding"><img src="{{asset('img/tw4848.png')}}"></a>--}}
-            {{--<a href="#"><img src="{{asset('img/pin4848.png')}}"></a>--}}
-            {{--</li>--}}
-        </ul>
+
     </div>
     <ul id="dropdown1" class="dropdown-content">
         <li>
@@ -205,6 +157,55 @@
 
 </nav>
 </div>
+<ul class="side-nav" id="mobile-sidebar">
+    <li class="indigo darken-4 center"><a class="white-text" href="/">truyentranh18</a></li>
+    <li class="black-text">
+        <form action="/tim-kiem">
+            <input id="search" name="query" type="search" placeholder="Search manga" required>
+        </form>
+    </li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            @if(!auth()->check())
+                <li><a class="orange-text" href="{{route('login')}}"><i class="material-icons">person
+                            outline</i>Đăng nhập</a></li>
+            @else
+                <li>
+                    <a class="collapsible-header"><img class="user-avatar right"
+                                                       src="{{auth()->user()->avatar}}"> {{auth()->user()->name}}
+                        <i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#" class="white-text red">Yêu thích<i
+                                            class="material-icons">favorite</i></a></li>
+                            <li><a href="#" class="btn-logout">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </li>
+            @endif
+            <li>
+                <a href="#" class="collapsible-header">Thể loại<i class="material-icons">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        @foreach($allGenres as $genre)
+                            <li><a title="{{$genre->name}}"
+                                   href="{{route('genre',['genre'=>$genre->slug])}}">{{$genre->name}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li><a href="/">Trang chủ</a></li>
+    <li><a href="{{route('manga.full')}}">Truyện Full</a></li>
+    <li><a href="{{route('manga.latest')}}">Truyện mới ra</a></li>
+    {{--<li>--}}
+    {{--<a href="#" class="left no-padding"><img src="{{asset('img/fb4848.png')}}"></a>--}}
+    {{--<a href="#" class="left no-padding"><img src="{{asset('img/ggplus4848.png')}}"></a>--}}
+    {{--<a href="#" class="left no-padding"><img src="{{asset('img/tw4848.png')}}"></a>--}}
+    {{--<a href="#"><img src="{{asset('img/pin4848.png')}}"></a>--}}
+    {{--</li>--}}
+</ul>
 <!-- end nav -->
 @yield('content')
 <!-- start footer -->
@@ -279,55 +280,55 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="{{asset('js/script.js?v=0.3')}}"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
-<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
-        style="width: 200px;height: 300px;">{
-        "handle"
-    :
-        "truyentranh18vn", "arch"
-    :
-        "js", "styles"
-    :
-        {
-            "a"
-        :
-            "336666", "b"
-        :
-            100, "c"
-        :
-            "FFFFFF", "d"
-        :
-            "FFFFFF", "k"
-        :
-            "336666", "l"
-        :
-            "336666", "m"
-        :
-            "336666", "n"
-        :
-            "FFFFFF", "p"
-        :
-            "10", "q"
-        :
-            "336666", "r"
-        :
-            100, "pos"
-        :
-            "br", "cv"
-        :
-            1, "cvfnt"
-        :
-            "monospace, sans-serif", "cvbg"
-        :
-            "336666", "cvw"
-        :
-            200, "cvh"
-        :
-            30, "ticker"
-        :
-            1, "fwtickm"
-        :
-            1
-        }
-    }</script>
+{{--<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"--}}
+        {{--style="width: 200px;height: 300px;">{--}}
+        {{--"handle"--}}
+    {{--:--}}
+        {{--"truyentranh18vn", "arch"--}}
+    {{--:--}}
+        {{--"js", "styles"--}}
+    {{--:--}}
+        {{--{--}}
+            {{--"a"--}}
+        {{--:--}}
+            {{--"336666", "b"--}}
+        {{--:--}}
+            {{--100, "c"--}}
+        {{--:--}}
+            {{--"FFFFFF", "d"--}}
+        {{--:--}}
+            {{--"FFFFFF", "k"--}}
+        {{--:--}}
+            {{--"336666", "l"--}}
+        {{--:--}}
+            {{--"336666", "m"--}}
+        {{--:--}}
+            {{--"336666", "n"--}}
+        {{--:--}}
+            {{--"FFFFFF", "p"--}}
+        {{--:--}}
+            {{--"10", "q"--}}
+        {{--:--}}
+            {{--"336666", "r"--}}
+        {{--:--}}
+            {{--100, "pos"--}}
+        {{--:--}}
+            {{--"br", "cv"--}}
+        {{--:--}}
+            {{--1, "cvfnt"--}}
+        {{--:--}}
+            {{--"monospace, sans-serif", "cvbg"--}}
+        {{--:--}}
+            {{--"336666", "cvw"--}}
+        {{--:--}}
+            {{--200, "cvh"--}}
+        {{--:--}}
+            {{--30, "ticker"--}}
+        {{--:--}}
+            {{--1, "fwtickm"--}}
+        {{--:--}}
+            {{--1--}}
+        {{--}--}}
+    {{--}</script>--}}
 </body>
 </html>

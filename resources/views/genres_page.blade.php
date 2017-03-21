@@ -34,19 +34,26 @@
 
                 <div class="col s12">
                     <div class="card-panel no-padding z-depth-0">
-                        <div class="row">
+                        <div class="row genre-results">
                             @foreach($mangas as $item)
                                 @include('manga.partial._manga_suggestion')
                                 @endforeach
                         </div>
                     </div>
                 </div>
-
+                {{--<div class="col s12 center">--}}
+                    {{--<ul class="pagination">--}}
+                        {{--<li class="waves-effect prev-page"><a href="#!"><i class="material-icons">chevron_left</i></a></li>--}}
+                        {{--<li class="active"><a href="#!">1</a></li>--}}
+                        {{--<li class="waves-effect next-page"><a href="#!"><i class="material-icons">chevron_right</i></a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
 
 @endsection
 @section('page_script')
-    <script src="{{asset('js/genres.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
+    <script src="{{asset('js/genres.js?v=0.1')}}"></script>
     @endsection
