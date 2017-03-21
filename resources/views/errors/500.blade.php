@@ -9,7 +9,7 @@
         <div class="section white">
             <div class="row container">
                 <h2 class="header">404 Error</h2>
-                <p class="grey-text tex t-darken-3 lighten-3">Bạn đã đi lạc ,trang bạn tìm kiếm không tồn tại :(</p>
+                <p class="grey-text tex t-darken-3 lighten-3">Truyện đang cập nhật, vui lòng đợi, mời bạn theo dõi truyện khác, cảm ơn :)</p>
             </div>
         </div>
 
