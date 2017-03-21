@@ -105,8 +105,7 @@
             </div>
             <div class="col hide-on-med-and-down l3 sidebar">
                 <div class="card-panel center ">
-                    <h1 class="title-h1">Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất
-                        Việt Nam, manga, manhua, manhwa</h1>
+                    <h1 class="title-h1">Truyentranh18 - Website đọc truyện tranh online miễn phí, đọc truyện tranh manga tổng hợp</h1>
                     <p>Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,
                         manhua, manhwa, truyentranh18</p>
 
