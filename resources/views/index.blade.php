@@ -104,7 +104,10 @@
                 </div>
             </div>
             <div class="col hide-on-med-and-down l3 sidebar">
-                <div class="card-panel center ">
+                <div class="card-panel center">
+                    <img class="poster-home-1" src="../../public/img/doc-truyen-tranh-online-mien-phi.jpg" alt="Website đọc truyện tranh online miễn phí tốt nhất Việt Nam" />
+                </div>
+                <div class="card-panel center hide">
                     <h1 class="title-h1">Truyentranh18 - Website đọc truyện tranh online miễn phí, đọc truyện tranh manga tổng hợp</h1>
                     <p>Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,
                         manhua, manhwa, truyentranh18</p>

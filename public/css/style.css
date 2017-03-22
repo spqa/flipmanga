@@ -294,7 +294,7 @@ li:hover .mega-menu {
     margin-bottom: 8px;
 }
 .btn-favorite i{
-font-size: 2.3rem;
+    font-size: 2.3rem;
 }
 .scroll-breadcrumb{
     position: relative;
@@ -305,6 +305,12 @@ font-size: 2.3rem;
 }
 .nav-up {
     top: -40px;
+}
+.chip {
+    cursor: pointer;
+}
+.poster-home-1 {
+    width: 100%;
 }
 @media screen and (max-width: 600px) {
     .user-avatar{
