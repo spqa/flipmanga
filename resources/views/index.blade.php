@@ -147,8 +147,8 @@
                         <ul class="tabs z-depth-1">
                             <li class="tab"><a class="active" href="#tab-container1">Truyện mới cập nhật</a></li>
                             <li class="tab"><a data-content="random" data-role="tab-genre" href="#tab-container2">Truyện ngẫu nhiên</a></li>
-                            <li class="tab"><a data-content="shoujo" data-role="tab-genre" href="#tab-container3">Con gái</a></li>
-                            <li class="tab"><a data-content="shounen" data-role="tab-genre" href="#tab-container4">Con trai</a></li>
+                            <li class="tab"><a data-content="manhwa" data-role="tab-genre" href="#tab-container3">Hàn Quốc</a></li>
+                            <li class="tab"><a data-content="manhua" data-role="tab-genre" href="#tab-container4">Trung Quốc</a></li>
                         </ul>
 
                     </div>

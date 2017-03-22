@@ -57,7 +57,7 @@ class AjaxController extends Controller
             return $text;
         }
         return Cache::remember('genre:' . $genre, 30, function ()use($genre) {
-            $mangas = Genre::whereSlug($genre)->first()->mangas()->orderBy('updated_at','desc')->take(12)->get();
+            $mangas = Genre::whereSlug($genre)->firstOrFail()->mangas()->orderBy('updated_at','desc')->take(12)->get();
 //            $mangas = Manga::orderBy('updated_at', 'desc')->select(['poster', 'slug', 'updated_at', 'name'])->take(12)->get();
 //            dd($mangas);
             $temp = function ($array)use($genre) {
