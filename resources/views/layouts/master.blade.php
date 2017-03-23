@@ -62,7 +62,7 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.2')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.3')}}">
 </head>
 
 <body>
