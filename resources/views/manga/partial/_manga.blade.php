@@ -1,6 +1,6 @@
 <!-- start poster -->
 <div class="col s12 m6 l4">
-    <div class="card-panel padding-0 short-infomation">
+    <div class="card padding-0 short-infomation">
         <div class="row row-poster">
             <div class="col s4 padding-0">
                 <a title="{{$item->name}}" class="black-text" href="{{route('manga',['manga'=>$item->slug])}}" rel="contents">
@@ -15,7 +15,7 @@
                     @endforeach
                       </span>
                 <p class="padding-0 margin-0">Chap: {{$item->getCacheLatestChap()}}</p>
-                <p class="truncate padding-0 margin-0">Author:
+                <p class="truncate padding-0 margin-0">Tác giả:
                     @foreach($item->getCachedAuthors() as $author)
                         <a title="{{$author->name}}" href="">{{$author->name}}</a>
                 @endforeach
@@ -23,6 +23,10 @@
                 <p class="padding-0 margin-0">View :{{$item->view}}</p>
                 <span class="badge green white-text past-timer">{{$item->updated_at->diffForHumans()}}</span>
             </div>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
         </div>
     </div>
 </div>

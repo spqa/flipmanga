@@ -11,7 +11,7 @@
             <div class="col s12">
                 <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
                 @if(isset($main_genre))
-                    <a href="{{route('genre',['genre'=>$main_genre->slug])}}" class="breadcrumb grey-text">{{$main_genre->name}}</a>
+                    <a href="{{route('genre',['genre'=>$main_genre->slug])}}" class=" breadcrumb grey-text">{{$main_genre->name}}</a>
 
                 @endif
                 <a href="{{route('manga',['manga'=>$manga->slug])}}" class="breadcrumb grey-text active">{{$manga->name}}</a>

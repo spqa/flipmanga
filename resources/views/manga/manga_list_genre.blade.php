@@ -9,7 +9,7 @@
             <div class="col s12">
                 <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
                 <a href="{{route('genre')}}" class="breadcrumb grey-text">Thể loại</a>
-                <a href="{{route('genre',['genre'=>$genre->slug])}}" class="breadcrumb grey-text active">{{$genre->name}}</a>
+                <a href="{{route('genre',['genre'=>$genre->slug])}}" class=" breadcrumb grey-text active">{{$genre->name}}</a>
             </div>
         </div>
         </nav>

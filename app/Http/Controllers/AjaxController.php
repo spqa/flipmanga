@@ -207,4 +207,9 @@ class AjaxController extends Controller
         }
     }
 
+    public function latestUpdate(){
+        $mangas = Manga::orderBy('updated_at', 'desc')->paginate(24);
+        return $mangas;
+    }
+
 }

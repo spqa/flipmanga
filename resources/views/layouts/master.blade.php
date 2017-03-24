@@ -62,7 +62,7 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.3')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.5')}}">
 </head>
 
 <body>
@@ -82,7 +82,7 @@
 </script>
 <div id="navbar-master">
     <nav>
-    <div class="nav-wrapper  blue darken-4">
+    <div class="nav-wrapper  teal darken-4">
         {{--<div class="container">--}}
         <a href="/" class="brand-logo center">Truyentranh18</a>
         <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -134,7 +134,7 @@
                        data-activates="dropdown1">{{auth()->user()->name}}<i
                                 class="material-icons right">arrow_drop_down</i></a>
                 @else
-                    <a href="{{route('login')}}" class="btn-flat white-text orange">Đăng nhập</a>
+                    <a href="{{route('login')}}" class="btn-flat white-text teal">Đăng nhập</a>
                 @endif
             </li>
         </ul>
@@ -158,7 +158,7 @@
 </nav>
 </div>
 <ul class="side-nav" id="mobile-sidebar">
-    <li class="indigo darken-4 center"><a class="white-text" href="/">truyentranh18</a></li>
+    <li class="teal darken-4"><a class="white-text" href="/">Truyentranh18</a></li>
     <li class="black-text">
         <form action="/tim-kiem">
             <input id="search" name="query" type="search" placeholder="Search manga" required>
@@ -188,7 +188,7 @@
                 <div class="collapsible-body">
                     <ul>
                         @foreach($allGenres as $genre)
-                            <li><a title="{{$genre->name}}"
+                            <li><a class="truncate" title="{{$genre->name}}"
                                    href="{{route('genre',['genre'=>$genre->slug])}}">{{$genre->name}}</a></li>
                         @endforeach
                     </ul>
@@ -207,9 +207,11 @@
     {{--</li>--}}
 </ul>
 <!-- end nav -->
-@yield('content')
+
+    @yield('content')
+
 <!-- start footer -->
-<footer class="page-footer grey darken-4">
+<footer class="page-footer grey darken-4 ">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -278,57 +280,57 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script src="{{asset('js/script.js?v=0.3')}}"></script>
+<script src="{{asset('js/script.js?v=0.5')}}"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
-{{--<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"--}}
-        {{--style="width: 200px;height: 300px;">{--}}
-        {{--"handle"--}}
-    {{--:--}}
-        {{--"truyentranh18vn", "arch"--}}
-    {{--:--}}
-        {{--"js", "styles"--}}
-    {{--:--}}
-        {{--{--}}
-            {{--"a"--}}
-        {{--:--}}
-            {{--"336666", "b"--}}
-        {{--:--}}
-            {{--100, "c"--}}
-        {{--:--}}
-            {{--"FFFFFF", "d"--}}
-        {{--:--}}
-            {{--"FFFFFF", "k"--}}
-        {{--:--}}
-            {{--"336666", "l"--}}
-        {{--:--}}
-            {{--"336666", "m"--}}
-        {{--:--}}
-            {{--"336666", "n"--}}
-        {{--:--}}
-            {{--"FFFFFF", "p"--}}
-        {{--:--}}
-            {{--"10", "q"--}}
-        {{--:--}}
-            {{--"336666", "r"--}}
-        {{--:--}}
-            {{--100, "pos"--}}
-        {{--:--}}
-            {{--"br", "cv"--}}
-        {{--:--}}
-            {{--1, "cvfnt"--}}
-        {{--:--}}
-            {{--"monospace, sans-serif", "cvbg"--}}
-        {{--:--}}
-            {{--"336666", "cvw"--}}
-        {{--:--}}
-            {{--200, "cvh"--}}
-        {{--:--}}
-            {{--30, "ticker"--}}
-        {{--:--}}
-            {{--1, "fwtickm"--}}
-        {{--:--}}
-            {{--1--}}
-        {{--}--}}
-    {{--}</script>--}}
+<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
+        style="width: 200px;height: 300px;">{
+        "handle"
+    :
+        "truyentranh18vn", "arch"
+    :
+        "js", "styles"
+    :
+        {
+            "a"
+        :
+            "336666", "b"
+        :
+            100, "c"
+        :
+            "FFFFFF", "d"
+        :
+            "FFFFFF", "k"
+        :
+            "336666", "l"
+        :
+            "336666", "m"
+        :
+            "336666", "n"
+        :
+            "FFFFFF", "p"
+        :
+            "10", "q"
+        :
+            "336666", "r"
+        :
+            100, "pos"
+        :
+            "br", "cv"
+        :
+            1, "cvfnt"
+        :
+            "monospace, sans-serif", "cvbg"
+        :
+            "336666", "cvw"
+        :
+            200, "cvh"
+        :
+            30, "ticker"
+        :
+            1, "fwtickm"
+        :
+            1
+        }
+    }</script>
 </body>
 </html>

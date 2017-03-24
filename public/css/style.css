@@ -161,6 +161,7 @@
 .slide-navi {
     margin-top: 1.78rem;
     padding: 0 10px 0 10px;
+    margin-left: 3px;
 }
 
 .slider-loading {
@@ -203,7 +204,7 @@ li form .input-field {
 
 .mega-menu {
     position: absolute;
-    max-width: 800px;
+    /*max-width: 800px;*/
     z-index: 999;
     display: none;
     margin: 0;
@@ -223,17 +224,17 @@ li:hover .mega-menu {
 }
 
 .mega-menu .mega-menu-content {
-    transition: background-color .3s;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    transition-timing-function: initial;
-    transition-delay: initial;
+    /*transition: background-color .3s;*/
+    /*transition-property: background-color;*/
+    /*transition-duration: 0.3s;*/
+    /*transition-timing-function: initial;*/
+    /*transition-delay: initial;*/
     border-bottom: thin solid #00acc1;
 }
 
 .mega-menu-content a:hover {
-    background-color: #ea454b;
-
+    color: #b71c1c;
+    background-color: transparent;
 }
 
 .mega-menu-content a {

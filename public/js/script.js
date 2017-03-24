@@ -31,12 +31,10 @@ $(document).ready(function () {
     );
     $(".slide-1").owlCarousel({
         navigation: false,
-        items: 6,
-        itemsDesktop: [1645, 5.5],
-        itemsDesktopSmall: [1461, 5],
+        items: 8,
+        itemsDesktopSmall: [1461, 6],
+        itemsMobile: [600, 1.5],
         itemsTabletSmall: [992, 4],
-        itemsTablet: [1248, 3.5],
-        itemsMobile: [600, 2.5],
         pagination: false,
         scrollPerPage: false,
         afterInit: function () {
