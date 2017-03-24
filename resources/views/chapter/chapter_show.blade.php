@@ -24,7 +24,7 @@
 </head>
 <body>
 <div id="navbar-wrapper">
-<nav class="blue darken-4 ">
+<nav class="teal darken-4 ">
     <div class="container ">
         <div class="nav-wrapper">
             <div class="col s12 scroll-breadcrumb transparent">
