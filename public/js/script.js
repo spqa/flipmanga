@@ -32,7 +32,7 @@ $(document).ready(function () {
     $(".slide-1").owlCarousel({
         navigation: false,
         items: 8,
-        itemsDesktopSmall: [1461, 6],
+        itemsDesktopSmall: [1461, 7],
         itemsMobile: [600, 1.5],
         itemsTabletSmall: [992, 4],
         pagination: false,
