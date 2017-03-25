@@ -13,7 +13,7 @@ class CreateMangaUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_manga',function(Blueprint $table){
+        Schema::create('manga_user',function(Blueprint $table){
             $table->increments('id');
             $table->integer('manga_id')->index();
             $table->integer('user_id')->index();

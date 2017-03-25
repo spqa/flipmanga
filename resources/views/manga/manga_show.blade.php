@@ -41,9 +41,9 @@
 
                     <div class="manga-show-button hide-on-small-only">
                         @if($manga->chapters->count()>0)
-                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$manga->chapters->sortBy('created_at')->first()->slug])}}"
                            class="waves-effect waves-light btn  pink darken-3">Chapter 1</a>
-                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$manga->chapters->sortByDesc('created_at')->first()->slug])}}"
                            class="waves-effect waves-light btn  pink darken-3">Last Chapter</a>
                         @endif
                         {{--<a class="waves-effect waves-light btn green darken-3">Continue Read</a>--}}
@@ -57,9 +57,9 @@
                 <div class="col s12">
                     <div class="manga-show-button-mobile hide-on-med-and-up">
                         @if($manga->chapters->count()>0)
-                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->min('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$manga->chapters->sortBy('created_at')->first()->slug])}}"
                            class="waves-effect waves-light btn   pink darken-3">Chapter 1</a>
-                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>($temp=$manga->chapters->where('chapter_number',$manga->chapters->max('chapter_number'))->first())->chapter_number,'chapter'=>$temp->id])}}"
+                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$manga->chapters->sortByDesc('created_at')->first()->slug])}}"
                            class="waves-effect waves-light btn   pink darken-3">Last Chapter</a>
                         @endif
                         {{--<a class="waves-effect waves-light btn">Continue Read</a>--}}
@@ -111,7 +111,7 @@
                             <div class="collapsible-body">
                                 <div class="collection">
                                     @foreach($manga->chapters->sortByDesc('chapter_number')->take(5) as $chapter)
-                                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$chapter->chapter_number,'chapter'=>$chapter->id])}}"
+                                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$chapter->slug])}}"
                                            class="collection-item">{{$chapter->name}}
                                             {{--<span class="new badge red "></span>--}}
                                             <span class="secondary-content">{{$chapter->updated_at->diffForHumans()}}</span></a>
@@ -137,7 +137,7 @@
                                         {{--</ul>--}}
                                     {{--</div>--}}
                                     @foreach($manga->chapters->sortBy('chapter_number') as $chapter)
-                                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$chapter->chapter_number,'chapter'=>$chapter->id])}}"
+                                        <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$chapter->slug])}}"
                                            class="collection-item">{{$chapter->name}}<span
                                                     class="secondary-content">{{$chapter->created_at->toFormattedDateString()}}</span></a>
                                     @endforeach

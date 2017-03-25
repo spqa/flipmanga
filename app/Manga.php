@@ -46,7 +46,10 @@ class Manga extends Model
     }
     public function getCacheLatestChap(){
         return Cache::tags('latest.chap')->rememberForever($this->getCacheKey(),function (){
-            return $this->chapters()->max('chapter_number');
+            if ($this->chapters()->count()>0){
+                return Chapter::where('manga_id',$this->id)->orderBy('created_at','desc')->first()->name;
+            }
+            return 'Chưa có chap';
         });
     }
     public function authors(){

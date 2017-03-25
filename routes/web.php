@@ -16,8 +16,8 @@ Route::get('/','IndexController@index')->name('home');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index');
-Route::get('/truyen/{manga}/{chapter?}','MangaController@show')->name('manga');
-Route::get('/truyen/{manga}/chap-{chapter_number?}/{chapter?}', 'MangaController@show')->name('manga.chapter');
+Route::get('/truyen/{manga}','MangaController@show')->name('manga');
+Route::get('/truyen/{manga}/{chapter_slug}', 'MangaController@show')->name('manga.chapter');
 Route::get('/doc-truyen-manga-mien-phi','IndexController@full')->name('manga.full');
 Route::get('/term-of-service','IndexController@tos')->name('manga.tos');
 Route::get('/privacy-policy','IndexController@priv')->name('manga.priv');

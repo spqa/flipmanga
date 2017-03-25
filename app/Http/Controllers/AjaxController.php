@@ -120,12 +120,12 @@ class AjaxController extends Controller
                         <div class="col s12 m4 l4 ">
                             <div class="card horizontal in-progress-card">
                                 <div class="card-image">
-                                    <img height="80px" src="http://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&gadget=a&no_expand=1&resize_h=0&rewriteMime=image%2F*&url=' . $item->poster . '">
+                                    <img height="80px" src="' . $item->poster . '">
                                 </div>
                                 <div class="card-stacked">
                                     <div class="card-content">
                                         <p class="truncate">' . $item->name . '</p>
-                                        <span class="truncate">Continue chapter :'.$array_chapter->where('manga_id',$item->id)->first()->chapter_number.'</span>
+                                        <span class="truncate">Continue chapter :'.$array_chapter->where('manga_id',$item->id)->first()->name.'</span>
                                     </div>
                                 </div>
                             </div>

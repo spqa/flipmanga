@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Session;
 
 class MangaController extends Controller
 {
-    public function show($manga, $chapter_number = null, $chapter = null)
+    public function show($manga, $chapter_slug = null)
     {
 
         if ($manga == null) {
 
             abort(404);
 
-        } elseif ($chapter == null) {
+        } elseif ($chapter_slug == null) {
             $manga = Manga::whereSlug($manga)->firstOrFail()->load('chapters');;
 //            dd($manga->getCacheKey('favorite'));
             $suggestion = Manga::inRandomOrder()->take(6)->get();
@@ -32,15 +32,15 @@ class MangaController extends Controller
 
 
         $manga = Manga::whereSlug($manga)->first()->load('chapters');
-        $chapter = $manga->chapters()->findOrFail($chapter);
+        $chapter = $manga->chapters()->whereSlug($chapter_slug)->firstOrFail();
         $next_link = $manga->chapters()->whereChapterNumber(DB::raw('(SELECT MIN(chapter_number) FROM chapters WHERE chapter_number > ' . $chapter->chapter_number . ' AND manga_id =' . $manga->id . ')'))->first();
         $prev_link = $manga->chapters()->whereChapterNumber(DB::raw('(SELECT MAX(chapter_number) FROM chapters WHERE chapter_number < ' . $chapter->chapter_number . ' AND manga_id =' . $manga->id . ')'))->first();
         $array_img = preg_split("/[\s,]+/", $chapter->img, -1, PREG_SPLIT_NO_EMPTY);
-        if (empty($chapter->typeImg)) {
-            for ($i = 0; $i < count($array_img); $i++) {
-                $array_img[$i] = '//i1.heymanga.me/' . $array_img[$i];
-            }
-        }
+//        if (empty($chapter->typeImg)) {
+//            for ($i = 0; $i < count($array_img); $i++) {
+//                $array_img[$i] = '//i1.heymanga.me/' . $array_img[$i];
+//            }
+//        }
         $json = request()->cookie('flmhistory');
         if ($json != null) {
             $array_history = json_decode($json, true);

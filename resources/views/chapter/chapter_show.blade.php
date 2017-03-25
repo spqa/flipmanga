@@ -2,8 +2,7 @@
 <html>
 <head>
     <!--Import Google Icon Font-->
-    <title>{{$manga->name}} chap {{$chapter->chapter_number}} | Đọc truyện tranh {{$manga->name}}
-        chap {{$chapter->chapter_number}} miễn phí</title>
+    <title>{{$manga->name}} |{{$chapter->name}} | Đọc truyện tranh {{$manga->name}} {{$chapter->name}} miễn phí</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
@@ -59,13 +58,13 @@
     </div>
     <div class="fixed-action-btn btn-forward">
 {{--        {!! dd($next_link) !!}--}}
-        <a href="{{isset($next_link)?route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$next_link->chapter_number,'chapter'=>$next_link->id]):'#!'}}"
+        <a href="{{isset($next_link)?route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$next_link->slug]):'#!'}}"
            class="btn-floating btn-large {{isset($next_link)?'red':'grey'}}">
             <i class="material-icons">keyboard_arrow_right</i>
         </a>
     </div>
     <div class="fixed-action-btn btn-rewind">
-        <a href="{{isset($prev_link)?route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$prev_link->chapter_number,'chapter'=>$prev_link->id]):'#!'}}"
+        <a href="{{isset($prev_link)?route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$prev_link->slug]):'#!'}}"
            class="btn-floating btn-large {{isset($prev_link)?'red':'grey'}}">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
@@ -88,7 +87,7 @@
             <h4>Danh sách chap</h4>
             <ul class="collection">
                 @foreach($manga->chapters as $chapter)
-                    <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_number'=>$chapter->chapter_number,'chapter'=>$chapter->id])}}"
+                    <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$chapter->slug])}}"
                        class="collection-item">{{$chapter->name}}</a>
                     @endforeach
             </ul>

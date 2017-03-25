@@ -6,7 +6,7 @@
         </div>
         <div class="card-title card-title-img center-align">
             <a title="Read latest {{$item->name}} manga online for free" href="{{ route('manga',['slug'=>$item->slug]) }}" class="grey-text darken-4 "><h3 class="title-h3-normal truncate">{{$item->name}}</h3></a>
-            <a href="#">Chap {{$item->getCacheLatestChap()}}</a>
+            <a href="#">{{$item->getCacheLatestChap()}}</a>
         </div>
         {{--<div class="card-reveal">--}}
             {{--<span class="card-title ">{{$item->name}}<i class="material-icons right">close</i></span>--}}
