@@ -59,7 +59,7 @@ class UpdateComicVN extends Command
 
     public function getComicVN()
     {
-        $comicId = 5000;
+        $comicId = 1;
         while ($comicId < 14000) {
             $mangaPage = null;
             try {
