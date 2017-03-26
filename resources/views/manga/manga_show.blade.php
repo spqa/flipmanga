@@ -7,8 +7,8 @@
     <!-- start content -->
     <div class="container ">
         <nav class="white z-depth-0 nav-breadcrumb">
-        <div class="nav-wrapper">
-            <div class="col s12">
+        <div class="nav-wrapper ">
+            <div class="col s12 scroll-breadcrumb">
                 <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
                 @if(isset($main_genre))
                     <a href="{{route('genre',['genre'=>$main_genre->slug])}}" class=" breadcrumb grey-text">{{$main_genre->name}}</a>

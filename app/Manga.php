@@ -49,7 +49,7 @@ class Manga extends Model
             if ($this->chapters()->count()>0){
                 return Chapter::where('manga_id',$this->id)->orderBy('chapter_number','desc')->first();
             }
-            return 'Chưa có chap';
+            return new Chapter();
         });
     }
     public function authors(){
