@@ -2,20 +2,20 @@
 @section('content')
     <div class="container-fluid grey lighten-4">
     <!-- start content -->
-    <div class="container-fluid  grey darken-4">
-        <div class="card-panel transparent z-depth-0">
+    <div class="container-fluid  grey darken-4 ">
+        <div class="card-panel transparent z-depth-0 hot-section ">
             <div class="row">
                 <div class="col s12 ">
                     <h2 class="left title-h2 white-text">Truyện Hot Mới Cập Nhật</h2>
-                    <button data-role="slide-next-1" class="btn right grey slide-navi hide-on-small-only"><i
+                    <button data-role="slide-next-1" class="btn right teal darken-3 slide-navi hide-on-small-only"><i
                                 class=" material-icons medium white-text">keyboard_arrow_right</i></button>
-                    <button data-role="slide-prev-1" class="hide-on-small-only btn right grey slide-navi"><i
+                    <button data-role="slide-prev-1" class="hide-on-small-only btn right teal darken-3 slide-navi"><i
                                 class=" material-icons medium white-text">keyboard_arrow_left</i></button>
                 </div>
                 <div class="col s12 m12 l12 ">
 
                     <div class="slide-container slide-1">
-                        @each('manga.partial._manga_slider', $latestHotUpdate, 'item')
+                        @each('manga.partial._manga_slider_hot', $latestHotUpdate, 'item')
                     </div><!-- slide-container -->
                 </div><!-- col-s12 -->
             </div>
@@ -54,10 +54,6 @@
 
                             <div class="slide-container slide-2">
                                 @each('manga.partial._manga_slider', $newRelease, 'item')
-
-                                {{--@foreach($newRelease as $item)--}}
-                                {{--@include('manga.partial._manga_slider')--}}
-                                {{--@endforeach--}}
                             </div><!-- slide-container -->
 
 
@@ -113,8 +109,7 @@
                     <blockquote
                             cite="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
                             class="fb-xfbml-parse-ignore"><a
-                                href="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/">Smovies.tv
-                            - Free movies online</a></blockquote>
+                                href="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/">Truyentranh18</a></blockquote>
                 </div>
 
                 <div class="card-panel no-padding">
@@ -166,8 +161,8 @@
                         {{--@foreach($latestUpdate as $item)--}}
                         {{--@include('manga.partial._manga')--}}
                         {{--@endforeach--}}
-                        <div class="col s12 center">
-                            <a href="{{route('manga.latest')}}" class="btn btn-more white grey-text">more</a>
+                        <div class="col s12 center latest-pagination-wrapper">
+
                         </div>
                     </div>
                     <div id="tab-container2">

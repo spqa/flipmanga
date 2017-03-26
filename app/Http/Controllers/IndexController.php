@@ -31,7 +31,7 @@ class IndexController extends Controller
             });
 //        dd(Redis::zrevrange('manga.trending',0,16));
             $latestUpdate = Cache::tags('index')->rememberForever('latest.update', function () {
-                return Manga::orderBy('updated_at', 'desc')->take(12)->get();
+                return Manga::orderBy('updated_at', 'desc')->paginate(12);
             });
             $topToday = Cache::remember('manga.list.day', 15, function () {
                 $list = collect(Redis::zrevrange('manga.trending.day', 0, 10))->map(function ($id) {

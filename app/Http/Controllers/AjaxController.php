@@ -125,7 +125,7 @@ class AjaxController extends Controller
                                 <div class="card-stacked">
                                     <div class="card-content">
                                         <p class="truncate">' . $item->name . '</p>
-                                        <span class="truncate">Continue chapter :'.$array_chapter->where('manga_id',$item->id)->first()->name.'</span>
+                                        <span class="truncate">Đọc tiếp :'.$array_chapter->where('manga_id',$item->id)->first()->chapter_number.'</span>
                                     </div>
                                 </div>
                             </div>
@@ -208,8 +208,15 @@ class AjaxController extends Controller
     }
 
     public function latestUpdate(){
-        $mangas = Manga::orderBy('updated_at', 'desc')->paginate(24);
-        return $mangas;
+        $mangas = Manga::with('authors','genres')->orderBy('updated_at', 'desc')->paginate(12);
+        foreach ($mangas as $manga){
+            $manga->latestChap=$manga->getCacheLatestChap()->makeHidden('img');
+            $manga->updated=$manga->updated_at->diffForHumans();
+        }
+        $json=new \stdClass();
+        $json->mangas=$mangas;
+        $json->links=$mangas->links()->toHtml();
+        return response()->json($json);
     }
 
 }

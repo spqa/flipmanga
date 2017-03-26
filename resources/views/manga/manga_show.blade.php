@@ -19,7 +19,7 @@
         </div>
         </nav>
         <div class="section manga-show-header ">
-            <div class="row z-depth-2">
+            <div class="row z-depth-0">
 
                 <div class="col s5 m3 l2">
                     <img class="materialboxed responsive-img" src="{{$manga->poster}}">

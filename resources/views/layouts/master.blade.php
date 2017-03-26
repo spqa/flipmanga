@@ -62,7 +62,7 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.5')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.6')}}">
 </head>
 
 <body>
@@ -116,14 +116,14 @@
             <li>
                 <form action="/tim-kiem">
                     <div class="input-field">
-                            <input name="query" id="search" type="search" required>
+                            <input autocomplete="off" name="query" id="search-desk" type="search" required>
                         <label for="search"><i class="icon-search material-icons">search</i></label>
                             <i class="material-icons">close</i>
                     </div>
                 </form>
             </li>
             <li>
-                <a href="{{route('contact')}}" class="btn-flat white-text green">Liên hệ</a>
+                <a href="{{route('contact')}}" class=" white-text green">Liên hệ</a>
             </li>
             @if(auth()->check() && auth()->user()->avatar)
                 <li><img class="user-avatar" src="{{auth()->user()->avatar}}"/></li>
@@ -134,7 +134,7 @@
                        data-activates="dropdown1">{{auth()->user()->name}}<i
                                 class="material-icons right">arrow_drop_down</i></a>
                 @else
-                    <a href="{{route('login')}}" class="btn-flat white-text teal">Đăng nhập</a>
+                    <a href="{{route('login')}}" class=" white-text teal">Đăng nhập</a>
                 @endif
             </li>
         </ul>
@@ -160,8 +160,8 @@
 <ul class="side-nav" id="mobile-sidebar">
     <li class="teal darken-4"><a class="white-text" href="/">Truyentranh18</a></li>
     <li class="black-text">
-        <form action="/tim-kiem">
-            <input id="search" name="query" type="search" placeholder="Search manga" required>
+        <form action="/tim-kiem" class="mobile-search-form">
+            <input autocomplete="off" id="search-mobile" name="query" type="search" placeholder="Search manga" required>
         </form>
     </li>
     <li class="no-padding">
@@ -258,6 +258,7 @@
 <script src="{{asset('js/owl.carousel.min.js')}} "></script>
 {{--<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>--}}
 <script src="{{asset('js/jquery.lazyloadxt.simple.js')}}"></script>
+<script src="//cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
 @yield('page_script')
 <script>
     window.fbAsyncInit = function () {
@@ -280,7 +281,8 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script src="{{asset('js/script.js?v=0.6')}}"></script>
+<script src="/js/mangacard.template.js"></script>
+<script src="{{asset('js/script.js?v=0.8')}}"></script>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
 <script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
         style="width: 200px;height: 300px;">{

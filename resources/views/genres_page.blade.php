@@ -54,6 +54,5 @@
 
 @endsection
 @section('page_script')
-    <script src="//cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <script src="{{asset('js/genres.js?v=0.1')}}"></script>
     @endsection

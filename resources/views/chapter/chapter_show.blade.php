@@ -23,15 +23,15 @@
 </head>
 <body>
 <div id="navbar-wrapper">
-<nav class="teal darken-4 ">
+<nav class="grey darken-4">
     <div class="container ">
         <div class="nav-wrapper">
-            <div class="col s12 scroll-breadcrumb transparent">
-                <a href="/" class="breadcrumb "><i class="material-icons">home</i>Trang chủ</a>
+            <div class="col s12 scroll-breadcrumb transparent ">
+                <a href="/" class="breadcrumb"><i class="material-icons">home</i>Trang chủ</a>
                 @if($main_genre)
-                <a href="{{route('genre',['genres'=>$main_genre->slug])}}" class="breadcrumb">{{$main_genre->name}}</a>
+                <a href="{{route('genre',['genres'=>$main_genre->slug])}}" class=" breadcrumb">{{$main_genre->name}}</a>
                 @endif
-                <a href="{{route('manga',['manga'=>$manga->slug])}}" class="breadcrumb ">{{$manga->name}}</a>
+                <a href="{{route('manga',['manga'=>$manga->slug])}}" class=" breadcrumb ">{{$manga->name}}</a>
                 <a href="#" class="breadcrumb active">{{$chapter->name}}</a>
             </div>
         </div>
@@ -39,10 +39,10 @@
 
 </nav>
 </div>
-<div class="container">
+<div class="container-fluid grey lighten-4">
     <div class="row">
         <div class="col s12">
-            <div class="card-panel z-depth-0">
+            <div class="card-panel z-depth-0 transparent">
                 <h3 class="inline">{{$manga->name}}</h3>
                 @if(!empty($manga->alias))
                 <h4 class="inline">({{$manga->alias}})</h4><br/>
@@ -95,7 +95,9 @@
     </div>
     <!-- model chapter -->
     <div id="end-of-page"></div>
-    <div id="disqus_thread"></div>
+    <div class="container">
+        <div class="fb-comments" data-width="100%" data-href="{{url()->current()}}" data-numposts="5"></div>
+    </div>
     <script src="{{asset('js/chapter.js?v=0.1')}}"></script>
 
 </div>
@@ -143,5 +145,25 @@
     </div>
 
 </footer>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '613058618881383',
+            xfbml: true,
+            version: 'v2.8'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 </body>
 </html>

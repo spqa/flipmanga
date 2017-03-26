@@ -66,6 +66,7 @@ class UpdateComicVN extends Command
                 $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-' . $comicId));
             } catch (\Exception $exception) {
                 $comicId++;
+                $this->comment($comicId);
                 continue;
             }
             Log::info('ID valid:' . $comicId);
@@ -194,6 +195,8 @@ class UpdateComicVN extends Command
                 Image::make($tmpManga['poster'])->save(storage_path('app/public/images/poster/' . $imageName));
             } catch (\Exception $exception) {
                 $imageName = 'placeholder.png';
+                Log::error($exception->getMessage());
+                Log::error($exception->getTraceAsString());
             }
             $insertManga = Manga::create([
                 'name' => $tmpManga['oriTitle'],

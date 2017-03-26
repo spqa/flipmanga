@@ -1,0 +1,33 @@
+<div class="col s12 m6 l4 manga-wrapper">
+    <div class="card padding-0 short-infomation">
+        <div class="row row-poster">
+            <div class="col s4 padding-0">
+                <a title="{{name}}" class="black-text" href="/truyen/{{slug}}" rel="contents">
+                    <img alt="Read latest {{name}} manga online for free" title="Read latest {{name}} manga online for free" class="manga-poster" src="{{poster}}" />
+                </a>
+            </div>
+            <div class="col s8 padding-0 ">
+
+                <h3 class="title-h3 activator grey-text text-darken-4"><a class="black-text" href="/truyen/{{slug}}" rel="contents">{{name}}</a><i class="material-icons right">more_vert</i></h3>
+
+                <a href="/truyen/{{slug}}/{{latestChap.slug}}" class="teal-text truncate padding-0 margin-0">Chapter : {{latestChap.chapter_number}}</a>
+                <p class="truncate padding-0 margin-0">Tác giả:
+                    {{#each authors}}
+                    <a title="{{name}}" href="">{{name}}</a>
+                    {{/each}}
+                </p>
+                <p class="padding-0 margin-0">View :{{view}}</p>
+                <span class="badge green white-text past-timer">{{updated}}</span>
+            </div>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+            <span class="">
+                    {{#each genres}}
+                    <a href="/the-loai/{{slug}}" class="deep-orange lighten-3 chip small-tag">{{name}}</a>
+                {{/each}}
+                      </span>
+            <p>{{description}}</p>
+        </div>
+    </div>
+</div>
