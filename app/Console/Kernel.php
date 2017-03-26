@@ -7,6 +7,7 @@ use App\Console\Commands\UpdateComicVN;
 use App\Console\Commands\UpdateMangaReader;
 use App\Console\Commands\UpdateOldMangareader;
 use App\Console\Commands\UpdateSitemap;
+use App\Console\Commands\UpdateThichTruyen;
 use App\Console\Commands\UpdateTrending;
 use App\Console\Commands\UpdateViewCache;
 use App\Console\Commands\UpdateViewToday;
@@ -28,7 +29,8 @@ class Kernel extends ConsoleKernel
         UpdateChapter::class,
         UpdateMangaReader::class,
         UpdateOldMangareader::class,
-        UpdateComicVN::class
+        UpdateComicVN::class,
+        UpdateThichTruyen::class
     ];
 
     /**
