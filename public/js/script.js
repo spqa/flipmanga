@@ -2,7 +2,7 @@ function getCookie(cname) {
     // console.log('get-cookie-called');
     var name = cname + "=";
     var ca = document.cookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -16,12 +16,29 @@ function getCookie(cname) {
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 $(document).ready(function () {
+
+    // $('#search').autocomplete({
+    //     data: {
+    //         "Apple": null,
+    //         "Microsoft": null,
+    //         "Google": 'http://placehold.it/250x250',
+    //         "Google1": 'http://placehold.it/250x250',
+    //         "Google2": 'http://placehold.it/250x250',
+    //         "Google3": 'http://placehold.it/250x250',
+    //         "Google4": 'http://placehold.it/250x250',
+    //     },
+    //     limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    //     onAutocomplete: function(val) {
+    //         // Callback function when value is autcompleted.
+    //     },
+    //     minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+    // });
     $('.button-collapse').sideNav({
             menuWidth: 250, // Default is 300
             edge: 'left', // Choose the horizontal origin
@@ -103,15 +120,20 @@ $(document).ready(function () {
     $("a[data-role='tab-genre']").one('click', function () {
         var t = $(this);
         $.ajax({
-            url: "/api/genres/" + $(this).attr('data-content'),
-            dataType: 'html',
+            url: "/api/genre/" + t.attr('data-content'),
+            dataType: 'json',
             cache: true,
             success: function (data) {
                 console.log(data);
-                $(t.attr('href')).html(data);
+                $(t.attr('href')).empty();
+                $.each(data, function (index, value) {
+                    $(t.attr('href')).append(Handlebars.templates.mangacard(value));
+                });
             }
         });
     });
+
+
     $.ajax({
         url: "/api/manga-in-progress",
         dataType: 'html',
@@ -126,7 +148,7 @@ $(document).ready(function () {
     });
     $(".dropdown-button").dropdown();
     $('.parallax').parallax();
-    if(getCookie("adult-check")!=1){
+    if (getCookie("adult-check") != 1) {
         $('#adult-modal').modal('open');
     }
     // $('.tooltipped').tooltip({delay: 50});
@@ -139,9 +161,9 @@ $(document).ready(function () {
         $.ajax({
             url: '/logout',
             method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             success: function () {
                 location.reload();
             }
@@ -189,6 +211,208 @@ $(document).ready(function () {
         }
 
         lastScrollTop = st;
+    }
+
+    if (location.pathname == "/" &&
+        location.hash.length <= 1 &&
+        location.search.length <= 1) {
+        getLatestPagination(1);
+    }
+    function getLatestPagination(page) {
+        $.ajax({
+            url: '/api/latest-update?page=' + page,
+            success: function (data) {
+                $('.latest-pagination-wrapper').empty().append(data.links);
+                $('.latest-pagination-wrapper a').click(function (e) {
+                    e.preventDefault();
+                    getLatestMangas($(this).attr('href'));
+                });
+            }
+        });
+    }
+
+    function getLatestMangas(url_page) {
+        if(!url_page.endsWith('#!'))
+        $.ajax({
+            url: url_page,
+            success: function (data) {
+                $('#tab-container1 .manga-wrapper').remove();
+                $.each(data.mangas.data, function (index, value) {
+                    $('#tab-container1').prepend(Handlebars.templates.mangacard(value));
+                });
+                $('.latest-pagination-wrapper').empty().append(data.links);
+                $('.latest-pagination-wrapper a').click(function (e) {
+                    e.preventDefault();
+                    getLatestMangas($(this).attr('href'));
+
+                });
+            }
+        });
+    }
+
+    ajaxAutoComplete({inputId: 'search-mobile', ajaxUrl: '/api/search/'});
+    ajaxAutoComplete({inputId: 'search-desk', ajaxUrl: '/api/search/'});
+
+    function ajaxAutoComplete(options) {
+
+        var defaults = {
+            inputId: null,
+            ajaxUrl: false,
+            data: {},
+            minLength: 2
+        };
+
+        options = $.extend(defaults, options);
+        var $input = $("#" + options.inputId);
+
+
+        if (options.ajaxUrl) {
+
+            if ($input.attr('id') == 'search-mobile') {
+                var $autocomplete = $('<ul id="ac" class="autocomplete-content dropdown-content"></ul>');
+            } else {
+                var $autocomplete = $('<ul id="ac" class="autocomplete-content dropdown-content"'
+                    + 'style="position:absolute;width: 100%;"></ul>');
+            }
+
+            var $inputDiv = $input.closest('.input-field'),
+                request,
+                runningRequest = false,
+                timeout,
+                liSelected;
+
+            if ($inputDiv.length) {
+                $inputDiv.append($autocomplete); // Set ul in body
+            } else {
+                $input.after($autocomplete);
+            }
+
+            var highlight = function (string, match) {
+                var matchStart = string.toLowerCase().indexOf("" + match.toLowerCase() + ""),
+                    matchEnd = matchStart + match.length - 1,
+                    beforeMatch = string.slice(0, matchStart),
+                    matchText = string.slice(matchStart, matchEnd + 1),
+                    afterMatch = string.slice(matchEnd + 1);
+                string = "<span>" + beforeMatch + "<span class='highlight'>" +
+                    matchText + "</span>" + afterMatch + "</span>";
+                return string;
+
+            };
+
+            $autocomplete.on('click', 'li', function () {
+                $input.val($(this).text().trim());
+                $autocomplete.empty();
+            });
+
+            $input.on('keyup', function (e) {
+
+                if (timeout) { // comment to remove timeout
+                    clearTimeout(timeout);
+                }
+
+                if (runningRequest) {
+                    request.abort();
+                }
+
+                if (e.which === 13) { // select element with enter key
+                    liSelected[0].click();
+                    return;
+                }
+
+                // scroll ul with arrow keys
+                if (e.which === 40) {   // down arrow
+                    if (liSelected) {
+                        liSelected.removeClass('selected');
+                        next = liSelected.next();
+                        if (next.length > 0) {
+                            liSelected = next.addClass('selected');
+                        } else {
+                            liSelected = $autocomplete.find('li').eq(0).addClass('selected');
+                        }
+                    } else {
+                        liSelected = $autocomplete.find('li').eq(0).addClass('selected');
+                    }
+                    return; // stop new AJAX call
+                } else if (e.which === 38) { // up arrow
+                    if (liSelected) {
+                        liSelected.removeClass('selected');
+                        next = liSelected.prev();
+                        if (next.length > 0) {
+                            liSelected = next.addClass('selected');
+                        } else {
+                            liSelected = $autocomplete.find('li').last().addClass('selected');
+                        }
+                    } else {
+                        liSelected = $autocomplete.find('li').last().addClass('selected');
+                    }
+                    return;
+                }
+
+                // escape these keys
+                if (e.which === 9 ||        // tab
+                    e.which === 16 ||       // shift
+                    e.which === 17 ||       // ctrl
+                    e.which === 18 ||       // alt
+                    e.which === 20 ||       // caps lock
+                    e.which === 35 ||       // end
+                    e.which === 36 ||       // home
+                    e.which === 37 ||       // left arrow
+                    e.which === 39) {       // right arrow
+                    return;
+                } else if (e.which === 27) { // Esc. Close ul
+                    $autocomplete.empty();
+                    return;
+                }
+
+                var val = $input.val().toLowerCase();
+                $autocomplete.empty();
+
+                if (val.length > options.minLength) {
+
+                    timeout = setTimeout(function () { // comment this line to remove timeout
+                        runningRequest = true;
+
+                        request = $.ajax({
+                            type: 'GET',
+                            url: options.ajaxUrl + val,
+                            success: function (data) {
+                                if (!$.isEmptyObject(data)) { // (or other) check for empty result
+                                    var appendList = '';
+                                    $.each(data, function (index, key) {
+                                        console.log(key.name);
+                                        // if (data.hasOwnProperty(key)) {
+                                        var li = '';
+                                        // if (!!data[key]) { // if image exists as in official docs
+                                        li += '<li><img src="' + key.poster + '" class="right">';
+                                        li += '<a href="/truyen/' + key.slug + '">' + highlight(key.name, val) + '</a></li>';
+                                        // } else {
+                                        //     li += '<li><span>' + highlight(key, val) + '</span></li>';
+                                        // }
+                                        appendList += li;
+                                        // }
+                                    });
+                                    // for (var key in data) {
+                                    //
+                                    // }
+                                    $autocomplete.append(appendList);
+                                } else {
+                                    $autocomplete.append($('<li><span>Không tìm thấy </span></li>'));
+                                }
+                            },
+                            complete: function () {
+                                runningRequest = false;
+                            }
+                        });
+                    }, 250);        // comment this line to remove timeout
+                }
+            });
+
+            $(document).click(function () { // close ul if clicked outside
+                if (!$(event.target).closest($autocomplete).length) {
+                    $autocomplete.empty();
+                }
+            });
+        }
     }
 
 });

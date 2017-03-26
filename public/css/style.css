@@ -43,6 +43,11 @@
     font-weight: bold;
 
 }
+.title-h3-hot{
+    font-size: 1rem;
+    margin: 4px 0px 4px 0px ;
+    font-weight: 400;
+}
 .title-h1-list {
     font-size: 2.75rem;
     padding: 0px;
@@ -50,13 +55,19 @@
 }
 
 .title-h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0 5px 0;
 }
-
+.activator{
+    cursor: pointer;
+}
 .padding-0 {
     padding: 0px;
+}
+
+.mobile-search-form a{
+    height: auto !important;
 }
 
 .row-poster {
@@ -204,7 +215,7 @@ li form .input-field {
 
 .mega-menu {
     position: absolute;
-    /*max-width: 800px;*/
+    max-width: 800px;
     z-index: 999;
     display: none;
     margin: 0;
@@ -222,7 +233,12 @@ li form .input-field {
 li:hover .mega-menu {
     display: unset;
 }
-
+.hot-section{
+    margin-top: 0px;
+}
+.tabs .indicator {
+    background-color: lightcyan;
+}
 .mega-menu .mega-menu-content {
     /*transition: background-color .3s;*/
     /*transition-property: background-color;*/

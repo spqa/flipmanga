@@ -20,4 +20,19 @@ class GenreController extends Controller
         }
     }
 
+    public function getBySlug($genre){
+        if ($genre=='random'){
+            $mangas=Manga::inRandomOrder()->take(12)->get();
+        }else{
+            $genre=Genre::whereSlug($genre)->firstOrFail();
+            $mangas=$genre->mangas()->take(12)->get();
+        }
+        $mangas->load('authors','genres');
+        foreach ($mangas as $manga){
+            $manga->latestChap=$manga->getCacheLatestChap()->makeHidden('img');
+            $manga->updated=$manga->updated_at->diffForHumans();
+        }
+        return $mangas;
+    }
+
 }

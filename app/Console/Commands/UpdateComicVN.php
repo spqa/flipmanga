@@ -59,13 +59,14 @@ class UpdateComicVN extends Command
 
     public function getComicVN()
     {
-        $comicId = 1;
+        $comicId = 5000;
         while ($comicId < 14000) {
             $mangaPage = null;
             try {
                 $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-' . $comicId));
             } catch (\Exception $exception) {
                 $comicId++;
+                $this->comment($comicId);
                 continue;
             }
             Log::info('ID valid:' . $comicId);

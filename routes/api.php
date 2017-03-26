@@ -17,4 +17,7 @@ Route::get('/genres/{genre?}','AjaxController@genre');
 Route::get('/latest-update','AjaxController@latestUpdate');
 Route::get('/manga-in-progress','AjaxController@getMangaProgress')->middleware('enc.cookie');
 Route::post('/genre','AjaxController@genres');
+Route::get('/genre/{id}','GenreController@getBySlug');
+Route::get('/search/{query?}','SearchController@autocompleteSearch');
+
 
