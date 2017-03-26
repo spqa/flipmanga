@@ -93,6 +93,9 @@
             </ul>
         </div>
     </div>
+    <div class="center">
+        <div class="fb-like" data-href="{{secure_url('/truyen/'.$manga->slug)}}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+    </div>
     <!-- model chapter -->
     <div id="end-of-page"></div>
     <div class="container">

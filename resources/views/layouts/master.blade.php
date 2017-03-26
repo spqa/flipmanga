@@ -79,83 +79,91 @@
 
 
 
+
 </script>
 <div id="navbar-master">
     <nav>
-    <div class="nav-wrapper  teal darken-4">
-        {{--<div class="container">--}}
-        <a href="/" class="brand-logo center">Truyentranh18</a>
-        <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="/">Trang chủ</a></li>
-            <li><a href="/the-loai" class="genres-mega-menu">Thể loại</a>
-                <div class="card-panel mega-menu white-text white z-depth-4">
-                    <div class="row black-text no-padding">
-                        @foreach($allGenres as $genre)
-                            <div class="col s2 mega-menu-content no-padding"><a title="{{$genre->name}}"
-                                                                                href="{{route('genre',['genre'=>$genre->slug])}}"
-                                                                                class="truncate">{{$genre->name}}</a>
-                            </div>
-                        @endforeach
-                        <div class="col s2 mega-menu-content no-padding"><a title="manhwa"
-                                                                            href="{{route('manhwa.latest')}}"
-                                                                            class="truncate">Manhwa</a></div>
-                        <div class="col s2 mega-menu-content no-padding"><a title="manhua"
-                                                                            href="{{route('manhua.latest')}}"
-                                                                            class="truncate">Manhua</a></div>
+        <div class="nav-wrapper  teal darken-4">
+            {{--<div class="container">--}}
+            <a href="/" class="brand-logo center">Truyentranh18</a>
+            <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/"><i class="material-icons">home</i></a></li>
+                <li><a href="/the-loai" class="genres-mega-menu">Thể loại</a>
+                    <div class="card-panel mega-menu white-text white z-depth-4">
+                        <div class="row black-text no-padding">
+                            @foreach($allGenres as $genre)
+                                <div class="col s2 mega-menu-content no-padding"><a title="{{$genre->name}}"
+                                                                                    href="{{route('genre',['genre'=>$genre->slug])}}"
+                                                                                    class="truncate">{{$genre->name}}</a>
+                                </div>
+                            @endforeach
+                            <div class="col s2 mega-menu-content no-padding"><a title="manhwa"
+                                                                                href="{{route('manhwa.latest')}}"
+                                                                                class="truncate">Manhwa</a></div>
+                            <div class="col s2 mega-menu-content no-padding"><a title="manhua"
+                                                                                href="{{route('manhua.latest')}}"
+                                                                                class="truncate">Manhua</a></div>
+                        </div>
+
                     </div>
+                </li>
 
-                </div>
-            </li>
+                <li><a href="{{route('manga.full')}}">Truyện Full</a></li>
+                <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-            <li><a href="{{route('manga.full')}}">Truyện Full</a></li>
-            <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
-        </ul>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-            <li>
-                <form action="/tim-kiem">
-                    <div class="input-field">
+                <li>
+                    <form action="/tim-kiem">
+                        <div class="input-field teal darken-2">
                             <input autocomplete="off" name="query" id="search-desk" type="search" required>
-                        <label for="search"><i class="icon-search material-icons">search</i></label>
+                            <label for="search"><i class="icon-search material-icons">search</i></label>
                             <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </li>
-            <li>
-                <a href="{{route('contact')}}" class=" white-text green">Liên hệ</a>
-            </li>
-            @if(auth()->check() && auth()->user()->avatar)
-                <li><img class="user-avatar" src="{{auth()->user()->avatar}}"/></li>
-            @endif
-            <li>
-                @if(auth()->check())
-                    <a style="min-width: 136px" class="dropdown-button" href="#!"
-                       data-activates="dropdown1">{{auth()->user()->name}}<i
-                                class="material-icons right">arrow_drop_down</i></a>
-                @else
-                    <a href="{{route('login')}}" class=" white-text teal">Đăng nhập</a>
+                        </div>
+                    </form>
+                </li>
+                {{--<li>--}}
+                    {{--<a href="{{route('contact')}}" class=" white-text green">Liên hệ</a>--}}
+                {{--</li>--}}
+                @if(auth()->check() && auth()->user()->avatar)
+                    <li><img class="user-avatar" src="{{auth()->user()->avatar}}"/></li>
                 @endif
+
+                    @if(auth()->check())
+                    <li>
+                        <a style="min-width: 136px" class="dropdown-button" href="#!"
+                           data-activates="dropdown1">{{auth()->user()->name}}<i
+                                    class="material-icons right">arrow_drop_down</i></a>
+                    </li>
+                    @else
+                        <li>
+                        <a href="{{route('login')}}" class=" white-text  deep-orange darken-3">Đăng nhập</a>
+                    </li>
+                    <li>
+                        <a href="{{route('contact')}}" class=" white-text green">Liên hệ</a>
+                    </li>
+                    @endif
+
+            </ul>
+            {{--</div>--}}
+
+        </div>
+        <ul id="dropdown1" class="dropdown-content">
+            <li>
+                <a href="{{route('favorite')}}" class="white-text red">Yêu thích</a>
             </li>
+            <li>
+                <a href="{{route('manga.create')}}">Đăng truyện</a>
+            </li>
+            <li>
+                <a href="{{route('request.show')}}">Yêu cầu truyện</a>
+            </li>
+            {{--<li class="divider"></li>--}}
+            <li><a class="btn-logout">Đăng xuất</a></li>
         </ul>
-        {{--</div>--}}
 
-    </div>
-    <ul id="dropdown1" class="dropdown-content">
-        <li>
-            <a href="{{route('favorite')}}" class="white-text red">Yêu thích</a>
-        </li>
-        <li>
-            <a href="{{route('manga.create')}}">Đăng truyện</a>
-        </li>
-        <li>
-            <a href="{{route('request.show')}}">Yêu cầu truyện</a>
-        </li>
-        {{--<li class="divider"></li>--}}
-        <li><a class="btn-logout">Đăng xuất</a></li>
-    </ul>
-
-</nav>
+    </nav>
 </div>
 <ul class="side-nav" id="mobile-sidebar">
     <li class="teal darken-4"><a class="white-text" href="/">Truyentranh18</a></li>
@@ -208,7 +216,7 @@
 </ul>
 <!-- end nav -->
 
-    @yield('content')
+@yield('content')
 
 <!-- start footer -->
 <footer class="page-footer grey darken-4 ">
@@ -216,13 +224,17 @@
         <div class="row">
             <div class="col l6 s12">
                 <h4 class="white-text title-h2">Truyentranh18.net</h4>
-                <p class="grey-text text-lighten-4">Đọc truyện manga, manhwa, manhua, comic,... với chap mới nhất miễn phí</p>
+                <p class="grey-text text-lighten-4">Đọc truyện manga, manhwa, manhua, comic,... với chap mới nhất miễn
+                    phí</p>
                 <h4 class="white-text title-h2">Truyện Nhật Bản mới nhất</h4>
-                <a href="{{route('manga.latest')}}" class="grey-text text-lighten-4">Đọc manga, Truyện Nhật Bản online mới nhất</a>
+                <a href="{{route('manga.latest')}}" class="grey-text text-lighten-4">Đọc manga, Truyện Nhật Bản online
+                    mới nhất</a>
                 <h4 class="white-text title-h2">Truyện Trung Quốc mới nhất</h4>
-                <a href="{{route('manhua.latest')}}" class="grey-text text-lighten-4">Đọc manhua, truyện Trung Quốc online mới nhất</a>
+                <a href="{{route('manhua.latest')}}" class="grey-text text-lighten-4">Đọc manhua, truyện Trung Quốc
+                    online mới nhất</a>
                 <h4 class="white-text title-h2">Truyện Hàn Quốc mới nhất</h4>
-                <a href="{{route('manhwa.latest')}}" class="grey-text text-lighten-4">Đọc manhwa, truyện Hàn Quốc online mới nhất</a>
+                <a href="{{route('manhwa.latest')}}" class="grey-text text-lighten-4">Đọc manhwa, truyện Hàn Quốc online
+                    mới nhất</a>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
@@ -230,7 +242,8 @@
                     <li><a class="grey-text text-lighten-3" href="/">Trang chủ</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.tos')}}">Term of service</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.priv')}}">Privacy Policy</a></li>
-                    <li><a class="grey-text text-lighten-3" href="{{route('request.show')}}">Yêu cầu nhờ vả Manga ,Manhua, Manhwa</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{route('request.show')}}">Yêu cầu nhờ vả Manga
+                            ,Manhua, Manhwa</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.create')}}">Tự up truyện</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('contact')}}">Liên hệ !</a></li>
                     <li>@include('dmca')</li>
@@ -282,57 +295,58 @@
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js"></script>
-<script src="{{asset('js/script.js?v=0.8')}}"></script>
-<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a557dc5a728f4b"></script>
+<script src="{{asset('js/script.js?v=0.9')}}"></script>
 <script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
         style="width: 200px;height: 300px;">{
-        "handle"
+    "handle"
     :
-        "truyentranh18vn", "arch"
+    "truyentranh18vn", "arch"
     :
-        "js", "styles"
+    "js", "styles"
     :
-        {
-            "a"
-        :
-            "336666", "b"
-        :
-            100, "c"
-        :
-            "FFFFFF", "d"
-        :
-            "FFFFFF", "k"
-        :
-            "336666", "l"
-        :
-            "336666", "m"
-        :
-            "336666", "n"
-        :
-            "FFFFFF", "p"
-        :
-            "10", "q"
-        :
-            "336666", "r"
-        :
-            100, "pos"
-        :
-            "br", "cv"
-        :
-            1, "cvfnt"
-        :
-            "monospace, sans-serif", "cvbg"
-        :
-            "336666", "cvw"
-        :
-            200, "cvh"
-        :
-            30, "ticker"
-        :
-            1, "fwtickm"
-        :
-            1
-        }
-    }</script>
-</body>
-</html>
+    {
+    "a"
+    :
+    "336666", "b"
+    :
+    100, "c"
+    :
+    "FFFFFF", "d"
+    :
+    "FFFFFF", "k"
+    :
+    "336666", "l"
+    :
+    "336666", "m"
+    :
+    "336666", "n"
+    :
+    "FFFFFF", "p"
+    :
+    "10", "q"
+    :
+    "336666", "r"
+    :
+    100, "pos"
+    :
+    "br", "cv"
+    :
+    1, "cvfnt"
+    :
+    "monospace, sans-serif", "cvbg"
+    :
+    "336666", "cvw"
+    :
+    200, "cvh"
+    :
+    30, "ticker"
+    :
+    1, "fwtickm"
+    :
+    1
+    }
+    }
+</script>
+</
+body >
+< / html >

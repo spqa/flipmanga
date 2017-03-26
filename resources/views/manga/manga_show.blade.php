@@ -38,7 +38,7 @@
                     <p class=""> Status : {{$manga->status}}</p>
                     <p class=""> Lượt xem : {{$manga->view}}</p>
                     <p class=""><i class="material-icons red-text">favorite</i> : {{$manga->getFavorite()}}</p>
-
+                    <div class="fb-like" data-href="{{secure_url('/truyen/'.$manga->slug)}}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                     <div class="manga-show-button hide-on-small-only">
                         @if($manga->chapters->count()>0)
                         <a href="{{route('manga.chapter',['manga'=>$manga->slug,'chapter_slug'=>$manga->chapters->sortBy('created_at')->first()->slug])}}"
@@ -99,8 +99,6 @@
                 </div>
             </div>
         </div>
-        <div class="addthis_inline_share_toolbox_t23u"></div>
-
         <div class="section padding-0">
             <div class="row">
                 <div class="col s12">

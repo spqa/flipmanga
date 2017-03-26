@@ -288,8 +288,11 @@ $(document).ready(function () {
             }
 
             var highlight = function (string, match) {
-                var matchStart = string.toLowerCase().indexOf("" + match.toLowerCase() + ""),
-                    matchEnd = matchStart + match.length - 1,
+                var matchStart = string.toLowerCase().indexOf("" + match.toLowerCase() + "");
+                if (matchStart===-1){
+                    return string;
+                }
+                var matchEnd = matchStart + match.length - 1,
                     beforeMatch = string.slice(0, matchStart),
                     matchText = string.slice(matchStart, matchEnd + 1),
                     afterMatch = string.slice(matchEnd + 1);

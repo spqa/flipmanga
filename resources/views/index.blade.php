@@ -25,7 +25,7 @@
         <div class="row hide-on-med-and-up margin-0">
             <div class="col s12 center">
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox_vmgx"></div>
+                <div class="fb-like" data-href="{{config('app.url')}}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
         <div class="row">
