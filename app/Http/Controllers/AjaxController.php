@@ -209,6 +209,7 @@ class AjaxController extends Controller
 
     public function latestUpdate(){
         $mangas = Manga::with('authors','genres')->orderBy('updated_at', 'desc')->paginate(12);
+        $mangas->setPath('/api/latest-update');
         foreach ($mangas as $manga){
             $manga->latestChap=$manga->getCacheLatestChap()->makeHidden('img');
             $manga->updated=$manga->updated_at->diffForHumans();
