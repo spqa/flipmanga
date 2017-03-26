@@ -14,7 +14,7 @@ class UpdateChapController extends Controller
 {
     public function getFromURL($url, $endSlug, $manga)
     {
-        $url = "https:" . $url;
+        $url = 'https:' . $url;
         $html = HtmlDomParser::file_get_html($url);
         $listChapter = [];
         foreach ($html->find('#manga-list')[0]->find('option') as $select) {
@@ -34,12 +34,12 @@ class UpdateChapController extends Controller
                 $manga->chapters()->save($insertChap);
             }
         };
-        return "done";
+        return 'done';
     }
 
     public function getFullManga($url, $manga)
     {
-        $url = "https:" . $url;
+        $url = 'https:' . $url;
         $html = HtmlDomParser::file_get_html($url);
         $listChapter = [];
         foreach ($html->find('#manga-list')[0]->find('option') as $select) {
@@ -58,7 +58,7 @@ class UpdateChapController extends Controller
                 $manga->chapters()->save($insertChap);
             }
         };
-        return "done";
+        return 'done';
     }
 
     public function getFromIndex()
@@ -88,7 +88,7 @@ class UpdateChapController extends Controller
                 } else {
                     $endSlug .= $lastest;
                 }
-                $endSlug .= "/1";
+                $endSlug .= '/1';
                 $this->getFromURL($item['link'], $endSlug, $manga);
             } else {
                 $detaiPage = HtmlDomParser::file_get_html('https://www.heymanga.me/manga/' . $array_split[4]);
@@ -134,7 +134,7 @@ class UpdateChapController extends Controller
                 $this->getFullManga($item, $insertManga);
             }
         }
-        return "done";
+        return 'done';
     }
 
     public function getMangaFox()
@@ -236,7 +236,7 @@ class UpdateChapController extends Controller
                             $linkUpload .= $upload . ',';
                         }
                         $insertChap = new \App\Chapter();
-                        $insertChap->name = $tmpManga['oriTitle'] . " " . $numOfChap;
+                        $insertChap->name = $tmpManga['oriTitle'] . ' ' . $numOfChap;
                         $insertChap->img = $linkUpload;
                         $insertChap->chapter_number = $numOfChap;
                         $insertManga->chapters()->save($insertChap);
@@ -265,7 +265,7 @@ class UpdateChapController extends Controller
             $_SESSION['token'] = $client->getAccessToken();
         }
 //        } else {
-//            echo '<a href="'.$client->getAuthenticationUrl().'">Click to authorize</a>';
+//            echo '<a href=''.$client->getAuthenticationUrl().''>Click to authorize</a>';
 //        }
 
         $imageData = [
@@ -461,22 +461,23 @@ class UpdateChapController extends Controller
         $comicId = 1;
         while ($comicId < 14000) {
             $mangaPage = null;
-            try{
-                $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-'.$comicId));
-            } catch (\Exception $exception){
+            try {
+                $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/truyen-tranh-online/abc-' . $comicId));
+            } catch (\Exception $exception) {
                 $comicId++;
                 continue;
             }
-            $this->getMangaFromLink('http://comicvn.net/truyen-tranh-online/abc-'.$comicId);
+            $this->getMangaFromLink('http://comicvn.net/truyen-tranh-online/abc-' . $comicId);
             $comicId++;
         }
     }
 
     //Quét truyện index
-    public function getIndexComic(){
+    public function getIndexComic()
+    {
         $indexPage = HtmlDomParser::str_get_html(file_get_contents('http://comicvn.net/'));
         foreach ($indexPage->find('div[class=manga-list-1]')[0]->find('div[class=item col-md-6 item-2]') as $manga) {
-            $this->getMangaFromLink('http://comicvn.net'.$manga->find('a')[0]->href);
+            $this->getMangaFromLink('http://comicvn.net' . $manga->find('a')[0]->href);
         }
     }
 
@@ -491,13 +492,14 @@ class UpdateChapController extends Controller
                 $textImg = $textImg . $img->src . ',';
             }
             return $textImg;
-        } catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return '';
         }
     }
 
     //Lấy truyện từ link
-    public function getMangaFromLink($mangaLink){
+    public function getMangaFromLink($mangaLink)
+    {
         $type = TypeImg::firstOrCreate([
             'prefix' => 'http://comicvn.net/'
         ]);
@@ -551,7 +553,7 @@ class UpdateChapController extends Controller
         $tmpManga['description'] = $mangaPage->find('div[class=margin-top-10 manga-summary]')[0]->innertext();
         $tmpManga['description'] = trim($tmpManga['description']);
 
-        $manga = Manga::where('name',$tmpManga['oriTitle'])->first();
+        $manga = Manga::where('name', $tmpManga['oriTitle'])->first();
         $listChap = $info->find('ul')[1]->find('ul')[0]->find('ul')[0]->find('a');
         if (!empty($manga)) {//$manga !=null
             //$this->comment('starting old ' . $manga->name);
@@ -564,10 +566,10 @@ class UpdateChapController extends Controller
                 } else {
                     $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
                 }
-                for($char = 'A';$char<='Z';$char++){
-                    $numOfChap = str_replace($char,'.'.(ord($char)-64),$numOfChap);
+                for ($char = 'A'; $char <= 'Z'; $char++) {
+                    $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
                 }
-                if (strpos($numOfChap,'-') !== false) continue;
+                if (strpos($numOfChap, '-') !== false) continue;
                 $existChap = $manga->chapters()->where('chapter_number', $numOfChap)->first();
                 if (isset($existChap)) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
@@ -617,10 +619,10 @@ class UpdateChapController extends Controller
                 } else {
                     $numOfChap = trim(explode(' ', $listChap[$i]->innertext())[1]);
                 }
-                for($char = 'A';$char<='Z';$char++){
-                    $numOfChap = str_replace($char,'.'.(ord($char)-64),$numOfChap);
+                for ($char = 'A'; $char <= 'Z'; $char++) {
+                    $numOfChap = str_replace($char, '.' . (ord($char) - 64), $numOfChap);
                 }
-                if (strpos($numOfChap,'-') !== false) continue;
+                if (strpos($numOfChap, '-') !== false) continue;
                 $textImg = $this->getImageComic($listChap[$i]->href);
                 $insertChap = new \App\Chapter();
                 $insertChap->name = $nameChap;
@@ -632,5 +634,177 @@ class UpdateChapController extends Controller
 
             }
         }
+    }
+
+    public function getThichFromList(){
+        for ($i=1;$i<236;$i++) {
+            $listPage = HtmlDomParser::str_get_html(file_get_contents('http://thichtruyentranh.com/truyen-tranh.html?category=&order=7&page='.$i));
+            $ulList = $listPage->find('ul[class=ulListruyen]')[0];
+            foreach ($ulList->find('li') as $item) {
+                $this->getMangaThichTruyen($item->find('a')[0]->href);
+            }
+        }
+    }
+    public function getMangaThichTruyen($link)
+    {
+        $type = TypeImg::firstOrCreate([
+            'prefix' => 'http://thichtruyentranh.com/'
+        ]);
+        $mangaPage = HtmlDomParser::str_get_html(file_get_contents('http://thichtruyentranh.com'.$link));
+        $tmpManga = [];
+        $tmpManga['poster'] = $mangaPage->find('div[class=divthum2]')[0]->find('img')[0]->src;
+        $divListText = $mangaPage->find('div[class=divListtext]')[0];
+        $tmpManga['oriTitle'] = $divListText->find('h1')[0]->text();
+        $tmpManga['oriTitle'] = trim($tmpManga['oriTitle']);
+        $tmpManga['alias'] = '';
+        $tmpManga['author'] = '';
+        $tmpManga['genre'] = '';
+        $tmpManga['status'] = '';
+        for ($i = 0; $i < sizeof($divListText->find('li')) - 3; $i++) {
+            $string = $divListText->find('li')[$i]->find('div[class=item1]')[0]->text();
+            switch ($string) {
+                case 'Tên khác':
+                    $tmpManga['alias'] = $divListText->find('li')[$i]->find('div[class=item2]')[0]->text();
+                    $tmpManga['alias'] = substr($tmpManga['alias'], 2);
+                    break;
+                case 'Tác giả':
+                    $tmpManga['author'] = $divListText->find('li')[$i]->find('div[class=item2]')[0]->find('a')[0]->text();
+                    $tmpManga['author'] = trim($tmpManga['author']);
+                    break;
+                case 'Thể loại':
+                    foreach ($divListText->find('li')[$i]->find('div[class=item2]')[0]->find('a') as $item) {
+                        $tmpManga['genre'] .= $item->text() . ',';
+                    }
+                    break;
+                case 'Tình trạng':
+                    $tmpManga['status'] = $divListText->find('li')[$i]->find('div[class=item2]')[0]->find('span')[0]->text();
+                    $tmpManga['status'] = trim($tmpManga['status']);
+                    break;
+            }
+        }
+        $tmpManga['description'] = trim($mangaPage->find('ul[class=ulpro_line]')[0]->find('li')[sizeof($mangaPage->find('ul[class=ulpro_line]')[0]->find('li')) - 1]->find('p')[1]->text());
+
+        $manga = Manga::where('name', $tmpManga['oriTitle'])->first();
+        if (empty($manga)) {
+            $manga = Manga::create([
+                'name' => $tmpManga['oriTitle'],
+                'slug' => str_slug($tmpManga['oriTitle']),
+                'poster' => $tmpManga['poster'],
+                'status' => $tmpManga['status'],
+                'description' => $tmpManga['description'],
+                'translator' => '',
+                'alias' => $tmpManga['alias'],
+                'view' => 1,
+            ]);
+        }
+        $listChap = $mangaPage->find('div[id=listChapterBlock]')[0];
+        if ($listChap->find('div[class=paging]') != null) {
+            if ($listChap->find('div[class=paging]')[0]->find('li[class=last]') != null) {
+                $lastLink = $listChap->find('div[class=paging]')[0]->find('li[class=last]')[0]->find('a')[0]->href;
+            } else {
+                $lastLink = $listChap->find('div[class=paging]')[0]->find('li')[sizeof($listChap->find('div[class=paging]')[0]->find('li')) - 1]->find('a')[0]->href;
+            }
+            $lastPage = explode('.', $lastLink)[1];
+            for ($i = 1; $i <= $lastPage; $i++) {
+                $chapterPage = HtmlDomParser::str_get_html(file_get_contents('http://thichtruyentranh.com' . str_replace('.' . $lastPage . '.', '.' . $i . '.', $lastLink)));
+                $listChap = $chapterPage->find('div[id=listChapterBlock]')[0]->find('ul[class=ul_listchap]')[0]->find('li');
+                foreach ($listChap as $item) {
+                    $textName = $item->find('a')[0]->text();
+                    if (stripos($textName, 'Chap ') !== false) {
+                        echo 'Chap ';
+                        $index = stripos($textName, 'Chap ');
+                        if (strpos($textName, ':') !== false) {
+                            $numOfChap = substr($textName, $index + 5, strpos($textName, ':') - $index - 5);
+                        } else if (strpos($textName, ' ', $index + 5) != false) {
+                            $numOfChap = substr($textName, $index + 5, strpos($textName, ' ', $index + 5) - $index - 5);
+                        } else {
+                            $numOfChap = substr($textName, $index + 5);
+                        }
+                        echo $numOfChap . '<br/>';
+                    } else {
+                        echo 'Chapter ';
+                        echo stripos($textName, 'Chap ');
+                        $index = stripos($textName, 'Chapter ');
+                        if (strpos($textName, ':') !== false) {
+                            $numOfChap = substr($textName, $index + 8, strpos($textName, ':') - $index - 8);
+                        } else if (strpos($textName, ' ', $index + 8) != false) {
+                            $numOfChap = substr($textName, $index + 8, strpos($textName, ' ', $index + 8) - $index - 8);
+                        } else {
+                            $numOfChap = substr($textName, $index + 8);
+                        }
+                        echo $numOfChap . '<br/>';
+                    }
+//                    dd($item->find('a')[0]->href);
+                    $textImg = $this->getImageThich($item->find('a')[0]->href);
+                    $insertChap = new \App\Chapter();
+                    $insertChap->name = '';
+                    $insertChap->img = $textImg;
+                    $insertChap->chapter_number = $numOfChap;
+                    $manga->chapters()->save($insertChap);
+                    $insertChap->typeImg()->associate($type);
+                    $insertChap->save();
+                }
+            }
+        } else {
+            $listChap = $mangaPage->find('div[id=listChapterBlock]')[0]->find('ul[class=ul_listchap]')[0]->find('li');
+            foreach ($listChap as $item) {
+                $textName = $item->find('a')[0]->text();
+                if (stripos($textName, 'Chap ') !== false) {
+                    echo 'Chap ';
+                    $index = stripos($textName, 'Chap ');
+                    if (strpos($textName, ':') !== false) {
+                        $numOfChap = substr($textName, $index + 5, strpos($textName, ':') - $index - 5);
+                    } else if (strpos($textName, ' ', $index + 5) != false) {
+                        $numOfChap = substr($textName, $index + 5, strpos($textName, ' ', $index + 5) - $index - 5);
+                    } else {
+                        $numOfChap = substr($textName, $index + 5);
+                    }
+                    echo $numOfChap . '<br/>';
+                } else {
+                    echo 'Chapter ';
+                    echo stripos($textName, 'Chap ');
+                    $index = stripos($textName, 'Chapter ');
+                    if (strpos($textName, ':') !== false) {
+                        $numOfChap = substr($textName, $index + 8, strpos($textName, ':') - $index - 8);
+                    } else if (strpos($textName, ' ', $index + 8) != false) {
+                        $numOfChap = substr($textName, $index + 8, strpos($textName, ' ', $index + 8) - $index - 8);
+                    } else {
+                        $numOfChap = substr($textName, $index + 8);
+                    }
+                    echo $numOfChap . '<br/>';
+                }
+//                dd($item->find('a')[0]->href);
+                $textImg = $this->getImageThich($item->find('a')[0]->href);
+                $insertChap = new \App\Chapter();
+                $insertChap->name = '';
+                $insertChap->img = $textImg;
+                $insertChap->chapter_number = $numOfChap;
+                $manga->chapters()->save($insertChap);
+                $insertChap->typeImg()->associate($type);
+                $insertChap->save();
+            }
+        }
+    }
+
+    public function getImageThich($link){
+//        dd(file_get_contents('http://thichtruyentranh.com/thuan-tinh-nha-dau-hoa-lat-lat/thuan-tinh-nha-dau-hoa-lat-lat-chap-3/127191.html'));
+        $dom = HtmlDomParser::str_get_html(file_get_contents('http://thichtruyentranh.com'.$link));
+        $imgText='';
+        $imgArray="";
+        foreach ($dom->find('script') as $script){
+            if (strpos($script->innertext(),'imgArray')!==false){
+                $imgText=$script->innertext();
+                break;
+            }
+        }
+
+        if (!empty($imgText)){
+            foreach (explode('"',$imgText) as $item){
+                if (strpos($item,'http')!==false){
+                    $imgArray .= $item . ",";
+                }
+            }
+        }
+        return $imgArray;
     }
 }
