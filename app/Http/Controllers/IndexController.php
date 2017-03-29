@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Genre;
 use App\Manga;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
@@ -70,7 +71,7 @@ class IndexController extends Controller
     {
         $title_page = 'Truyện manhwa - Truyện Hàn Quốc manhwa mới nhất';
         $page_description = 'Manhwa (Hangul: 만화, Korean phát âm: [manhwa]) Manhwa là thể loại truyện tranh của Hàn Quốc có sức ảnh hưởng lớn từ Manga Nhật Bản. Ngoài ra Manhwa cũng là thuật ngữ dùng cho tranh biếm họa hài hước và bản in. Tuy nhiên, tại Việt Nam, từ "manhwa" chỉ được dùng với nghĩa truyện tranh Hàn Quốc.';
-        $mangas = Manga::inRandomOrder()->orderBy('updated_at', 'desc')->paginate(24);
+        $mangas = Genre::whereSlug('manhwa')->firstOrFail()->mangas()->orderBy('updated_at', 'desc')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
 
@@ -78,7 +79,7 @@ class IndexController extends Controller
     {
         $title_page = 'Truyện manhua - Truyện tranh Trung Quốc mới nhất';
         $page_description = ' Manhua (simplified Chinese: 漫画; traditional Chinese: 漫畫; pinyin: Mànhuà; Jyutping: maan6 waa2) Thể loại truyện Manhua là các bộ truyện tranh của Trung Quốc, HongKong hoặc Đài Loan . :D';
-        $mangas = Manga::inRandomOrder()->orderBy('updated_at', 'desc')->paginate(24);
+        $mangas = Genre::whereSlug('manhua')->firstOrFail()->mangas()->orderBy('updated_at', 'desc')->paginate(24);
         return view('manga.manga_list_custom', compact('mangas', 'title_page', 'page_description'));
     }
 
