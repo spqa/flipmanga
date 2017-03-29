@@ -49,6 +49,8 @@ templates['mangacard'] = template({"1":function(container,depth0,helpers,partial
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.genres : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "                      </span>\r\n            <p>"
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    + "</p>\r\n            <div class=\"center\">\r\n                <a class=\"teal-text\" href=\"/truyen/"
+    + alias4(((helper = (helper = helpers.slug || (depth0 != null ? depth0.slug : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"slug","hash":{},"data":data}) : helper)))
+    + "\">Đọc ngay</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 },"useData":true});
 })();

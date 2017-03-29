@@ -215,7 +215,7 @@ li form .input-field {
 
 .mega-menu {
     position: absolute;
-    max-width: 800px;
+    max-width: 1200px;
     z-index: 999;
     display: none;
     margin: 0;

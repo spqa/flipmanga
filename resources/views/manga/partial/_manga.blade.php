@@ -29,24 +29,9 @@
                 @endforeach
                       </span>
             <p>{{$item->description}}</p>
+            <div class="center">
+                <a class="teal-text" href="{{route('manga',['manga'=>$item->slug])}}">Đọc ngay</a>
+            </div>
         </div>
     </div>
 </div>
-
-<!-- end poster -->
-
-{{--<div class="col s12 m6 l4">--}}
-    {{--<div class="card horizontal">--}}
-        {{--<div class="card-image">--}}
-            {{--<img src="http://lorempixel.com/100/190/nature/6">--}}
-        {{--</div>--}}
-        {{--<div class="card-stacked">--}}
-            {{--<div class="card-content">--}}
-                {{--<p>I am a very simple card. I am good at containing small bits of information.</p>--}}
-            {{--</div>--}}
-            {{--<div class="card-action">--}}
-                {{--<a href="#">This is a link</a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}

@@ -125,10 +125,13 @@ $(document).ready(function () {
             cache: true,
             success: function (data) {
                 console.log(data);
-                $(t.attr('href')).empty();
+                $more=$(t.attr('href')).find('.more-wrapper').first();
+                $tab=$(t.attr('href'));
+                $tab.empty();
                 $.each(data, function (index, value) {
-                    $(t.attr('href')).append(Handlebars.templates.mangacard(value));
+                    $tab.append(Handlebars.templates.mangacard(value));
                 });
+                $tab.append($more);
             }
         });
     });

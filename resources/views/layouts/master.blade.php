@@ -62,7 +62,7 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.6')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.8')}}">
 </head>
 
 <body>
@@ -294,8 +294,8 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script src="/js/mangacard.template.js"></script>
-<script src="{{asset('js/script.js?v=0.9')}}"></script>
+<script src="/js/mangacard.template.js?v=0.1"></script>
+<script src="{{asset('js/script.js?v=1.0')}}"></script>
 <script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
         style="width: 200px;height: 300px;">{
     "handle"

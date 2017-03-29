@@ -202,6 +202,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col s12 center ">
+                            <a href="{{route('manhwa.latest')}}" class="btn btn-more white grey-text">xem tiếp truyện manhwa</a>
+                        </div>
                     </div>
                     <div id="tab-container4">
                         <div class="col s12 center ">
@@ -220,6 +223,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col s12 center more-wrapper">
+                            <a href="{{route('manhua.latest')}}" class="btn btn-more white grey-text">xem tiếp truyện manhua</a>
                         </div>
                     </div>
                 </div>

@@ -60,3 +60,7 @@ Route::get('up-truyen', 'MangaController@create')->name('manga.create')->middlew
 Route::post('up-truyen', 'MangaController@store')->name('manga.store')->middleware('auth');
 Route::get('yeu-cau-truyen','RequestMangaController@show')->name('request.show')->middleware('auth');
 Route::post('yeu-cau-truyen','RequestMangaController@store')->name('request.store')->middleware('auth');
+
+//blog
+
+//Route::get('tin-tuc/{}')
