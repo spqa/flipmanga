@@ -13,7 +13,7 @@ class IndexController extends Controller
         //return Cache::get('index_page');
 //        return Cache::remember('index_page',15,function (){
             $latestHotUpdate = Cache::tags('index')->rememberForever('latest.hot.update', function () {
-                return Manga::orderBy('updated_at', 'desc')->orderBy('view', 'desc')->take(12)->get();
+                return Manga::orderBy('updated_at', 'desc')->orderBy('view', 'desc')->take(24)->get();
             });
             $newRelease = Cache::tags('index')->rememberForever('new.release', function () {
                 return Manga::orderBy('created_at', 'desc')->take(12)->get();
