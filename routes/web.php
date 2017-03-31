@@ -63,4 +63,4 @@ Route::post('yeu-cau-truyen','RequestMangaController@store')->name('request.stor
 
 //blog
 
-//Route::get('tin-tuc/{}')
+Route::get('/tin-tuc/{slug?}','PostController@show');
