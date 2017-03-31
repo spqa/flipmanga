@@ -20,20 +20,20 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        Carbon::setLocale('vi');
-        Genre::saved(function($genres){
-            Cache::forget('allGenres');
-        });
-        Manga::saved(function($manga){
-            Cache::tags('genre')->forget($manga->getCacheKey());
-            Cache::tags('author')->forget($manga->getCacheKey());
-            Cache::tags('latest.chap')->forget($manga->getCacheKey());
-            Cache::tags('index')->flush();
-        });
-        $allGenres=Cache::rememberForever('allGenres',function(){
-            return Genre::all();
-        });
-        View::share( 'allGenres',$allGenres);
+//        Carbon::setLocale('vi');
+//        Genre::saved(function($genres){
+//            Cache::forget('allGenres');
+//        });
+//        Manga::saved(function($manga){
+//            Cache::tags('genre')->forget($manga->getCacheKey());
+//            Cache::tags('author')->forget($manga->getCacheKey());
+//            Cache::tags('latest.chap')->forget($manga->getCacheKey());
+//            Cache::tags('index')->flush();
+//        });
+//        $allGenres=Cache::rememberForever('allGenres',function(){
+//            return Genre::all();
+//        });
+//        View::share( 'allGenres',$allGenres);
     }
 
     /**
