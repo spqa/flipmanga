@@ -109,8 +109,8 @@
                     </div>
                 </li>
 
-                <li><a href="{{route('manga.full')}}">Truyện Full</a></li>
                 <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
+                <li><a href="https://truyentranh18.net">Truyện hay nhất </a></li>
             </ul>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
 
