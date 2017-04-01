@@ -106,6 +106,13 @@ class UpdateThichTruyen extends Command
                 'alias' => $tmpManga['alias'],
                 'view' => 1,
             ]);
+            foreach (explode(',',$tmpManga['genre']) as $item) {
+                $insertGenre = Genre::firstOrCreate([
+                    'name' => $item,
+                    'slug' => str_slug($item)
+                ]);
+                $manga->genres()->attach($insertGenre);
+            }
         }
         $this->comment('Insert: ' . $tmpManga['oriTitle']);
         $listChap = $mangaPage->find('div[id=listChapterBlock]')[0];
