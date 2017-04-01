@@ -1,8 +1,0 @@
-$ mkdir -p /home/www/truyentranh18/production/releases
-mkdir -p /home/www/truyentranh18/production/releases
-
-$ mkdir -p /home/www/truyentranh18/production/current
-mkdir -p /home/www/truyentranh18/production/current
-
-$ mkdir -p /home/www/truyentranh18/production/shared
-mkdir -p /home/www/truyentranh18/production/shared

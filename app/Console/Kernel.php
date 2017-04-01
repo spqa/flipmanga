@@ -50,8 +50,8 @@ class Kernel extends ConsoleKernel
 //        $schedule->command('update:Chapter')->name('change1.1')->everyTenMinutes()->withoutOverlapping();
 //        $schedule->command('update:mangareader')->name('mangareader1')->everyMinute()->withoutOverlapping();
 //        $schedule->command('update:old')->name('mangareader1.old')->everyThirtyMinutes()->withoutOverlapping();
-//        $schedule->command('update:comicvn')->name('comicvn')->everyMinute()->withoutOverlapping()->sendOutputTo('comicvnLog');
-        $schedule->command('update:thichtruyen')->name('thichtruyen')->everyMinute()->withoutOverlapping()->sendOutputTo('thichtruyenLog');
+        $schedule->command('update:comicvn')->name('comicvn')->everyMinute()->withoutOverlapping()->sendOutputTo('comicvnLog');
+//        $schedule->command('update:thichtruyen')->name('thichtruyen')->everyMinute()->withoutOverlapping()->sendOutputTo('thichtruyenLog');
     }
 
     /**
