@@ -101,9 +101,9 @@ class UpdateThichTruyen extends Command
                 'slug' => str_slug($tmpManga['oriTitle']),
                 'poster' => $tmpManga['poster'],
                 'status' => $tmpManga['status'],
-                'description' => $tmpManga['description'],
+                'description' => $tmpManga['description'] . $tmpManga['alias'],
                 'translator' => '',
-                'alias' => $tmpManga['alias'],
+                'alias' => '',
                 'view' => 1,
             ]);
             foreach (explode(',',$tmpManga['genre']) as $item) {
