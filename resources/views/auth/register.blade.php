@@ -7,15 +7,15 @@
         <nav class="white z-depth-0 nav-breadcrumb">
             <div class="nav-wrapper">
                 <div class="col s12">
-                    <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
-                    <a href="/register" class="breadcrumb grey-text active">Register Flipmanga</a>
+                    <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
+                    <a href="/register" class="breadcrumb grey-text active">Đăng ký</a>
                 </div>
             </div>
         </nav>
         <div class="row">
             <div class="col s12 m6 offset-m3">
                 <div class="card-panel">
-                    <h3 class="orange-text">Register</h3>
+                    <h3 class="orange-text">Đăng ký</h3>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                             {{ csrf_field() }}

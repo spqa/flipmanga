@@ -111,6 +111,7 @@
 
                 <li><a href="https://truyentranh8.info">Truyện Hay</a></li>
                 <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
+                <li><a href="{{route('meme.index')}}">Ảnh chế</a></li>
             </ul>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
 
@@ -132,7 +133,7 @@
 
                     @if(auth()->check())
                     <li>
-                        <a style="min-width: 136px" class="dropdown-button" href="#!"
+                        <a style="min-width: 200px" class="dropdown-button" href="#!"
                            data-activates="dropdown1">{{auth()->user()->name}}<i
                                     class="material-icons right">arrow_drop_down</i></a>
                     </li>
@@ -151,16 +152,19 @@
         </div>
         <ul id="dropdown1" class="dropdown-content">
             <li>
-                <a href="{{route('favorite')}}" class="white-text red">Yêu thích</a>
+                <a href="{{route('favorite')}}" class="white-text red"><i class="material-icons right">favorite</i>Yêu thích</a>
             </li>
             <li>
-                <a href="{{route('manga.create')}}">Đăng truyện</a>
+                <a href="{{route('meme.create')}}" class="white-text green"><i class="material-icons right">insert_emoticon</i>Tạo ảnh chế</a>
             </li>
             <li>
-                <a href="{{route('request.show')}}">Yêu cầu truyện</a>
+                <a class="black-text" href="{{route('manga.create')}}">Đăng truyện</a>
+            </li>
+            <li>
+                <a class="black-text" href="{{route('request.show')}}">Yêu cầu truyện</a>
             </li>
             {{--<li class="divider"></li>--}}
-            <li><a class="btn-logout">Đăng xuất</a></li>
+            <li><a class="btn-logout grey darken-3 white-text">Đăng xuất</a></li>
         </ul>
 
     </nav>

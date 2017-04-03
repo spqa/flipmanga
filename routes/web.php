@@ -64,3 +64,9 @@ Route::post('yeu-cau-truyen','RequestMangaController@store')->name('request.stor
 //blog
 
 Route::get('/tin-tuc/{slug?}','PostController@show');
+
+//anh che
+Route::get('/meme-anh-che/{slug?}','MemeController@index')->name('meme.index');
+Route::get('/tao-anh-che-truyen-tranh','MemeController@create')->name('meme.create');
+
+Route::post('/api/meme/preview','MemeController@previewMeme')->middleware('auth');
