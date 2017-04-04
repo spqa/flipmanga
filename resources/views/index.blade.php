@@ -103,7 +103,7 @@
                     <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/tw4848.png"></a> -->
                 </div>
                 <div class="fb-page"
-                     data-href="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
+                     data-href="https://www.facebook.com/truyentranhmanga18/"
                      data-tabs="no" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
                      data-show-facepile="true">
                     <blockquote

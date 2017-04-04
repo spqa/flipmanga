@@ -11,8 +11,8 @@ class SearchController extends Controller
         $query=request('query');
         $eng_query=$this->convert_vi_to_en($query);
         $title_page='Kết quả tìm kiếm '.$query;
-        $mangas=Manga::orderBy('view')->where('name','like','%'.$query.'%')->orWhere('name','like','%'.$eng_query.'%')->paginate(24);
-        $page_description='Có '.$mangas->count().' kết quả cho từ khóa '.$query;
+        $mangas=Manga::orderBy('view')->where('name','like','%'.$query.'%')->orWhere('name','like','%'.$eng_query.'%')->paginate(24)->appends(['query'=>$query]);
+        $page_description='Có '.$mangas->total().' kết quả cho từ khóa '.$query;
         return view('manga.manga_list_custom',compact('title_page','mangas','page_description'));
     }
 
