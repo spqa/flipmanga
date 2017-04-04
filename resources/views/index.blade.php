@@ -107,9 +107,9 @@
                      data-tabs="no" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
                      data-show-facepile="true">
                     <blockquote
-                            cite="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
+                            cite="https://www.facebook.com/truyentranhmanga18/"
                             class="fb-xfbml-parse-ignore"><a
-                                href="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/">Truyentranh18</a></blockquote>
+                                href="https://www.facebook.com/truyentranhmanga18/">Truyentranh8</a></blockquote>
                 </div>
 
                 <div class="card-panel no-padding">

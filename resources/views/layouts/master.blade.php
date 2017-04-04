@@ -70,7 +70,7 @@
         {
           "@context" : "https://schema.org",
           "@type" : "Organization",
-          "name" : "Truyentranh18",
+          "name" : "Truyentranh8",
           "url" : "{{secure_url('/')}}",
           "sameAs" : [
           "https://www.facebook.com/truyentranhmanga18/"
@@ -85,7 +85,7 @@
     <nav>
         <div class="nav-wrapper  teal darken-4">
             {{--<div class="container">--}}
-            <a href="/" class="brand-logo center">Truyentranh18</a>
+            <a href="/" class="brand-logo center">Truyentranh8</a>
             <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/"><i class="material-icons">home</i></a></li>
@@ -166,7 +166,7 @@
     </nav>
 </div>
 <ul class="side-nav" id="mobile-sidebar">
-    <li class="teal darken-4"><a class="white-text" href="/">Truyentranh18</a></li>
+    <li class="teal darken-4"><a class="white-text" href="/">Truyentranh8</a></li>
     <li class="black-text">
         <form action="/tim-kiem" class="mobile-search-form">
             <input autocomplete="off" id="search-mobile" name="query" type="search" placeholder="Search manga" required>
@@ -223,7 +223,7 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h4 class="white-text title-h2">Truyentranh18.net</h4>
+                <h4 class="white-text title-h2">Truyentranh8.info</h4>
                 <p class="grey-text text-lighten-4">Đọc truyện manga, manhwa, manhua, comic,... với chap mới nhất miễn
                     phí</p>
                 <h4 class="white-text title-h2">Truyện Nhật Bản mới nhất</h4>
@@ -259,8 +259,8 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2017 All Rights Reserved - truyentranh18.net
-            <a class="grey-text text-lighten-4 right" href="/">truyentranh18.net</a>
+            © 2017 All Rights Reserved - Truyentranh8.info
+            <a class="grey-text text-lighten-4 right" href="/">Truyentranh8.info</a>
         </div>
     </div>
 
