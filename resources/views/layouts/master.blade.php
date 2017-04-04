@@ -296,6 +296,6 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js?v=0.1"></script>
 <script src="{{asset('js/script.js?v=1.0')}}"></script>
-<script id="cid0020000152278171111" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 199px;height: 300px;">{"handle":"Truyentranh8vn","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1}}</script>
+<script id="cid0020000152285350923" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"truyentranh18vn","arch":"js","styles":{"a":"CC0000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"CC0000","l":"CC0000","m":"CC0000","n":"FFFFFF","p":"10","q":"CC0000","r":100,"pos":"br","cv":1,"cvbg":"CC0000","cvw":200,"cvh":30,"ticker":1,"fwtickm":1}}</script>
 </body>
 </html>
