@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Genre;
 use App\Manga;
 use App\TypeImg;
 use Illuminate\Console\Command;
@@ -107,11 +108,13 @@ class UpdateThichTruyen extends Command
                 'view' => 1,
             ]);
             foreach (explode(',',$tmpManga['genre']) as $item) {
-                $insertGenre = Genre::firstOrCreate([
-                    'name' => $item,
-                    'slug' => str_slug($item)
-                ]);
-                $manga->genres()->attach($insertGenre);
+                if (!empty($item)){
+                    $insertGenre = Genre::firstOrCreate([
+                        'name' => $item,
+                        'slug' => str_slug($item)
+                    ]);
+                    $manga->genres()->attach($insertGenre);
+                }
             }
         }
         $this->comment('Insert: ' . $tmpManga['oriTitle']);
