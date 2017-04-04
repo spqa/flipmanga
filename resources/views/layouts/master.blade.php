@@ -296,55 +296,6 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js?v=0.1"></script>
 <script src="{{asset('js/script.js?v=1.0')}}"></script>
-{{--<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"--}}
-{{--style="width: 200px;height: 300px;">{--}}
-{{--"handle"--}}
-{{--:--}}
-{{--"truyentranh18vn", "arch"--}}
-{{--:--}}
-{{--"js", "styles"--}}
-{{--:--}}
-{{--{--}}
-{{--"a"--}}
-{{--:--}}
-{{--"336666", "b"--}}
-{{--:--}}
-{{--100, "c"--}}
-{{--:--}}
-{{--"FFFFFF", "d"--}}
-{{--:--}}
-{{--"FFFFFF", "k"--}}
-{{--:--}}
-{{--"336666", "l"--}}
-{{--:--}}
-{{--"336666", "m"--}}
-{{--:--}}
-{{--"336666", "n"--}}
-{{--:--}}
-{{--"FFFFFF", "p"--}}
-{{--:--}}
-{{--"10", "q"--}}
-{{--:--}}
-{{--"336666", "r"--}}
-{{--:--}}
-{{--100, "pos"--}}
-{{--:--}}
-{{--"br", "cv"--}}
-{{--:--}}
-{{--1, "cvfnt"--}}
-{{--:--}}
-{{--"monospace, sans-serif", "cvbg"--}}
-{{--:--}}
-{{--"336666", "cvw"--}}
-{{--:--}}
-{{--200, "cvh"--}}
-{{--:--}}
-{{--30, "ticker"--}}
-{{--:--}}
-{{--1, "fwtickm"--}}
-{{--:--}}
-{{--1--}}
-{{--}--}}
-{{--}</script>--}}
+<script id="cid0020000152285928468" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"truyentranh18vn","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1,"fwtickm":1}}</script>
 </body>
 </html>
