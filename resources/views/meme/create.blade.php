@@ -40,8 +40,14 @@
                             <input id="bottom-text" type="text">
                             <label for="bottom-text">text phía dưới</label>
                         </div>
-                        <button class="btn btn-preview col s6" type="submit"><i
-                                    class="material-icons left">local_see</i>Xem trước
+                        <button class="btn btn-preview col s6"><i
+                                    class="material-icons left">local_see</i>chỉnh sửa
+                        </button>
+                        <button class="btn btn-add-text col s6 hide"><i
+                                    class="material-icons left">format_color_text</i>thêm text
+                        </button>
+                        <button class="btn btn-generate col s6 hide"><i
+                                    class="material-icons left">create</i>xem trước
                         </button>
                         <button class="btn green col s6" type="submit"><i class="material-icons left">save</i>Đăng ảnh
                         </button>
@@ -64,46 +70,12 @@
 
             if ($(this).val()) {
                 $('#preview-image').attr('src', $(this).val());
-                var canvas =new fabric.Canvas('editor');
-                var source=$(this).val();
-                fabric.Image.fromURL(source, function(oImg) {
-                    canvas.add(oImg);
-                });
-
             }
         });
 
         $('#preview-image').on('error', function (e) {
             $('#preview-image').attr('src', '/404.png');
         });
-        //        $('.btn-preview').click(function (e) {
-        //            e.preventDefault();
-        //            $.ajax({
-        //                url:'/api/meme/preview',
-        //                method:'POST',
-        //                data:{
-        //                    image:$('#image').val(),
-        //                    up:$('#upper-text').val(),
-        //                    down:$('#bottom-text').val()
-        //                },
-        //                success:function (data) {
-        //                    $('#preview-image').attr('src','/storage/images/temp/'+data+'.jpg');
-        //                }
-        //
-        //            });
-        //
-        //        });
-        //        var canvas = new fabric.Canvas('editor');
-        //        canvas.setWidth(500);
-        //        canvas.setHeight(500);
-        //        var imgElement = document.getElementById('preview-image');
-        //        var imgInstance = new fabric.Image(imgElement, {
-        //            left: 100,
-        //            top: 100,
-        //        });
-        //        canvas.add(imgInstance);
-        //        var text = new fabric.Text('hello world', { left: 100, top: 100 });
-        //        canvas.add(text);
-
     </script>
+    <script src="/js/meme_editor.js"></script>
 @endsection
