@@ -88,14 +88,14 @@
                     {{--<div class="card-image">--}}
                         {{--<img class="poster-home-1" src="/img/doc-truyen-tranh-online-mien-phi.jpg"--}}
                              {{--alt="Website đọc truyện tranh online miễn phí tốt nhất Việt Nam"/>--}}
-                        {{--<span class="card-title">Truyentranh18</span>--}}
+                        {{--<span class="card-title">Truyentranh8</span>--}}
                     {{--</div>--}}
                 {{--</div>--}}
                 <div class="card-panel center hide">
-                    <h1 class="title-h1">Truyentranh18 - Website đọc truyện tranh online miễn phí, đọc truyện tranh
+                    <h1 class="title-h1">Truyentranh8 - Website đọc truyện tranh online miễn phí, đọc truyện tranh
                         manga tổng hợp</h1>
                     <p>Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,
-                        manhua, manhwa, truyentranh18</p>
+                        manhua, manhwa, Truyentranh8</p>
 
                     <!-- <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/fb4848.png"></a>
                     <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/pin4848.png"></a>

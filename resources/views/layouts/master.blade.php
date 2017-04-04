@@ -9,9 +9,9 @@
     <meta name="keywords"
           content="truyện tranh, truyentranh 18+, truyen tranh 18+, manga, đọc truyện tranh online, cổng truyện dịch, truyện tranh online, manga online, xem truyện, xem truyện tranh online, xem truyện online, vechai, manga24h, blogtruyen, truyện tranh 18, manhua, manhwa">
     <link rel="canonical" href="@yield('canonical',secure_url('/'))"/>
-    <meta itemprop="name" content="Truyentranh18"/>
+    <meta itemprop="name" content="Truyentranh8"/>
     <meta itemprop="description"
-          content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,truyentranh18')"/>
+          content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,Truyentranh8')"/>
     <link hreflang="vi" href="{{secure_url('/')}}">
     <meta itemprop="image" content="@yield('image',asset('/img/flip.png'))"/>
     <meta property="fb:app_id" content="1729477510640705">
@@ -20,9 +20,9 @@
     <meta property="og:url" content="@yield('og_url',secure_url('/'))"/>
     <meta property="og:type" content="@yield('og_type','website')"/>
     <meta property="og:description"
-          content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,truyentranh18')">
+          content="@yield('meta_des','Trang truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga,manhua,manhwa,Truyentranh8')">
     <meta property="og:image" content="@yield('image','/img/flip.png')"/>
-    <meta property="og:site_name" content="truyentranh18.net"/>
+    <meta property="og:site_name" content="Truyentranh8.info"/>
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/apple-icon-57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('/apple-icon-60x60.png')}}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('/apple-icon-72x72.png')}}">

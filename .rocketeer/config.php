@@ -38,9 +38,9 @@ return [
     // and store them locally
     'connections' => [
         'production' => [
-            'host' => '45.76.160.161',
+            'host' => '45.76.189.72',
             'username' => 'root',
-            'password' => 'B}6bNFnA[M[*AZ-V',
+            'password' => '3Ca=UCCtQBCUU]YR',
             'key' => '',
             'keyphrase' => '',
             'agent' => '',
@@ -92,7 +92,7 @@ return [
                 'scm' => array('branch' => 'master'),
             ),
             'truyentranh18' => [
-                'scm' => array('branch' => 'truyentranh18')
+                'scm' => array('branch' => 'truyentranh8')
             ]
         ),
         // Connections configuration
