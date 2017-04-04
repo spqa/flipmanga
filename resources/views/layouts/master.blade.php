@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title','Truyentranh18 - Website đọc truyện tranh online miễn phí, đọc truyện tranh manga tổng hợp')</title>
+    <title>@yield('title','Truyentranh8 - Website đọc truyện tranh online miễn phí, đọc truyện tranh manga tổng hợp')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="language" content="en">
     <meta name="description"
-          content="@yield('meta_des','Website truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga, manhua, manhwa, truyentranh18, cộng đồng truyện dịch Việt Nam')">
+          content="@yield('meta_des','Website truyện tranh online miễn phí, truyện tranh tổng hợp nhiều truyện nhất Việt Nam, manga, manhua, manhwa, Truyentranh8, cộng đồng truyện dịch Việt Nam')">
     <meta name="keywords"
           content="truyện tranh, truyentranh 18+, truyen tranh 18+, manga, đọc truyện tranh online, cổng truyện dịch, truyện tranh online, manga online, xem truyện, xem truyện tranh online, xem truyện online, vechai, manga24h, blogtruyen, truyện tranh 18, manhua, manhwa">
     <link rel="canonical" href="@yield('canonical',secure_url('/'))"/>
@@ -296,6 +296,6 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js?v=0.1"></script>
 <script src="{{asset('js/script.js?v=1.0')}}"></script>
-<script id="cid0020000152278171111" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 199px;height: 300px;">{"handle":"truyentranh18vn","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1}}</script>
+<script id="cid0020000152278171111" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 199px;height: 300px;">{"handle":"Truyentranh8vn","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1}}</script>
 </body>
 </html>
