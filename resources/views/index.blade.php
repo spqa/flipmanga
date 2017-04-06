@@ -103,13 +103,13 @@
                     <a class="tooltipped" data-position="top" data-delay="50" data-tooltip="50000"><img class="responsive-img" src="img/tw4848.png"></a> -->
                 </div>
                 <div class="fb-page"
-                     data-href="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
+                     data-href="https://www.facebook.com/truyentranhmanga18/"
                      data-tabs="no" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
                      data-show-facepile="true">
                     <blockquote
-                            cite="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/"
+                            cite="https://www.facebook.com/truyentranhmanga18/"
                             class="fb-xfbml-parse-ignore"><a
-                                href="https://www.facebook.com/Flipmanga-Manga-community-share-and-read-mangamanhwamanhua-for-free-571436729717447/">Truyentranh18</a></blockquote>
+                                href="https://www.facebook.com/truyentranhmanga18/">Truyentranh18</a></blockquote>
                 </div>
 
                 <div class="card-panel no-padding">
