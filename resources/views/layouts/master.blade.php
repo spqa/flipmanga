@@ -109,7 +109,7 @@
                     </div>
                 </li>
 
-                <li><a href="https://truyentranh8.info">Truyện Hay</a></li>
+                <li><a href="https://truyentranh18.info">Truyện Hay</a></li>
                 <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
             </ul>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
