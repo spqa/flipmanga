@@ -2,22 +2,26 @@
 
     var fabric = fabric || window.fabric;
     var canvas = new fabric.Canvas('editor');
-    canvas.setDimensions({
-        width : 300,
-        height : 400
-    });
+    // canvas.setDimensions({
+    //     width : 300,
+    //     height : 400
+    // });
 
-    $('.btn-preview').click(function() {
+    $('.btn-preview').click(function(e) {
         var imgSrc = $('#image').val();
-        $('.btn-add-text').removeClass('hide');
+        $('.editor-control').removeClass('hide');
         if (!imgSrc) {
             imgSrc = 'http://i.memeful.com/template/521ee7a0bf0fb/LR8ZQwv.jpg';
         }
-        fabric.Image.fromURL(imgSrc, function(img) {
-
+        var img = document.getElementById('preview-image');
+//or however you get a handle to the IMG
+        var width = img.clientWidth;
+        var height = img.clientHeight;
+        fabric.Image.fromURL('/api/proxy/image?url='+imgSrc, function(img) {
+            img.scaleToWidth(width);
             canvas.setDimensions({
-                width : img.width,
-                height : img.height
+                width : width,
+                height : height
             });
             canvas.add(img);
         });
@@ -38,7 +42,7 @@
             padding: 7,
             fontSize: 60,
             textAlign: 'left',
-            fontFamily: 'Impact',
+            fontFamily: 'meme',
             caching: false,
             fill: 'white',
             stroke: 'black',
@@ -57,8 +61,9 @@
     $('.btn-generate').click(function() {
         canvas.deactivateAll();
 
-        var img = canvas.toDataURL("image/jpg");
-        $('#preview').attr("src", img);
+        var img1 = canvas.toDataURL();
+        $('#encode-image').val(img1);
+        $('#preview-image').attr("src", img1);
 
         // window.open(img);
     });

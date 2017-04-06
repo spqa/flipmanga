@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col l8 m8 s12 meme-section">
                 <h2>{{$meme->title}}</h2>
-                <span class="btn grey-text transparent z-depth-0 no-padding"><i class="material-icons left">remove_red_eye</i><span>123156</span></span>
+                <span class="btn grey-text transparent z-depth-0 no-padding"><i class="material-icons left">remove_red_eye</i><span>{{$meme->view_count}}</span></span>
                 <span class="btn grey-text transparent z-depth-0 "><i class="material-icons left">comment</i><div class="fb-comments-count inline" data-href="/meme-anh-che/{{$meme->slug}}">0</div></span>
                 <span class="btn grey-text transparent z-depth-0 right hide-on-small-only"><i class="material-icons left">access_time</i><span>{{$meme->created_at->diffForHumans()}}</span></span>
                 <div class="fb-like" data-href="/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

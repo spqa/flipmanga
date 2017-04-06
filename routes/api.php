@@ -19,5 +19,6 @@ Route::get('/manga-in-progress','AjaxController@getMangaProgress')->middleware('
 Route::post('/genre','AjaxController@genres');
 Route::get('/genre/{id}','GenreController@getBySlug');
 Route::get('/search/{query?}','SearchController@autocompleteSearch');
+Route::get('/proxy/image','MemeController@proxy');
 
 

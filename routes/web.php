@@ -69,4 +69,11 @@ Route::get('/tin-tuc/{slug?}','PostController@show');
 Route::get('/meme-anh-che/{slug?}','MemeController@index')->name('meme.index');
 Route::get('/tao-anh-che-truyen-tranh','MemeController@create')->name('meme.create');
 
-Route::post('/api/meme/preview','MemeController@previewMeme')->middleware('auth');
+Route::post('/tao-anh-che-truyen-tranh','MemeController@store')->middleware('auth');
+
+//admin
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'admin-check'],function (){
+Route::get('/','MemeController@index');
+Route::get('/meme/check/{id}','MemeController@check')->name('meme.check');
+
+});
