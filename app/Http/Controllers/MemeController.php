@@ -28,15 +28,15 @@ class MemeController extends Controller
 //        dd(request()->all());
         $name=time();
         if ($encode_image){
-            $name=$name.'.png';
-            \Intervention\Image\Facades\Image::make($encode_image)->save(storage_path('app/public/images/meme/').$name.'.png');
+//            $name=$name.'.png';
+            \Intervention\Image\Facades\Image::make($encode_image)->save(public_path('images/meme/').$name.'.png');
         }else{
             $filename=basename(request('image-link'));
             $extension=explode('.', $filename)[1];
 //            dd($extension);
             $name.='.'.$extension;
 //            dd($name);
-            copy(request('image-link'),storage_path('app/public/images/meme/').$name);
+            copy(request('image-link'),public_path('images/meme/').$name);
         }
         Meme::create([
             'title'=>$title,
