@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\CountryMiddleware;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\VerifyCsrfToken;
@@ -41,6 +42,10 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+        'admin-check'=>[
+            'auth',
+            'admin'
+        ]
     ];
 
     /**
@@ -58,6 +63,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'enc.cookie'=>EncryptCookies::class,
-        'csrf'=>VerifyCsrfToken::class
+        'csrf'=>VerifyCsrfToken::class,
+        'admin'=>AdminMiddleware::class
     ];
 }

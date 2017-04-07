@@ -109,8 +109,9 @@
                     </div>
                 </li>
 
+                <li><a href="https://truyentranh8.info">Truyện Hay</a></li>
                 <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
-                <li><a href="https://truyentranh18.net">Truyện hay nhất </a></li>
+                <li><a href="{{route('meme.index')}}">Ảnh chế</a></li>
             </ul>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
 
@@ -132,7 +133,7 @@
 
                     @if(auth()->check())
                     <li>
-                        <a style="min-width: 136px" class="dropdown-button" href="#!"
+                        <a style="min-width: 200px" class="dropdown-button" href="#!"
                            data-activates="dropdown1">{{auth()->user()->name}}<i
                                     class="material-icons right">arrow_drop_down</i></a>
                     </li>
@@ -151,16 +152,19 @@
         </div>
         <ul id="dropdown1" class="dropdown-content">
             <li>
-                <a href="{{route('favorite')}}" class="white-text red">Yêu thích</a>
+                <a href="{{route('favorite')}}" class="white-text red"><i class="material-icons right">favorite</i>Yêu thích</a>
             </li>
             <li>
-                <a href="{{route('manga.create')}}">Đăng truyện</a>
+                <a href="{{route('meme.create')}}" class="white-text green"><i class="material-icons right">insert_emoticon</i>Tạo ảnh chế</a>
             </li>
             <li>
-                <a href="{{route('request.show')}}">Yêu cầu truyện</a>
+                <a class="black-text" href="{{route('manga.create')}}">Đăng truyện</a>
+            </li>
+            <li>
+                <a class="black-text" href="{{route('request.show')}}">Yêu cầu truyện</a>
             </li>
             {{--<li class="divider"></li>--}}
-            <li><a class="btn-logout">Đăng xuất</a></li>
+            <li><a class="btn-logout grey darken-3 white-text">Đăng xuất</a></li>
         </ul>
 
     </nav>
@@ -296,6 +300,55 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js?v=0.1"></script>
 <script src="{{asset('js/script.js?v=1.0')}}"></script>
-<script id="cid0020000152285928468" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"truyentranh18vn","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1,"fwtickm":1}}</script>
+{{--<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"--}}
+{{--style="width: 200px;height: 300px;">{--}}
+{{--"handle"--}}
+{{--:--}}
+{{--"truyentranh18vn", "arch"--}}
+{{--:--}}
+{{--"js", "styles"--}}
+{{--:--}}
+{{--{--}}
+{{--"a"--}}
+{{--:--}}
+{{--"336666", "b"--}}
+{{--:--}}
+{{--100, "c"--}}
+{{--:--}}
+{{--"FFFFFF", "d"--}}
+{{--:--}}
+{{--"FFFFFF", "k"--}}
+{{--:--}}
+{{--"336666", "l"--}}
+{{--:--}}
+{{--"336666", "m"--}}
+{{--:--}}
+{{--"336666", "n"--}}
+{{--:--}}
+{{--"FFFFFF", "p"--}}
+{{--:--}}
+{{--"10", "q"--}}
+{{--:--}}
+{{--"336666", "r"--}}
+{{--:--}}
+{{--100, "pos"--}}
+{{--:--}}
+{{--"br", "cv"--}}
+{{--:--}}
+{{--1, "cvfnt"--}}
+{{--:--}}
+{{--"monospace, sans-serif", "cvbg"--}}
+{{--:--}}
+{{--"336666", "cvw"--}}
+{{--:--}}
+{{--200, "cvh"--}}
+{{--:--}}
+{{--30, "ticker"--}}
+{{--:--}}
+{{--1, "fwtickm"--}}
+{{--:--}}
+{{--1--}}
+{{--}--}}
+{{--}</script>--}}
 </body>
 </html>

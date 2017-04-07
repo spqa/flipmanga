@@ -17,7 +17,8 @@
         "sunra/php-simple-html-dom-parser": "^1.5",
         "guzzlehttp/guzzle": "^6.2",
       "j0k3r/php-imgur-api-client": "^3.0",
-      "sentry/sentry": "^1.6"
+      "sentry/sentry": "^1.6",
+        "intervention/imagecache": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
