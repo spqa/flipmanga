@@ -1,4 +1,4 @@
-<h2><a class="black-text" href="{{route('meme.index',['slug'=>$meme->slug])}}">{{$meme->title}}</a></h2>
+<h2 ><a class="black-text" href="{{route('meme.index',['slug'=>$meme->slug])}}">{{$meme->title}}</a></h2>
 <div class="card z-depth-0">
     <div class="card-image">
         <img src="{{$meme->image}}">

@@ -6,10 +6,10 @@
                 @each('meme._meme',$memes,'meme')
             </div>
             <div class="col m4 l3 offset-l1 hide-on-small-only post-sidebar">
-                @for($i=1;$i<10;$i++)
-                    @include('post._post')
+                {{--@for($i=1;$i<10;$i++)--}}
+                    {{--@include('post._post')--}}
                     {{--<div class="divider"></div>--}}
-                @endfor
+                {{--@endfor--}}
             </div>
         </div>
 
