@@ -51,9 +51,10 @@ class MemeController extends Controller
     public function proxy(){
         try{
             if (request('url')){
-                return \Intervention\Image\Facades\Image::cache(function($image) {
+                $img=  \Intervention\Image\Facades\Image::cache(function($image) {
                     $image->make(request('url'));
-                }, 10, false);
+                }, 10, true);
+                return $img->response();
             }
             return 0;
         }catch(\Exception $exception){
