@@ -72,8 +72,9 @@ Route::get('/tao-anh-che-truyen-tranh','MemeController@create')->name('meme.crea
 Route::post('/tao-anh-che-truyen-tranh','MemeController@store')->middleware('auth');
 
 //admin
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'admin-check'],function (){
-Route::get('/','MemeController@index');
-Route::get('/meme/check/{id}','MemeController@check')->name('meme.check');
-
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware' =>'admin-check'],function (){
+    Route::get('/','MemeController@index')->name('meme.admin.index');
+    Route::get('/meme/check/{id}','MemeController@check')->name('meme.check');
+    Route::get('/meme/uncheck/{id}','MemeController@uncheck')->name('meme.uncheck');
+    Route::get('meme/delete/{id}','MemeController@delete')->name('meme.delete');
 });

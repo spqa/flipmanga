@@ -60,7 +60,16 @@
 
             </form>
         </div>
+
         <div class="row " id="search-memeful">
+            <div class="col s12">
+                <div class="card-panel transparent">
+                    <p>* Cách search ảnh gif :</p>
+                    <p class="margin-0">Gõ từ khóa rồi nhấn enter để search </p>
+                    <p class="margin-0">Nhấn vào hình ảnh để copy link ảnh </p>
+                    <p class="margin-0">Chú ý ảnh động không thể thêm text </p>
+                </div>
+            </div>
             <div class="col s12">
                 <iframe src="https://memefulsearch.github.io" frameborder="0"></iframe>
             </div>

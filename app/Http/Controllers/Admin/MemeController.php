@@ -10,14 +10,27 @@ use Illuminate\Support\Facades\DB;
 class MemeController extends Controller
 {
     public function index(){
-        $memes=Meme::where('check','!=',1)->orWhereNull('check')->orderBy('created_at','desc')->paginate('10');
+        $memes=Meme::orderBy('created_at','desc')->paginate('10');
         return view('admin.check_meme',compact('memes'));
     }
 
     public function check($id){
-        $meme=Meme::find($id);
+        $meme=Meme::findOrFail($id);
         $meme->check=true;
         $meme->save();
-        return back();
+        return redirect()->route('meme.admin.index');
+    }
+
+    public function uncheck($id){
+        $meme=Meme::findOrFail($id);
+        $meme->check=false;
+        $meme->save();
+        return redirect()->route('meme.admin.index');
+    }
+
+    public function delete($id){
+        $meme=Meme::findOrFail($id);
+        $meme->delete();
+        return redirect()->route('meme.admin.index');
     }
 }
