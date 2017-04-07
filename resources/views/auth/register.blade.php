@@ -19,7 +19,11 @@
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                             {{ csrf_field() }}
-
+                            <div class="hide">
+                                @foreach($errors->all() as $error)
+                                <span>{{$error}}</span>
+                                    @endforeach
+                            </div>
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Name</label>
 
