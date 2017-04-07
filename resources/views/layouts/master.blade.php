@@ -62,7 +62,7 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.8')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.9')}}">
 </head>
 
 <body>
@@ -109,7 +109,7 @@
                     </div>
                 </li>
 
-                <li><a href="https://truyentranh8.info">Truyện Hay</a></li>
+                <li><a href="https://truyentranh18.net">Truyện Hay</a></li>
                 <li><a href="{{route('manga.latest')}}">Truyện mới </a></li>
                 <li><a href="{{route('meme.index')}}">Ảnh chế</a></li>
             </ul>
