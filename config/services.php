@@ -35,8 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'facebook' => [
-        'client_id' => '613058618881383',
-        'client_secret' => 'a2f99909794f4b92b02c3c5d93b84bf8',
+        'client_id' => '598254003704583',
+        'client_secret' => '74e5b73ed1d3124fef142f1b45523c29',
         'redirect' =>env('FACEBOOK_CALLBACK'),
     ],
     'google'=>[
