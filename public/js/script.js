@@ -165,7 +165,8 @@ $(document).ready(function () {
         $('.carousel.carousel-slider').carousel('next');
     }, 3500);
     // $(".dropdown-button").dropdown();
-    $('.btn-logout').click(function () {
+    $('.btn-logout').click(function (e) {
+        e.preventDefault();
         $.ajax({
             url: '/logout',
             method: 'POST',

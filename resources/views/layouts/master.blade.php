@@ -164,7 +164,7 @@
                 <a class="black-text" href="{{route('request.show')}}">Yêu cầu truyện</a>
             </li>
             {{--<li class="divider"></li>--}}
-            <li><a class="btn-logout grey darken-3 white-text">Đăng xuất</a></li>
+            <li><a href="#" class="btn-logout grey darken-3 white-text">Đăng xuất</a></li>
         </ul>
 
     </nav>
@@ -299,7 +299,7 @@
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js?v=0.1"></script>
-<script src="{{asset('js/script.js?v=1.0')}}"></script>
+<script src="{{asset('js/script.js?v=1.1')}}"></script>
 {{--<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"--}}
 {{--style="width: 200px;height: 300px;">{--}}
 {{--"handle"--}}
