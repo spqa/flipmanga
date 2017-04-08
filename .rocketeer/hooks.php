@@ -32,7 +32,6 @@ return [
         'cleanup' => [
             'ln -s /home/www/truyentranh18/truyentranh18/shared/storage/app/public/images public/',
             'php artisan migrate',
-            'composer update'
         ],
     ],
 
