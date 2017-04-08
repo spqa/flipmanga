@@ -5,8 +5,8 @@
         <nav class="white z-depth-0 nav-breadcrumb">
             <div class="nav-wrapper">
                 <div class="col s12">
-                    <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Home</a>
-                    <a href="/login" class="breadcrumb grey-text active">Login to Flipmanga</a>
+                    <a href="/" class="breadcrumb grey-text"><i class="material-icons">home</i>Trang chủ</a>
+                    <a href="/login" class="breadcrumb grey-text active">Đăng nhập</a>
                 </div>
             </div>
         </nav>
