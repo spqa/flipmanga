@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\UpdateChapter;
 use App\Console\Commands\UpdateComicVN;
+use App\Console\Commands\UpdateComicVNIndex;
 use App\Console\Commands\UpdateGenreThich;
 use App\Console\Commands\UpdateMangaReader;
 use App\Console\Commands\UpdateOldMangareader;
@@ -32,7 +33,8 @@ class Kernel extends ConsoleKernel
         UpdateOldMangareader::class,
         UpdateComicVN::class,
         UpdateThichTruyen::class,
-        UpdateGenreThich::class
+        UpdateGenreThich::class,
+        UpdateComicVNIndex::class
     ];
 
     /**
@@ -53,7 +55,7 @@ class Kernel extends ConsoleKernel
 //        $schedule->command('update:mangareader')->name('mangareader1')->everyMinute()->withoutOverlapping();
 //        $schedule->command('update:old')->name('mangareader1.old')->everyThirtyMinutes()->withoutOverlapping();
 //        $schedule->command('update:comicvn')->name('comicvn')->everyMinute()->withoutOverlapping()->sendOutputTo('comicvnLog');
-//        $schedule->command('update:thichtruyen')->name('thichtruyen')->everyMinute()->withoutOverlapping()->sendOutputTo('thichtruyenLog');
+        $schedule->command('update:comicVNIndex')->name('comicvn0.2')->everyMinute()->withoutOverlapping()->sendOutputTo('comicvn');
     }
 
     /**
