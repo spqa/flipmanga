@@ -28,8 +28,8 @@ class MemeController extends Controller
 //        dd(request()->all());
         $name=time();
         if ($encode_image){
-//            $name=$name.'.png';
-            \Intervention\Image\Facades\Image::make($encode_image)->save('/home/www/truyentranh18/truyentranh18/current/storage/app/public/images/meme/'.$name.'.png');
+            $name=$name.'.png';
+            \Intervention\Image\Facades\Image::make($encode_image)->save('/home/www/truyentranh18/truyentranh18/current/storage/app/public/images/meme/'.$name);
         }else{
             $filename=basename(request('image-link'));
             $extension=explode('.', $filename)[1];
