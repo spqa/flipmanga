@@ -15,7 +15,7 @@
                 <div class="card-panel login-container z-depth-2">
                     <h3 class="green-text">Login</h3>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ secure_url('/login') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
