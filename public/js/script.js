@@ -175,8 +175,7 @@ $(document).ready(function () {
             success: function () {
                 location.reload();
             }
-        });
-        location.reload();
+        })
     });
 
     var didScroll;
