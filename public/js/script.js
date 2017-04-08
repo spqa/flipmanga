@@ -168,7 +168,7 @@ $(document).ready(function () {
     $('.btn-logout-1').click(function (e) {
         e.preventDefault();
         $.ajax({
-            url: '/logout',
+            url: 'https://truyentranh18.info/logout',
             method: 'POST',
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

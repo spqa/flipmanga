@@ -299,7 +299,7 @@
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script src="/js/mangacard.template.js?v=0.1"></script>
-<script src="{{asset('js/script.js?v=1.2')}}"></script>
+<script src="{{asset('js/script.js?v=1.3')}}"></script>
 {{--<script id="cid0020000150789223515" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"--}}
 {{--style="width: 200px;height: 300px;">{--}}
 {{--"handle"--}}
