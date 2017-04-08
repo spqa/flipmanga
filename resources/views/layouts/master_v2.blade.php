@@ -112,7 +112,7 @@
                 </form>
             </li>
             <li>
-                <a href="mailto:contact.flipmanga@gmail.com" class="btn-flat white-text green">Contact</a>
+                <a href="mailto:tadalata@gmail.com" class="btn-flat white-text green">Contact</a>
             </li>
             @if(auth()->check() && auth()->user()->avatar)
                 <li><img class="user-avatar" src="{{auth()->user()->avatar}}"/></li>
@@ -213,7 +213,7 @@
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.tos')}}">Term of service</a></li>
                     <li><a class="grey-text text-lighten-3" href="{{route('manga.priv')}}">Privacy Policy</a></li>
                     <li><a class="grey-text text-lighten-3" href="#!">Request Manga ,Manhua, Manhwa</a></li>
-                    <li><a class="grey-text text-lighten-3" href="mailto:contact.flipmanga@gmail.com">Contact us!</a></li>
+                    <li><a class="grey-text text-lighten-3" href="mailto:tadalata@gmail.com">Contact us!</a></li>
                 </ul>
             </div>
             <div class="col s12 center">

@@ -16,7 +16,7 @@
 <div class="cover">
     <h1>Access Denied <small>Error 403</small></h1>
     <p class="lead">The requested resource requires an authentication.</p>
-    <p >contact.flipmanga@gmail.com</p>
+    <p >tadalata@gmail.com</p>
 </div>
 
 

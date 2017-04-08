@@ -41,7 +41,7 @@
     <meta name="msapplication-TileImage" content="{{asset('/ms-icon-144x144.png')}}">
     <meta name="theme-color" content="#0D47A1">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <meta name="email" content="contact.flipmanga@gmail.com"/>
+    <meta name="email" content="tadalata@gmail.com"/>
     <meta name="Charset" content="UTF-8"/>
     <meta name="Distribution" content="Global"/>
     <meta name="Rating" content="General"/>

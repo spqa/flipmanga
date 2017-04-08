@@ -9,11 +9,11 @@
                         <div class="card-content black-text">
                             <span class="card-title">Liên hệ</span>
                             <p>
-                                <a href="mailto:contact.flipmanga@gmail.com">Email: contact.flipmanga@gmail.com</a>
+                                <a href="mailto:tadalata@gmail.com">Email: tadalata@gmail.com</a>
                             </p>
                         </div>
                         <div class="card-action ">
-                            <a class="grey-text" href="mailto:contact.flipmanga@gmail.com">Gửi Email</a>
+                            <a class="grey-text" href="mailto:tadalata@gmail.com">Gửi Email</a>
                         </div>
                     </div>
                 </div>
