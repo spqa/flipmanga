@@ -166,9 +166,8 @@ $(document).ready(function () {
     }, 3500);
     // $(".dropdown-button").dropdown();
     $('.btn-logout-1').click(function (e) {
-        e.preventDefault();
         $.ajax({
-            url: 'https://truyentranh18.info/logout',
+            url: '/logout',
             method: 'POST',
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -177,6 +176,7 @@ $(document).ready(function () {
                 location.reload();
             }
         });
+        location.reload();
     });
 
     var didScroll;
