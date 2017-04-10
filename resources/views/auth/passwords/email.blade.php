@@ -9,8 +9,8 @@
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
                     @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                        <div class="card green lighten-2">
+                            {{ 'Email reset password đã được gửi đi ! Hãy kiểm tra hòm thư của bạn' }}
                         </div>
                     @endif
 
