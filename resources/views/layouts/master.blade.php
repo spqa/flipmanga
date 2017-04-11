@@ -157,12 +157,12 @@
             <li>
                 <a href="{{route('meme.create')}}" class="white-text green"><i class="material-icons right">insert_emoticon</i>Tạo ảnh chế</a>
             </li>
-            <li>
-                <a class="black-text" href="{{route('manga.create')}}">Đăng truyện</a>
-            </li>
-            <li>
-                <a class="black-text" href="{{route('request.show')}}">Yêu cầu truyện</a>
-            </li>
+            {{--<li>--}}
+                {{--<a class="black-text" href="{{route('manga.create')}}">Đăng truyện</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a class="black-text" href="{{route('request.show')}}">Yêu cầu truyện</a>--}}
+            {{--</li>--}}
             {{--<li class="divider"></li>--}}
             <li><a class="btn-logout grey darken-3 white-text">Đăng xuất</a></li>
         </ul>
@@ -195,7 +195,8 @@
                     </div>
                 </li>
             @endif
-            <li>
+                <li><a href="{{route('meme.index')}}">Ảnh chế</a></li>
+                <li>
                 <a href="#" class="collapsible-header">Thể loại<i class="material-icons">arrow_drop_down</i></a>
                 <div class="collapsible-body">
                     <ul>
