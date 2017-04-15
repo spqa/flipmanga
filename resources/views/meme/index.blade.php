@@ -12,6 +12,10 @@
                 {{--@endfor--}}
             </div>
         </div>
-
+        <div class="row">
+            <div class="col s12 center">
+                {!! $memes->links() !!}
+            </div>
+        </div>
     </div>
     @endsection
